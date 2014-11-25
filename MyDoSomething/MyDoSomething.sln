@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseButtonEvent", "MouseButtonEvent\MouseButtonEvent.csproj", "{3527EC78-0C2C-451B-97A4-5C86EE286900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticSomething", "StaticSomething\StaticSomething.csproj", "{48A35DFB-3081-4D8F-9BDE-AEE63B04F7A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attribute", "Attribute\Attribute.csproj", "{0BEDBB45-C930-4D26-A536-433B50F13387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDragDrop", "MyDragDrop\MyDragDrop.csproj", "{C7A236B2-B9C5-4B58-A3CB-ACD2ED640A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControlTemplate", "MyControlTemplate\MyControlTemplate.csproj", "{7D3F76A0-86C1-4341-B98D-75FA0499E85E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLG", "CLG\CLG.csproj", "{99FD0F7C-1746-4D8A-9BD0-555D1BAF7FD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3527EC78-0C2C-451B-97A4-5C86EE286900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3527EC78-0C2C-451B-97A4-5C86EE286900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3527EC78-0C2C-451B-97A4-5C86EE286900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3527EC78-0C2C-451B-97A4-5C86EE286900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A35DFB-3081-4D8F-9BDE-AEE63B04F7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A35DFB-3081-4D8F-9BDE-AEE63B04F7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A35DFB-3081-4D8F-9BDE-AEE63B04F7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A35DFB-3081-4D8F-9BDE-AEE63B04F7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BEDBB45-C930-4D26-A536-433B50F13387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEDBB45-C930-4D26-A536-433B50F13387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEDBB45-C930-4D26-A536-433B50F13387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEDBB45-C930-4D26-A536-433B50F13387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7A236B2-B9C5-4B58-A3CB-ACD2ED640A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7A236B2-B9C5-4B58-A3CB-ACD2ED640A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7A236B2-B9C5-4B58-A3CB-ACD2ED640A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7A236B2-B9C5-4B58-A3CB-ACD2ED640A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3F76A0-86C1-4341-B98D-75FA0499E85E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3F76A0-86C1-4341-B98D-75FA0499E85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3F76A0-86C1-4341-B98D-75FA0499E85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3F76A0-86C1-4341-B98D-75FA0499E85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99FD0F7C-1746-4D8A-9BD0-555D1BAF7FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99FD0F7C-1746-4D8A-9BD0-555D1BAF7FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99FD0F7C-1746-4D8A-9BD0-555D1BAF7FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99FD0F7C-1746-4D8A-9BD0-555D1BAF7FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

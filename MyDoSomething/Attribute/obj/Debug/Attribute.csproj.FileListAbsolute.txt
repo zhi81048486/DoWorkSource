@@ -1,0 +1,6 @@
+E:\MyCode\MyDoSomething\Attribute\obj\Debug\Attribute.csprojResolveAssemblyReference.cache
+E:\MyCode\MyDoSomething\Attribute\bin\Debug\Attribute.exe.config
+E:\MyCode\MyDoSomething\Attribute\bin\Debug\Attribute.exe
+E:\MyCode\MyDoSomething\Attribute\bin\Debug\Attribute.pdb
+E:\MyCode\MyDoSomething\Attribute\obj\Debug\Attribute.exe
+E:\MyCode\MyDoSomething\Attribute\obj\Debug\Attribute.pdb

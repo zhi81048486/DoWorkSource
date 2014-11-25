@@ -1,0 +1,12 @@
+E:\MyDo\DoSome\CLG\bin\Debug\CLG.exe.config
+E:\MyDo\DoSome\CLG\obj\Debug\CLG.csprojResolveAssemblyReference.cache
+E:\MyDo\DoSome\CLG\bin\Debug\CLG.exe
+E:\MyDo\DoSome\CLG\bin\Debug\CLG.pdb
+E:\MyDo\DoSome\CLG\obj\Debug\CLG.exe
+E:\MyDo\DoSome\CLG\obj\Debug\CLG.pdb
+E:\MyCode\MyDoSomething\CLG\bin\Debug\CLG.exe.config
+E:\MyCode\MyDoSomething\CLG\obj\Debug\CLG.exe
+E:\MyCode\MyDoSomething\CLG\obj\Debug\CLG.pdb
+E:\MyCode\MyDoSomething\CLG\bin\Debug\CLG.exe
+E:\MyCode\MyDoSomething\CLG\bin\Debug\CLG.pdb
+E:\MyCode\MyDoSomething\CLG\obj\Debug\CLG.csprojResolveAssemblyReference.cache
