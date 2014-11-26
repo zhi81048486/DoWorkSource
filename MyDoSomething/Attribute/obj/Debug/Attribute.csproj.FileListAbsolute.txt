@@ -4,3 +4,9 @@ E:\MyCode\MyDoSomething\Attribute\bin\Debug\Attribute.exe
 E:\MyCode\MyDoSomething\Attribute\bin\Debug\Attribute.pdb
 E:\MyCode\MyDoSomething\Attribute\obj\Debug\Attribute.exe
 E:\MyCode\MyDoSomething\Attribute\obj\Debug\Attribute.pdb
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\bin\Debug\Attribute.exe.config
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\bin\Debug\Attribute.exe
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\bin\Debug\Attribute.pdb
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\obj\Debug\Attribute.csprojResolveAssemblyReference.cache
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\obj\Debug\Attribute.exe
+D:\GitSource\DoWorkSource\MyDoSomething\Attribute\obj\Debug\Attribute.pdb
