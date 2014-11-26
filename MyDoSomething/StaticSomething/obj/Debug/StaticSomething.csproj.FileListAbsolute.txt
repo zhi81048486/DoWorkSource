@@ -4,3 +4,9 @@ E:\MyCode\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.pdb
 E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.csprojResolveAssemblyReference.cache
 E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.exe
 E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.pdb
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.exe.config
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.exe
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.pdb
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.csprojResolveAssemblyReference.cache
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.exe
+D:\GitSource\DoWorkSource\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.pdb
