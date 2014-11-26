@@ -10,3 +10,5 @@ E:\MyCode\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.Properties
 E:\MyCode\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.csproj.GenerateResource.Cache
 E:\MyCode\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.exe
 E:\MyCode\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.pdb
+E:\MyGitSource\DoWorkSource\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.exe
+E:\MyGitSource\DoWorkSource\MyDoSomething\MyControlTemplate\obj\Debug\MyControlTemplate.pdb
