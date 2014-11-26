@@ -1,6 +1,0 @@
-E:\MyCode\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.exe.config
-E:\MyCode\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.exe
-E:\MyCode\MyDoSomething\StaticSomething\bin\Debug\StaticSomething.pdb
-E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.csprojResolveAssemblyReference.cache
-E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.exe
-E:\MyCode\MyDoSomething\StaticSomething\obj\Debug\StaticSomething.pdb
