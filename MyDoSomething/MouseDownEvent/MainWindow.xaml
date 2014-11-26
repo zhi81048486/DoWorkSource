@@ -1,0 +1,38 @@
+﻿<Window x:Class="MouseDownEvent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="{x:Type ContentControl}">
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Background" Value="PaleGreen" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Tag="Panel" PreviewMouseDown="PreviewMouseDown" MouseDown="MouseDown" MouseMove="StackPanel_MouseMove">
+            <ContentControl BorderBrush="Red" Tag="C1" PreviewMouseDown="PreviewMouseDown" MouseDown="MouseDown">
+                <ContentControl BorderBrush="Green" Tag="C2" PreviewMouseDown="PreviewMouseDown" MouseDown="MouseDown">
+                    <ContentControl Content="Click Me" BorderBrush="Blue" Tag="C3" PreviewMouseDown="PreviewMouseDown" MouseDown="MouseDown"/>
+                </ContentControl>
+            </ContentControl>
+        </StackPanel>
+        <ListView Background="Pink" Width="200" Height="50" Margin="20" PreviewMouseDown="ListView_PreviewMouseDown" MouseDown="ListView_MouseDown" MouseUp="ListView_MouseUp" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseLeftButtonDown="ListView_MouseLeftButtonDown">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="姓名"></GridViewColumn>
+                    <GridViewColumn Header="年龄"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
