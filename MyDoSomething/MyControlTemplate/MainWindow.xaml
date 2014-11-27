@@ -251,7 +251,7 @@
                         </GridViewColumn>
                         <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" >
                             <GridViewColumn.Header>
-                                <GridViewColumnHeader Click="GridViewColumnHeader_Click" Content="First"/>
+                                <GridViewColumnHeader  Content="First"/>
                             </GridViewColumn.Header>
                         </GridViewColumn>
                         <GridViewColumn Header="Second" Width="100" DisplayMemberBinding="{Binding Second}"></GridViewColumn>
