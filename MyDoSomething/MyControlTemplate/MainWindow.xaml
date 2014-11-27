@@ -233,7 +233,7 @@
     </Window.Resources>
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10" Background="Blue">
-            <ListView Name="MyListView" Margin="10" VirtualizingStackPanel.IsVirtualizing="True" SelectionChanged="MyListView_SelectionChanged">
+            <ListView Name="MyListView" Margin="10" VirtualizingStackPanel.IsVirtualizing="True" SelectionChanged="MyListView_SelectionChanged" GridViewColumnHeader.Click="MyListView_Click">
                 <ListView.View>
                     <GridView >
                         <GridViewColumn>
@@ -249,7 +249,11 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="First" Width="100" DisplayMemberBinding="{Binding First}"></GridViewColumn>
+                        <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" >
+                            <GridViewColumn.Header>
+                                <GridViewColumnHeader Click="GridViewColumnHeader_Click" Content="First"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
                         <GridViewColumn Header="Second" Width="100" DisplayMemberBinding="{Binding Second}"></GridViewColumn>
                         <GridViewColumn Header="Third" Width="100" DisplayMemberBinding="{Binding Third}"></GridViewColumn>
                         <GridViewColumn Header="Forth" Width="100" DisplayMemberBinding="{Binding Forth}"></GridViewColumn>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace MyControlTemplate
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<ListSource> List_S;
         public CheckBox AllCheckBox { get; set; }
         public MainWindow()
         {
@@ -27,7 +29,7 @@ namespace MyControlTemplate
         }
         List<ListSource> DoSource()
         {
-            List<ListSource>List_S=new List<ListSource>();
+            List_S = new List<ListSource>();
             for (int i = 0; i < 1000; i++)
 			{
                 ListSource s = new ListSource() { First = "First" + i.ToString(), Second = "Second" + i.ToString(), Third = "Third" + i.ToString(), Forth = "Forth" + i.ToString(), Firth = "Firth" + i.ToString(), Sixth = "Sixth" + i.ToString() };
@@ -67,6 +69,39 @@ namespace MyControlTemplate
         private void CheckBox_All_Loaded(object sender, RoutedEventArgs e)
         {            
             AllCheckBox = sender as CheckBox;
+        }
+
+
+        void SortMethod(string SHeader)
+        {
+            CollectionView SortView = (CollectionView)CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
+            SortView.SortDescriptions.Clear();
+            SortView.SortDescriptions.Add(new SortDescription(SHeader, ListSortDirection.Ascending));
+            SortView.Refresh();
+        }
+
+        private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            //SortMethod();
+        }
+
+        private void MyListView_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader HeaderInfo = e.OriginalSource as GridViewColumnHeader;
+            Console.WriteLine(HeaderInfo.ToString());
+            try
+            {
+                if (HeaderInfo.Role != GridViewColumnHeaderRole.Padding)
+                {
+                    string strHeader = HeaderInfo.Column.Header.ToString();
+                    SortMethod(strHeader);
+                }
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            } 
         }
     }
     public class ListSource
