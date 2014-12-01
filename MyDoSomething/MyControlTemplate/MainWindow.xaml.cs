@@ -77,7 +77,7 @@ namespace MyControlTemplate
             CollectionView SortView = (CollectionView)CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
             SortView.SortDescriptions.Clear();
             SortView.SortDescriptions.Add(new SortDescription(SHeader, ListSortDirection.Ascending));
-            SortView.Refresh();
+           // SortView.Refresh();
         }
 
         private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
