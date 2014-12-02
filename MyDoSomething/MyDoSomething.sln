@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLG", "CLG\CLG.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseDownEvent", "MouseDownEvent\MouseDownEvent.csproj", "{16257EBC-A6E3-402F-98FD-A8CC5162E402}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDatePicker", "MyDatePicker\MyDatePicker.csproj", "{FDC3E2D6-E305-4566-8916-728AB93107E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{16257EBC-A6E3-402F-98FD-A8CC5162E402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16257EBC-A6E3-402F-98FD-A8CC5162E402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16257EBC-A6E3-402F-98FD-A8CC5162E402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC3E2D6-E305-4566-8916-728AB93107E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC3E2D6-E305-4566-8916-728AB93107E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC3E2D6-E305-4566-8916-728AB93107E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC3E2D6-E305-4566-8916-728AB93107E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
