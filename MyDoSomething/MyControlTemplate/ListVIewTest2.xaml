@@ -1,0 +1,30 @@
+﻿<Window x:Class="MyControlTemplate.ListVIewTest2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myControlTemplate="clr-namespace:MyControlTemplate"
+        Title="ListVIewTest2" Height="300" Width="600">
+    <Grid>
+        <ListView Name="MyListView"
+          IsSynchronizedWithCurrentItem="True"
+          myControlTemplate:GridViewSort.AutoSort="True"
+          myControlTemplate:GridViewSort.ShowSortGlyph="True">
+            <ListView.View>
+                <GridView >
+                       
+                    <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" myControlTemplate:GridViewSort.PropertyName="First"> 
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="MyHeader"  Content="First"/>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Second" Width="100" DisplayMemberBinding="{Binding Second}" myControlTemplate:GridViewSort.PropertyName="Second"></GridViewColumn>
+                    <GridViewColumn Header="Third" Width="100" DisplayMemberBinding="{Binding Third}" myControlTemplate:GridViewSort.PropertyName="Third"></GridViewColumn>
+                    <GridViewColumn Header="Forth" Width="100" DisplayMemberBinding="{Binding Forth}" myControlTemplate:GridViewSort.PropertyName="Forth"></GridViewColumn>
+                    <GridViewColumn Header="Firth" Width="100" DisplayMemberBinding="{Binding Firth}" myControlTemplate:GridViewSort.PropertyName="Firth"></GridViewColumn>
+                    <GridViewColumn Header="Sixth" Width="100" DisplayMemberBinding="{Binding Sixth}" myControlTemplate:GridViewSort.PropertyName="Sixth"></GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+    </Grid>
+</Window>
