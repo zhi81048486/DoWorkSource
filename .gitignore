@@ -1,6 +1,6 @@
 */obj
 bin/
-.suo
+*.suo
 /MyDoSomething/MouseButtonEvent/bin
 /MyDoSomething/MyControlTemplate/bin
 /MyDoSomething/StaticSomething/obj
