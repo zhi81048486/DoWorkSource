@@ -12,7 +12,7 @@ namespace MyControlTemplate
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<ListSource> List_S;
+        private List<ListSource> _listS;
 
         public MainWindow()
         {
@@ -24,7 +24,7 @@ namespace MyControlTemplate
 
         private IEnumerable<ListSource> DoSource()
         {
-            List_S = new List<ListSource>();
+            _listS = new List<ListSource>();
             for (int i = 0; i < 1000; i++)
             {
                 var s = new ListSource
@@ -36,15 +36,15 @@ namespace MyControlTemplate
                     Firth = "Firth" + i,
                     Sixth = string.Format("Sixth{0}", i)
                 };
-                List_S.Add(s);
+                _listS.Add(s);
             }
-            return List_S;
+            return _listS;
         }
 
         private void CheckBox_All_Click(object sender, RoutedEventArgs e)
         {
             var cbox = sender as CheckBox;
-            if (cbox.IsChecked.Value)
+            if (cbox != null && cbox.IsChecked.Value)
             {
                 MyListView.SelectAll();
                 Console.WriteLine("Checked");
@@ -52,18 +52,18 @@ namespace MyControlTemplate
             else
             {
                 MyListView.UnselectAll();
-                Console.WriteLine("UnChecked");
+                Console.WriteLine(@"UnChecked");
             }
         }
 
         private void MyListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Console.WriteLine("SelectionChanged");
-            int SelectedNum = MyListView.SelectedItems.Count;
-            int AllNum = MyListView.Items.Count;
-            if (SelectedNum == AllNum)
+            int selectedNum = MyListView.SelectedItems.Count;
+            int allNum = MyListView.Items.Count;
+            if (selectedNum == allNum)
                 AllCheckBox.IsChecked = true;
-            else if (SelectedNum == 0)
+            else if (selectedNum == 0)
                 AllCheckBox.IsChecked = false;
             else
                 AllCheckBox.IsChecked = null;
@@ -75,11 +75,11 @@ namespace MyControlTemplate
         }
 
 
-        private void SortMethod(string SHeader)
+        private void SortMethod(string sHeader)
         {
-            var SortView = (CollectionView) CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
-            SortView.SortDescriptions.Clear();
-            SortView.SortDescriptions.Add(new SortDescription(SHeader, ListSortDirection.Ascending));
+            var sortView = (CollectionView)CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
+            sortView.SortDescriptions.Clear();
+            sortView.SortDescriptions.Add(new SortDescription(sHeader, ListSortDirection.Ascending));
             // SortView.Refresh();
         }
 
@@ -90,17 +90,20 @@ namespace MyControlTemplate
 
         private void MyListView_Click(object sender, RoutedEventArgs e)
         {
-            var HeaderInfo = e.OriginalSource as GridViewColumnHeader;
+            var headerInfo = e.OriginalSource as GridViewColumnHeader;
             try
             {
-                Console.WriteLine(HeaderInfo.ToString());
-
-                if (HeaderInfo.Role != GridViewColumnHeaderRole.Padding)
+                if (headerInfo != null)
                 {
-//这条语句对第一列就是First的写法不管用。
-                    // string strHeader = HeaderInfo.Column.Header.ToString(); 
-                    string strHeader = HeaderInfo.Content.ToString();
-                    SortMethod(strHeader);
+                    Console.WriteLine(headerInfo.ToString());
+
+                    if (headerInfo.Role != GridViewColumnHeaderRole.Padding)
+                    {
+                        //这条语句对第一列就是First的写法不管用。
+                        // string strHeader = HeaderInfo.Column.Header.ToString(); 
+                        string strHeader = headerInfo.Content.ToString();
+                        SortMethod(strHeader);
+                    }
                 }
             }
             catch (Exception exc)

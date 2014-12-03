@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -14,12 +15,21 @@ namespace MyControlTemplate
     public partial class ListViewTest
     {
 
-        private ObservableCollection<GameData> _GameCollection = new ObservableCollection<GameData>();
-
+        private readonly ObservableCollection<GameData> _GameCollection = new ObservableCollection<GameData>();
+        private readonly string _str = "ddsseeff";
+        private const string _conStr = "ddsseeff";
         private GridViewColumnHeader _CurSortCol = null;
         private SortAdorner _CurAdorner = null;
-
+        public ObservableCollection<GameData> Mysource=new ObservableCollection<GameData>();
         public ListViewTest()
+        {
+           // this.Loaded += ListViewTest_Loaded;
+           
+           
+            InitializeComponent();
+        }
+
+        void ListViewTest_Loaded(object sender, RoutedEventArgs e)
         {
             _GameCollection.Add(new GameData
             {
@@ -39,8 +49,6 @@ namespace MyControlTemplate
                 Creator = "Epic",
                 Publisher = "Microsoft"
             });
-
-            InitializeComponent();
         }
 
         public ObservableCollection<GameData> GameCollection
@@ -54,12 +62,21 @@ namespace MyControlTemplate
                 Creator = "A New Creator",
                 Publisher = "A New Publisher"
             });
+           string sss= _str.Remove(1,2);
+            string cons = _conStr.Remove(1, 2);
+           // MessageBox.Show(_str);
+           // MessageBox.Show(_conStr);
+            MessageBox.Show(_GameCollection.Count.ToString(CultureInfo.InvariantCulture));
+            // _GameCollection = Mysource;
         }
 
         private void SortClick(object sender, RoutedEventArgs e)
         {
+            // ReSharper disable once SuggestUseVarKeywordEvident
             GridViewColumnHeader column = sender as GridViewColumnHeader;
+            // ReSharper disable SuggestUseVarKeywordEvident
             String field = column.Tag as String;
+            // ReSharper restore SuggestUseVarKeywordEvident
 
             if (_CurSortCol != null)
             {
