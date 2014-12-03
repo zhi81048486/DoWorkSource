@@ -1,5 +1,5 @@
-*/obj
-bin/
+obj/*
+bin/*
 *.suo
 /MyDoSomething/MouseButtonEvent/bin
 /MyDoSomething/MyControlTemplate/bin
