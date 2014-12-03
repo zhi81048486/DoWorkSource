@@ -1,0 +1,5 @@
+E:\MyGitSource\DoWorkSource\MyDoSomething\CLG\bin\Debug\CLG.exe.config
+E:\MyGitSource\DoWorkSource\MyDoSomething\CLG\bin\Debug\CLG.exe
+E:\MyGitSource\DoWorkSource\MyDoSomething\CLG\bin\Debug\CLG.pdb
+E:\MyGitSource\DoWorkSource\MyDoSomething\CLG\obj\Debug\CLG.exe
+E:\MyGitSource\DoWorkSource\MyDoSomething\CLG\obj\Debug\CLG.pdb

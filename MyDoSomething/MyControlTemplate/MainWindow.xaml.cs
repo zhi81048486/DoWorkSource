@@ -1,38 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyControlTemplate
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    ///     MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<ListSource> List_S;
-        public CheckBox AllCheckBox { get; set; }
+        private List<ListSource> List_S;
+
         public MainWindow()
         {
             InitializeComponent();
-            this.MyListView.ItemsSource = DoSource();
+            MyListView.ItemsSource = DoSource();
         }
-        List<ListSource> DoSource()
+
+        public CheckBox AllCheckBox { get; set; }
+
+        private IEnumerable<ListSource> DoSource()
         {
             List_S = new List<ListSource>();
             for (int i = 0; i < 1000; i++)
             {
-                ListSource s = new ListSource() { First = "First" + i.ToString(), Second = "Second" + i.ToString(), Third = "Third" + i.ToString(), Forth = "Forth" + i.ToString(), Firth = "Firth" + i.ToString(), Sixth = "Sixth" + i.ToString() };
+                var s = new ListSource
+                {
+                    First = "First" + i,
+                    Second = "Second" + i,
+                    Third = "Third" + i,
+                    Forth = "Forth" + i,
+                    Firth = "Firth" + i,
+                    Sixth = string.Format("Sixth{0}", i)
+                };
                 List_S.Add(s);
             }
             return List_S;
@@ -40,15 +43,15 @@ namespace MyControlTemplate
 
         private void CheckBox_All_Click(object sender, RoutedEventArgs e)
         {
-            CheckBox cbox = sender as CheckBox;
-            if (cbox.IsChecked.Value == true)
+            var cbox = sender as CheckBox;
+            if (cbox.IsChecked.Value)
             {
-                this.MyListView.SelectAll();
+                MyListView.SelectAll();
                 Console.WriteLine("Checked");
             }
             else
             {
-                this.MyListView.UnselectAll();
+                MyListView.UnselectAll();
                 Console.WriteLine("UnChecked");
             }
         }
@@ -56,8 +59,8 @@ namespace MyControlTemplate
         private void MyListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Console.WriteLine("SelectionChanged");
-            int SelectedNum = this.MyListView.SelectedItems.Count;
-            int AllNum = this.MyListView.Items.Count;
+            int SelectedNum = MyListView.SelectedItems.Count;
+            int AllNum = MyListView.Items.Count;
             if (SelectedNum == AllNum)
                 AllCheckBox.IsChecked = true;
             else if (SelectedNum == 0)
@@ -72,12 +75,12 @@ namespace MyControlTemplate
         }
 
 
-        void SortMethod(string SHeader)
+        private void SortMethod(string SHeader)
         {
-            CollectionView SortView = (CollectionView)CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
+            var SortView = (CollectionView) CollectionViewSource.GetDefaultView(MyListView.ItemsSource);
             SortView.SortDescriptions.Clear();
             SortView.SortDescriptions.Add(new SortDescription(SHeader, ListSortDirection.Ascending));
-           // SortView.Refresh();
+            // SortView.Refresh();
         }
 
         private void GridViewColumnHeader_Click(object sender, RoutedEventArgs e)
@@ -87,18 +90,18 @@ namespace MyControlTemplate
 
         private void MyListView_Click(object sender, RoutedEventArgs e)
         {
-            GridViewColumnHeader HeaderInfo = e.OriginalSource as GridViewColumnHeader;
+            var HeaderInfo = e.OriginalSource as GridViewColumnHeader;
             try
             {
                 Console.WriteLine(HeaderInfo.ToString());
 
                 if (HeaderInfo.Role != GridViewColumnHeaderRole.Padding)
-                {//这条语句对第一列就是First的写法不管用。
-                   // string strHeader = HeaderInfo.Column.Header.ToString(); 
+                {
+//这条语句对第一列就是First的写法不管用。
+                    // string strHeader = HeaderInfo.Column.Header.ToString(); 
                     string strHeader = HeaderInfo.Content.ToString();
                     SortMethod(strHeader);
                 }
-
             }
             catch (Exception exc)
             {
@@ -106,6 +109,7 @@ namespace MyControlTemplate
             }
         }
     }
+
     public class ListSource
     {
         public string First { get; set; }

@@ -1,0 +1,35 @@
+﻿<Window x:Class="MyControlTemplate.ListViewTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ListViewTest" Height="300" Width="500" Name="MyThis">
+    <StackPanel>
+        <ListView x:Name="gameListView" ItemsSource=
+        "{Binding ElementName=MyThis, Path=GameCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="140" 
+                DisplayMemberBinding="{Binding GameName}">
+                        <GridViewColumnHeader Click="SortClick" 
+                                  Tag="GameName" 
+                                  Content="Game Name" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="140" 
+                DisplayMemberBinding="{Binding Creator}">
+                        <GridViewColumnHeader Click="SortClick" 
+                                  Tag="Creator" 
+                                  Content="Creator" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="140" 
+                DisplayMemberBinding="{Binding Publisher}">
+                        <GridViewColumnHeader Click="SortClick" 
+                                  Tag="Publisher" 
+                                  Content="Publisher" />
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button HorizontalAlignment="Right" Margin="5" 
+            Content="Add Row" Click="AddRowClick" />
+    </StackPanel>
+
+</Window>
