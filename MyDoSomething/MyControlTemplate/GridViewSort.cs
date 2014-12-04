@@ -81,11 +81,13 @@ namespace MyControlTemplate
                             {
                                 bool oldValue = (bool)e.OldValue;
                                 bool newValue = (bool)e.NewValue;
-                                if (oldValue && !newValue)
+                                //if (oldValue && !newValue)
+                                if(!newValue)
                                 {
                                     listView.RemoveHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ColumnHeader_Click));
                                 }
-                                if (!oldValue && newValue)
+                                //if (!oldValue && newValue)
+                                else
                                 {
                                     listView.AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(ColumnHeader_Click));
                                 }

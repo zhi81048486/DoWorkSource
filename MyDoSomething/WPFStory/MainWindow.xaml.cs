@@ -27,8 +27,14 @@ namespace WPFStory
 
         private void Button_Open_Click(object sender, RoutedEventArgs e)
         {
-            NewWindow Nw = new NewWindow();
-            Nw.ShowDialog();
+            //NewWindow Nw = new NewWindow();
+            //Nw.ShowDialog();
+        }
+
+        private void DoubleAnimation_Completed(object sender, EventArgs e)
+        {
+            
+            Console.WriteLine("Complete");
         }
     }
 }

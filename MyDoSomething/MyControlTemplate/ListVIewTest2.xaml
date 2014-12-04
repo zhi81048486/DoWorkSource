@@ -10,8 +10,7 @@
           myControlTemplate:GridViewSort.ShowSortGlyph="True">
             <ListView.View>
                 <GridView >
-                       
-                    <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" myControlTemplate:GridViewSort.PropertyName="First"> 
+                    <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" myControlTemplate:GridViewSort.PropertyName="First">
                         <GridViewColumn.Header>
                             <GridViewColumnHeader Tag="MyHeader"  Content="First"/>
                         </GridViewColumn.Header>
