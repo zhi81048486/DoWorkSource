@@ -32,62 +32,63 @@ namespace WPFStory
             
             Console.WriteLine("Complete");
         }
-        double Window_Height;
-        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Window_Height = e.NewSize.Height;
-            //double Back_Height_Bottom = this.StackPanel_Bottom.ActualHeight;
-            //double Back_Height_Up = this.StackPanel_Up.ActualHeight;
+        //double Window_Height;
+        //private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        //{
+        //    Window_Height = e.NewSize.Height;
+        //    //double Back_Height_Bottom = this.StackPanel_Bottom.ActualHeight;
+        //    //double Back_Height_Up = this.StackPanel_Up.ActualHeight;
+
+
+        //}
+        //double Bheigt, Uheight;
+        //void DoBeginStory()
+        //{
+        //    DoubleAnimation Begin_Up_Height_Story = new DoubleAnimation();
+        //    Begin_Up_Height_Story.From = Uheight = this.StackPanel_Up.ActualHeight;
+        //    Begin_Up_Height_Story.To = this.StackPanel_Up.ActualHeight / 2;
+        //    Begin_Up_Height_Story.FillBehavior = FillBehavior.HoldEnd;
+        //    Begin_Up_Height_Story.Duration = TimeSpan.FromSeconds(1);
+        //    this.StackPanel_Up.BeginAnimation(StackPanel.HeightProperty, Begin_Up_Height_Story);
+
+        //    DoubleAnimation Begin_Bottom_Height_Story = new DoubleAnimation();
+        //    Begin_Bottom_Height_Story.From =Bheigt= this.StackPanel_Bottom.ActualHeight;
+        //    Begin_Bottom_Height_Story.To = this.StackPanel_Bottom.ActualHeight+200;
+        //    Begin_Bottom_Height_Story.FillBehavior = FillBehavior.HoldEnd;
+        //    Begin_Bottom_Height_Story.Duration = TimeSpan.FromSeconds(1);
+        //    this.StackPanel_Bottom.BeginAnimation(StackPanel.HeightProperty, Begin_Bottom_Height_Story);
            
-           
-        }
-        double Bheigt, Uheight;
-        void DoBeginStory()
-        {
-            DoubleAnimation Begin_Up_Height_Story = new DoubleAnimation();
-            Begin_Up_Height_Story.From = Uheight = this.StackPanel_Up.ActualHeight;
-            Begin_Up_Height_Story.To = this.StackPanel_Up.ActualHeight / 2;
-            Begin_Up_Height_Story.FillBehavior = FillBehavior.HoldEnd;
-            Begin_Up_Height_Story.Duration = TimeSpan.FromSeconds(1);
-            this.StackPanel_Up.BeginAnimation(StackPanel.HeightProperty, Begin_Up_Height_Story);
+        //}
 
-            DoubleAnimation Begin_Bottom_Height_Story = new DoubleAnimation();
-            Begin_Bottom_Height_Story.From =Bheigt= this.StackPanel_Bottom.ActualHeight;
-            Begin_Bottom_Height_Story.To = this.StackPanel_Bottom.ActualHeight+200;
-            Begin_Bottom_Height_Story.FillBehavior = FillBehavior.HoldEnd;
-            Begin_Bottom_Height_Story.Duration = TimeSpan.FromSeconds(1);
-            this.StackPanel_Bottom.BeginAnimation(StackPanel.HeightProperty, Begin_Bottom_Height_Story);
-        }
+        //void DoBackStory()
+        //{
+        //    DoubleAnimation Back_Bottom_Height_Story = new DoubleAnimation();
+        //    Back_Bottom_Height_Story.From = this.StackPanel_Bottom.ActualHeight;
+        //    Back_Bottom_Height_Story.To = Bheigt;
+        //    Back_Bottom_Height_Story.FillBehavior = FillBehavior.HoldEnd;
+        //    Back_Bottom_Height_Story.Duration = TimeSpan.FromSeconds(1);
+        //    this.StackPanel_Bottom.BeginAnimation(StackPanel.HeightProperty, Back_Bottom_Height_Story);
 
-        void DoBackStory()
-        {
-            DoubleAnimation Back_Bottom_Height_Story = new DoubleAnimation();
-            Back_Bottom_Height_Story.From = this.StackPanel_Bottom.ActualHeight;
-            Back_Bottom_Height_Story.To = Bheigt;
-            Back_Bottom_Height_Story.FillBehavior = FillBehavior.HoldEnd;
-            Back_Bottom_Height_Story.Duration = TimeSpan.FromSeconds(1);
-            this.StackPanel_Bottom.BeginAnimation(StackPanel.HeightProperty, Back_Bottom_Height_Story);
-
-            DoubleAnimation Back_Up_Height_Story = new DoubleAnimation();
-            Back_Up_Height_Story.From = this.StackPanel_Up.ActualHeight;
-            Back_Up_Height_Story.To = Uheight;
-            Back_Up_Height_Story.Duration = TimeSpan.FromSeconds(1);
-            this.StackPanel_Up.BeginAnimation(StackPanel.HeightProperty, Back_Up_Height_Story);
-        }
+        //    DoubleAnimation Back_Up_Height_Story = new DoubleAnimation();
+        //    Back_Up_Height_Story.From = this.StackPanel_Up.ActualHeight;
+        //    Back_Up_Height_Story.To = Uheight;
+        //    Back_Up_Height_Story.Duration = TimeSpan.FromSeconds(1);
+        //    this.StackPanel_Up.BeginAnimation(StackPanel.HeightProperty, Back_Up_Height_Story);
+        //}
 
         private void Button_Open_Click(object sender, RoutedEventArgs e)
         {
-            //NewWindow Nw = new NewWindow();
-            //Nw.ShowDialog();
-           // DoBeginStory();
+        //    //NewWindow Nw = new NewWindow();
+        //    //Nw.ShowDialog();
+        //   // DoBeginStory();
 
         }
 
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            //DoBackStory();
+        //    //DoBackStory();
         }
     }
-   
 }
+
