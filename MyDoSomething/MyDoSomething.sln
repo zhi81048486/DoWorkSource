@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseDownEvent", "MouseDown
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFStory", "WPFStory\WPFStory.csproj", "{3D1DE0D4-F5FB-40AC-ABD5-116CA37A2047}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicCsharp", "BasicCsharp\BasicCsharp.csproj", "{C65B4132-BC2E-461A-915D-96B93526C78F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{3D1DE0D4-F5FB-40AC-ABD5-116CA37A2047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D1DE0D4-F5FB-40AC-ABD5-116CA37A2047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D1DE0D4-F5FB-40AC-ABD5-116CA37A2047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C65B4132-BC2E-461A-915D-96B93526C78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C65B4132-BC2E-461A-915D-96B93526C78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C65B4132-BC2E-461A-915D-96B93526C78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C65B4132-BC2E-461A-915D-96B93526C78F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
