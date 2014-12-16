@@ -4,11 +4,11 @@
         Title="MainWindow" Height="350" Width="525" SizeChanged="Window_SizeChanged">
     <Grid Name="MyGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <StackPanel Width="200" Height="200" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="Yellow" Name="StackPanel_Up" Grid.Row="0">
+        <StackPanel Width="200"  HorizontalAlignment="Left" Background="Yellow" Name="StackPanel_Up" Grid.Row="0">
             <Button Content="Back" Width="60" Height="25"  Name="Button_Back" Click="Button_Back_Click">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -83,7 +83,7 @@
                             <DoubleAnimation
                                     Storyboard.TargetName="StackPanel_Bottom" 
                                     Storyboard.TargetProperty="Height"
-                                    From="{Binding ElementName=StackPanel_Bottom,Path=ActualHeight}" To="300" Duration="0:0:1" 
+                                    From="{Binding ElementName=StackPanel_Bottom,Path=ActualHeight}" To="400" Duration="0:0:1"  FillBehavior="HoldEnd"
                       AccelerationRatio="1"
                                     />
                         </Storyboard>
@@ -92,7 +92,7 @@
 
             </Button.Triggers>
         </Button>
-        <StackPanel Width="300" Height="200" Background="Pink" HorizontalAlignment="Left" VerticalAlignment="Stretch" Name="StackPanel_Bottom" Grid.Row="2">
+        <StackPanel Width="300" Background="Pink" HorizontalAlignment="Left" VerticalAlignment="Stretch" Name="StackPanel_Bottom" Grid.Row="2">
             
         </StackPanel>
     </Grid>
