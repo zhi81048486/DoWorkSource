@@ -9,7 +9,7 @@ namespace StaticSomething
     class Program
     {
         static string str = "I'm static";
-        static List<string> ListStr = new List<string>() { "str1", "str2", "str3" };       
+        static readonly List<string> ListStr = new List<string>() { "str1", "str2", "str3" };       
         static void Main(string[] args)
         {
            // changed(ref str);

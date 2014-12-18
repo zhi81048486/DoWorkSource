@@ -1,0 +1,24 @@
+﻿<Window x:Class="StaticVSDynamic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Grid Background="{DynamicResource myGradientBrush}">
+        <Label>
+            <AccessText TextWrapping="WrapWithOverflow">
+                StaticResource只能向父级元素向上查找，不能向后查找，但是DynamicResource可以双向查找
+            </AccessText>
+        </Label>
+        
+        <TextBlock  Margin="20" TextWrapping="Wrap">
+        A StaticResource will be resolved and assigned to the property during the loading of the XAML which occurs before the application is actually run. It will only be assigned once and any changes to resource dictionary ignored.<LineBreak/>
+A DynamicResource assigns an Expression object to the property during loading but does not actually lookup the resource until runtime when the Expression object is asked for the value. This defers looking up the resource until it is needed at runtime. A good example would be a forward reference to a resource defined later on in the XAML. Another example is a resource that will not even exist until runtime. It will update the target if the source resource dictionary is changed.
+        </TextBlock>
+    </Grid>
+    <Window.Resources>
+        <!--<RadialGradientBrush x:Key="myGradientBrush">
+            <GradientStop Color="Green" Offset="0"/>
+            <GradientStop Color="Blue" Offset="2"/>
+        </RadialGradientBrush>-->
+    </Window.Resources>
+</Window>
