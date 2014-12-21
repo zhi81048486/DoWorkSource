@@ -14,7 +14,6 @@
           Padding="2"
           SnapsToDevicePixels="true">
                             <!--<ContentPresenter />-->
-                            <ItemsPresenter></ItemsPresenter>
                             <!--<TextBlock Text="{Binding Name}"></TextBlock>-->
                         </Border>
                         <ControlTemplate.Triggers>
