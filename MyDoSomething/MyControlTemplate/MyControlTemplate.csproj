@@ -49,6 +49,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ListViewHeaderFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ListViewTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GridViewSort.cs" />
+    <Compile Include="ListViewHeaderFilter.xaml.cs">
+      <DependentUpon>ListViewHeaderFilter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListViewTest.xaml.cs">
       <DependentUpon>ListViewTest.xaml</DependentUpon>
     </Compile>
