@@ -2,22 +2,87 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit" 
+        xmlns:filter="clr-namespace:MyControlTemplate"
         Title="ListViewHeaderFilter" Height="300" Width="600">
+    <Window.Resources>
+        <filter:BoolToVisibility_Collapsed_Convert x:Key="change"/>
+    </Window.Resources>
     <Grid>
         <ListView Name="MyListView"
           IsSynchronizedWithCurrentItem="True" GridViewColumnHeader.Click="MyListView_Click">     
             <ListView.View>
                 <GridView  >
                     <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}">
-                        <GridViewColumn.Header>
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Frist"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        <!--<GridViewColumn.Header>
+                           
                             <GridViewColumnHeader Tag="MyHeader"  Content="First"/>
-                        </GridViewColumn.Header>
+                            
+                        </GridViewColumn.Header>-->
                     </GridViewColumn>
-                    <GridViewColumn Header="Second" Width="100" DisplayMemberBinding="{Binding Second}" ></GridViewColumn>
-                    <GridViewColumn Header="Third" Width="100" DisplayMemberBinding="{Binding Third}" ></GridViewColumn>
-                    <GridViewColumn Header="Forth" Width="100" DisplayMemberBinding="{Binding Forth}" ></GridViewColumn>
-                    <GridViewColumn Header="Firth" Width="100" DisplayMemberBinding="{Binding Firth}" ></GridViewColumn>
-                    <GridViewColumn Header="Sixth" Width="100" DisplayMemberBinding="{Binding Sixth}" ></GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Second}">
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Second"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Third" Width="100" DisplayMemberBinding="{Binding Third}" >
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Third"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Forth" Width="100" DisplayMemberBinding="{Binding Forth}" >
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Forth"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Firth" Width="100" DisplayMemberBinding="{Binding Firth}" >
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Firth"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Sixth" Width="100" DisplayMemberBinding="{Binding Sixth}" >
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Sixth"/>
+                                    <filter:UCFilter Visibility="{Binding RelativeSource={RelativeSource FindAncestor, 
+AncestorType={x:Type GridViewColumnHeader}}, Path=IsMouseOver,Converter={StaticResource change}}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                    </GridViewColumn>
 
                 </GridView>
             </ListView.View>

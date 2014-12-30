@@ -119,12 +119,7 @@
               RecognizesAccessKey="True"
               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                                 </Grid>
-                            </Border>
-                            <CheckBox Width="30" Height="30" HorizontalAlignment="Right" Name="CheckBox_Filter" Visibility="Hidden">
-                            </CheckBox>
-                            <Popup Placement="Right" PlacementTarget="{Binding CheckBox_Filter}" IsOpen="{Binding ElementName=CheckBox_Filter,Path=IsChecked}" StaysOpen="False" HorizontalOffset="0" VerticalOffset="20">
-                                <Label Content="sd" Background="White"/>
-                            </Popup>
+                            </Border>                            
                             <Thumb x:Name="PART_HeaderGripper"
             HorizontalAlignment="Right"
             Margin="0,0,-9,0"
@@ -133,8 +128,7 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter TargetName="HeaderBorder"
-                    Property="Background" Value="Red"/>
-                                <Setter TargetName="CheckBox_Filter" Property="Visibility" Value="Visible"/>
+                    Property="Background" Value="Red"/>                             
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter TargetName="HeaderBorder"

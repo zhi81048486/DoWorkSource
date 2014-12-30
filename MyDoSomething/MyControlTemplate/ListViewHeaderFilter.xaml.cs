@@ -44,27 +44,9 @@ namespace MyControlTemplate
         }
         bool b = false;
         private void MyListView_Click(object sender, RoutedEventArgs e)
-        {
-            b = true;
-            FilterCorner();
-            Console.WriteLine((e.OriginalSource as GridViewColumnHeader).ToString());
+        {         
+           
+            //Console.WriteLine((e.OriginalSource as GridViewColumnHeader).ToString());
         }
-        void FilterCorner()
-        {
-            Label l=new Label();
-            l.Content="sds";
-            l.Foreground = Brushes.Red;
-            l.Background = Brushes.White;
-            Popup p = new Popup();          
-            p.Width = 200;
-            p.Height = 100;
-            p.Child = l;
-            p.IsOpen = b;
-            p.StaysOpen = false;
-            p.PlacementTarget = MyListView;
-            p.Placement = PlacementMode.Bottom;
-            Console.WriteLine(p.Parent);
-        }
-             
     }
 }
