@@ -20,12 +20,12 @@ namespace MyControlTemplate
         private const string _conStr = "ddsseeff";
         private GridViewColumnHeader _CurSortCol = null;
         private SortAdorner _CurAdorner = null;
-        public ObservableCollection<GameData> Mysource=new ObservableCollection<GameData>();
+        public ObservableCollection<GameData> Mysource = new ObservableCollection<GameData>();
         public ListViewTest()
         {
-           // this.Loaded += ListViewTest_Loaded;
-           
-           
+            // this.Loaded += ListViewTest_Loaded;
+
+
             InitializeComponent();
         }
 
@@ -62,10 +62,10 @@ namespace MyControlTemplate
                 Creator = "A New Creator",
                 Publisher = "A New Publisher"
             });
-           string sss= _str.Remove(1,2);
+            string sss = _str.Remove(1, 2);
             string cons = _conStr.Remove(1, 2);
-           // MessageBox.Show(_str);
-           // MessageBox.Show(_conStr);
+            // MessageBox.Show(_str);
+            // MessageBox.Show(_conStr);
             MessageBox.Show(_GameCollection.Count.ToString(CultureInfo.InvariantCulture));
             // _GameCollection = Mysource;
         }
@@ -142,7 +142,5 @@ namespace MyControlTemplate
         public string Creator { get; set; }
         public string Publisher { get; set; }
     }
-
-
 
 }

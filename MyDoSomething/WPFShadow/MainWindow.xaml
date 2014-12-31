@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPFShadow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="20">
+        <Grid Background="White">
+            <!--阴影的内阴影和外阴影关键就是这个阴影的对象的背景色,及ClipToBounds的属性值-->
+            <Border BorderThickness="1" BorderBrush="Black" Margin="1" ClipToBounds="False" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect Color="Red" BlurRadius="5" Direction="200"  ShadowDepth="0" Opacity="1" />
+                </Border.Effect>
+            </Border>
+            <Grid Margin="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Name="Label_Title" Height="25" Padding="0,5"/>
+                <!--<Button Style="{DynamicResource FilterCloseStyle}" HorizontalAlignment="Right" Cursor="Hand" Name="Button_Close" Margin="5,0"/>-->
+                <ComboBox Height="30" Width="80" Grid.Row="1"  HorizontalAlignment="Left" Name="ComboBox_Filter" SelectedIndex="0" Margin="0,5">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBox HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Grid.Row="2" Height="100" AcceptsReturn="True" Name="TextBox_Filter" IsEnabled="True">
+
+                </TextBox>
+                <Label Content="最多同时搜1000个文本(每行一个)" Grid.Row="3" Margin="0"/>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,10" HorizontalAlignment="Center">
+                    <Button Content="确定" Margin="0,0,20,0" Width="60" Name="Button_Sure"/>
+                    <Button Content="取消"  Width="60" Name="Button_Cancel"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
