@@ -3,18 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MyListBox" Height="300" Width="600" WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <Style x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+        <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border 
-          Name="Border"
-          Padding="2"
-          SnapsToDevicePixels="true">
+                        <Border Name="Border" Padding="2" SnapsToDevicePixels="true">
                             <!--<ContentPresenter />-->
-                            <!--<TextBlock Text="{Binding Name}"></TextBlock>-->
+                         
+                            <TextBlock Text="{Binding Age}"></TextBlock>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
@@ -30,10 +28,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-
+        <DataTemplate x:Key="ListBoxItem_Data" DataType="ListBoxItem">
+            <StackPanel Name="StackP" SnapsToDevicePixels="true" Orientation="Horizontal">
+                <TextBlock Text="{Binding Name}"/>
+                <TextBlock Text="{Binding Age}"></TextBlock>
+            </StackPanel>
+            <DataTemplate.Triggers>               
+            </DataTemplate.Triggers>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ListBox Name="MyLb"></ListBox>
+        <!--DisplayMemberPath="Name"-->
+        <!--<ItemContainerStyle="StaticResource ListBoxItemStyle"/>-->
+        <ListBox Name="MyLb" ItemTemplate="{StaticResource ListBoxItem_Data}"></ListBox>
     </Grid>
 </Window>
