@@ -13,16 +13,21 @@
             </ListView.View>
         </ListView>
     </Grid>-->
-    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" 
-    PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown"
+    <Grid 
      Width="313" Height="271" Name="mygrid">
-        <Button PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown"
-         MouseLeftButtonDown="Button_MouseLeftButtonDown" Click="Button_Click" Name="btnGo">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Click="btnGo_Click"
+         Name="btnGo" MouseDoubleClick="btnGo_MouseDoubleClick">
             <TextBox Name="textBox1" Width="173" Height="27"
-            MouseLeftButtonDown="textBox1_MouseLeftButtonDown"
-             PreviewMouseLeftButtonDown="textBox1_PreviewMouseLeftButtonDown">
+           MouseDoubleClick="textBox1_MouseDoubleClick">
             </TextBox>
-        </Button>
+            </Button>
+        <Button Grid.Row="1" Name="Button2" Margin="0,5" Click="Button2_Click" MouseUp="Button2_MouseUp" PreviewMouseDown="Button2_PreviewMouseDown"/>
+        
     </Grid>
 
 

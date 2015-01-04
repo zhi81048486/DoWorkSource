@@ -26,13 +26,6 @@
                 </ContentControl>
             </ContentControl>
         </StackPanel>
-        <ListView Background="Pink" Width="200" Height="50" Margin="20" PreviewMouseDown="ListView_PreviewMouseDown" MouseDown="ListView_MouseDown" MouseUp="ListView_MouseUp" PreviewMouseLeftButtonDown="ListView_PreviewMouseLeftButtonDown" MouseLeftButtonDown="ListView_MouseLeftButtonDown">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="姓名"></GridViewColumn>
-                    <GridViewColumn Header="年龄"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Label Content="冒泡事件和隧道事件"/>
     </StackPanel>
 </Window>
