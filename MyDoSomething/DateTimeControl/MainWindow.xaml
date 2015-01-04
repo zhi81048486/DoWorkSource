@@ -1,0 +1,18 @@
+﻿<Window x:Class="DateTimeControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DateTime" Height="350" Width="525">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Name="Label_Date"/>
+        </StackPanel>
+        <UniformGrid Name="WeekGrid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Rows="1" Columns="7"  Margin="0"  FlowDirection="LeftToRight" SnapsToDevicePixels="True"/>
+        <UniformGrid Name="DayGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Rows="6" Columns="7" Margin="0"
+          FlowDirection="LeftToRight"  SnapsToDevicePixels="True" Grid.Row="2"/>
+    </Grid>
+</Window>

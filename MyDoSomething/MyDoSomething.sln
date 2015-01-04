@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticVSDynamic", "StaticVS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFShadow", "WPFShadow\WPFShadow.csproj", "{30627264-F51A-499E-AF25-0F443EEA05BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateTimeControl", "DateTimeControl\DateTimeControl.csproj", "{C5D3809D-E31B-4B35-8965-701E7119B810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{30627264-F51A-499E-AF25-0F443EEA05BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30627264-F51A-499E-AF25-0F443EEA05BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30627264-F51A-499E-AF25-0F443EEA05BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D3809D-E31B-4B35-8965-701E7119B810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D3809D-E31B-4B35-8965-701E7119B810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D3809D-E31B-4B35-8965-701E7119B810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D3809D-E31B-4B35-8965-701E7119B810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
