@@ -11,9 +11,9 @@
         <StackPanel Orientation="Horizontal">
             <Label Name="Label_Date"/>
             <ComboBox Name="Combo_Years" Width="60"/>
-            <Button Content="+" Name="Button_MonthAdd" Margin="20,0,0,0"/>
+            <Button Content="+" Name="Button_MonthAdd" Margin="20,0,0,0" Width="20"/>
             <ComboBox Name="Combo_Monthes" Width="40"/>
-            <Button Content="-" Name="Button_MonthReduce" Margin="0"/>
+            <Button Content="-" Name="Button_MonthReduce" Margin="0" Width="20"/>
         </StackPanel>
         <UniformGrid Name="WeekGrid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Rows="1" Columns="7"  Margin="0"  FlowDirection="LeftToRight" SnapsToDevicePixels="True"/>
         <UniformGrid Name="DayGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Rows="6" Columns="7" Margin="0"

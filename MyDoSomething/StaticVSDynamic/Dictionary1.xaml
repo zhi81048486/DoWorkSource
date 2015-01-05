@@ -4,4 +4,14 @@
         <GradientStop Color="Green" Offset="0"/>
         <GradientStop Color="Blue" Offset="2"/>
     </RadialGradientBrush>
+    <Style x:Key="DateLabel" TargetType="Label">
+        <Setter Property="Background" Value="Pink"></Setter>
+        <Setter Property="BorderThickness" Value="1"></Setter>
+        <Setter Property="BorderBrush" Value="Black"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Yellow"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

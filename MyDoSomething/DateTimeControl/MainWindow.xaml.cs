@@ -120,11 +120,7 @@ namespace DateTimeControl
                 for (int j = 0; j < 7; j++)
                 {
                     Label l1 = new Label();
-                    l1.Background = Brushes.Pink;
-                   // l1.Margin = new Thickness(4);
-                    l1.BorderBrush = Brushes.Black;
-                    l1.BorderThickness = new Thickness(1);
-                  
+                    l1.Style = (Style)FindResource("DateLabel");
                     l1.MouseLeftButtonDown += l1_MouseLeftButtonDown;
                     DayGrid.Children.Add(l1);
                     _btnMonthMode[i, j] = l1;
