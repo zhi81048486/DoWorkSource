@@ -50,6 +50,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MyConvert.cs" />
+    <Compile Include="MyTabControl.xaml.cs">
+      <DependentUpon>MyTabControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UCFilter.xaml.cs">
       <DependentUpon>UCFilter.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MyListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
