@@ -82,8 +82,8 @@
               Margin="12,2,12,2"
               RecognizesAccessKey="True"/>-->
                                 <StackPanel>
-                                    <Label x:Name="aLabel" Style="{x:Null}" FontSize="16" Margin="10,2,10,2"   Height="40" Content="{TemplateBinding Header}" HorizontalAlignment="Center"   VerticalContentAlignment="Center" VerticalAlignment="Center"  />
-                                    <Border  BorderThickness="1" BorderBrush="Black" Margin="20,2,20,0" Name="BorderLine" Visibility="Hidden"/>
+                                    <Label x:Name="aLabel" Style="{x:Null}" FontSize="15" Margin="10,2,10,0"   Height="30" Content="{TemplateBinding Header}" HorizontalAlignment="Center"   VerticalContentAlignment="Center" VerticalAlignment="Center"  />
+                                    <Border  BorderThickness="1" BorderBrush="Black" Margin="0" Name="BorderLine" Visibility="Hidden"/>
                                 </StackPanel>
                             </Border>
                         </Grid>
@@ -148,14 +148,20 @@
 
     </Window.Resources>
     <Grid>
-        <Border BorderBrush="Green"  BorderThickness="1" Margin="1" Background="#FFFFFF">
+        <Border BorderBrush="Green"  BorderThickness="0.5" Margin="1" Background="#FFFFFF">
             <Border.Effect>
                 <DropShadowEffect Color="#000000" BlurRadius="5" Direction="270"  ShadowDepth="0" Opacity="1" />
             </Border.Effect>
         </Border>
-        <Grid Margin="6,0">
+        <!-- 这个grid的margin其实还控制着边框的宽度问题-->
+        <Grid Margin="2" Background="OldLace">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <Button Width="20" Height="20" Style="{DynamicResource LoginCloseStyle}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,5" Padding="0" Cursor="Hand" Click="Button_Click" Background="#FFFFFF"/>
-            <TabControl Style="{DynamicResource LoginTabControlStyle}" ItemContainerStyle="{DynamicResource LoginTabItemStyle}" Button.Click="TabControl_Click">
+            <TabControl Style="{DynamicResource LoginTabControlStyle}" ItemContainerStyle="{DynamicResource LoginTabItemStyle}" Button.Click="TabControl_Click" Grid.Row="0">
                 <TabItem Header="普通登录" Width="160">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -163,7 +169,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Name="Label_ErroTip" Height="30" Foreground="Red" Content="错误" Margin="90,10,0,0"/>
+                        <Label Grid.Row="0" Name="Label_ErroTip" Height="30" Foreground="Red" Margin="90,10,0,0"/>
                             <StackPanel Orientation="horizontal" Grid.Row="1" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
                                 <Label Name="Label_Account" Content="账户名称:" Width="60" Height="30" />
                                 <TextBox Name="TextBox_Account" Width="280" Height="30" VerticalContentAlignment="Center" BorderThickness="1" Text="ddsd"/>
@@ -181,7 +187,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Name="Label_ErroTip1" Height="30" Foreground="Red" Content="错误" Margin="90,10,0,0"/>
+                        <Label Grid.Row="0" Name="Label_ErroTip1" Height="30" Foreground="Red" Margin="90,10,0,0"/>
                         <StackPanel Orientation="horizontal" Grid.Row="1" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <Label  Content="手机号码:" Width="60" Height="30"/>
                             <TextBox Name="TextBox_PhoneNum" Width="280" Height="40" VerticalContentAlignment="Center"/>
@@ -196,7 +202,28 @@
 
                 </TabItem>
             </TabControl>
-            <Button Content="登录" Width="200" Height="40"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="60,0,0,40"/>
+
+            <TabControl Style="{DynamicResource LoginTabControlStyle}" ItemContainerStyle="{DynamicResource LoginTabItemStyle}" Grid.Row="1" Visibility="Collapsed" Name="ServiceTabControl" Margin="0,-30,0,0">
+                <TabItem Header="客服登录" Width="160">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Name="Label_ErroTip_Service" Height="30" Foreground="Red"  Margin="90,10,0,0"/>
+                        <StackPanel Orientation="horizontal" Grid.Row="1" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Label Name="Label_Account_Service" Content="客服名称" Width="60" Height="30" MinWidth="100"/>
+                            <TextBox  Name="TextBox_Account_Service" Width="280" Height="30" VerticalContentAlignment="Center" BorderThickness="1"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <Label Name="Label_PWD_Service" Content="客服密码" Width="60" Height="30" MinWidth="100"/>
+                            <PasswordBox Width="280" Height="30" VerticalContentAlignment="Center"  Tag="请输入密码" Name="PB_Password_Service"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+            <Button Content="登录" Width="200" Height="40"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="60,0,0,20" Grid.Row="2"/>
         </Grid>
     </Grid>
 </Window>

@@ -6,60 +6,59 @@ using System.Threading.Tasks;
 using System.IO;
 namespace BasicCsharp
 {
-
     class Program
     {
-        static void Main(string[] args)
-        {
-            //string str = "First";
-            //if (str == "First")
-            //    Console.WriteLine("First");
-            //else if (str == "Second")
-            //    Console.WriteLine("Second");
-            //else if (str == "Third")
-            //    Console.WriteLine("Third");
-            //Console.ReadKey();
+        //static void Main(string[] args)
+        //{
+        //    //string str = "First";
+        //    //if (str == "First")
+        //    //    Console.WriteLine("First");
+        //    //else if (str == "Second")
+        //    //    Console.WriteLine("Second");
+        //    //else if (str == "Third")
+        //    //    Console.WriteLine("Third");
+        //    //Console.ReadKey();
 
-            //MyEqual();
+        //    //MyEqual();
 
-            //Console.ReadKey();
+        //    //Console.ReadKey();
 
-            //string str = "";
-            //while (str != "No")
-            //{
-            //    FileWatch();
-            //    str = Console.ReadLine();
-            //}
+        //    //string str = "";
+        //    //while (str != "No")
+        //    //{
+        //    //    FileWatch();
+        //    //    str = Console.ReadLine();
+        //    //}
 
 
-            int i = 30;
-            MethodParameters mp = new MethodParameters();
-            mp.Method1(i);
-            Console.WriteLine("Out Value:" + i);
+        //    int i = 30;
+        //    MethodParameters mp = new MethodParameters();
+        //    mp.Method1(i);
+        //    Console.WriteLine("Out Value:" + i);
 
-            string str = "mystring";
-            mp.Method2(str);
-            Console.WriteLine("Out　Value:" + str);
-            Console.WriteLine();
-            List<string> lists = new List<string>();
-            lists.Add("1");
-            lists.Add("2");
-            mp.Method3(lists);
-            Console.WriteLine("Out Value" + lists.Count.ToString());
+        //    string str = "mystring";
+        //    mp.Method2(str);
+        //    Console.WriteLine("Out　Value:" + str);
+        //    Console.WriteLine();
+        //    List<string> lists = new List<string>();
+        //    lists.Add("1");
+        //    lists.Add("2");
+        //    mp.Method3(lists);
+        //    Console.WriteLine("Out Value" + lists.Count.ToString());
 
-            Product item = new Product("Fasteners", 54321);
-            System.Console.WriteLine("Original values in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
+        //    Product item = new Product("Fasteners", 54321);
+        //    System.Console.WriteLine("Original values in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
 
-            // Send item to ChangeByReference as a ref argument.
-            mp.ChangeByReference(item);
-            System.Console.WriteLine("Back in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
-            Console.WriteLine();
-            mp.ChangeByReference(ref item);
-            System.Console.WriteLine("Back in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
+        //    // Send item to ChangeByReference as a ref argument.
+        //    mp.ChangeByReference(item);
+        //    System.Console.WriteLine("Back in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
+        //    Console.WriteLine();
+        //    mp.ChangeByReference(ref item);
+        //    System.Console.WriteLine("Back in Main.  Name: {0}, ID: {1}\n",item.ItemName, item.ItemID);
 
-           mp.dosom("dsfs");
-            Console.ReadKey();
-        }
+        //   mp.dosom("dsfs");
+        //    Console.ReadKey();
+        //}
 
         #region 文件监视
         static void FileWatch()
@@ -154,6 +153,13 @@ namespace BasicCsharp
             //如果不new的话这时我修改参数的值，实际的值也会改变，如果我new了的话，等于重新分配了一块内存。不会改变实际的值，但是如果使用ref修饰符的话，new不new都会修改实际的值
             itemRef = new Product("Ref Stapler", 99999);
             itemRef.ItemID = 12345;
+        }
+        /// <summary>
+        /// 实现抽象类的抽象方法
+        /// </summary>
+        public override void absmethod()
+        {
+            throw new NotImplementedException();
         }
     }
 
