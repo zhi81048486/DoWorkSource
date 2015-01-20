@@ -31,14 +31,15 @@ namespace WPFStory
         {
             if (StoryButton.IsChecked == true)
             {               
-                Thread tt = new Thread(new ThreadStart(some));
-                tt.Start();
+                //Thread tt = new Thread(new ThreadStart(some));
+                //tt.Start();
+
+                some();
             }
         }
         void some()
         {
             Timer t = new Timer(DoMethod, Intcount, 0, 1000);
-            t.Change(0, 1000);
         }
         void DoMethod(object o)
         {
@@ -48,6 +49,8 @@ namespace WPFStory
                 Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(delegate()
                 {
                     TimeTextBox.Text = Intcount.ToString();
+                    Console.WriteLine(DateTime.Now.ToString());
+                    Console.WriteLine(Thread.CurrentThread.ToString());
                 }));          
             }
         }
