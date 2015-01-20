@@ -56,7 +56,6 @@
     <Compile Include="ProgressBarStory.xaml.cs">
       <DependentUpon>ProgressBarStory.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TimeButton.cs" />
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>

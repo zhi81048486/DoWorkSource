@@ -50,7 +50,7 @@ namespace WPFStory
                 {
                     TimeTextBox.Text = Intcount.ToString();
                     Console.WriteLine(DateTime.Now.ToString());
-                    Console.WriteLine(Thread.CurrentThread.ToString());
+                    Console.WriteLine(StoryButton.IsChecked.ToString());
                 }));          
             }
         }
