@@ -1,4 +1,7 @@
-﻿<Window x:Class="WPFStory.WaitingStory"
+﻿<!--
+    等待按钮，单击确定后出现等待动画，按钮不可用，一段时间后，等待结束，按钮恢复原来状态。
+    -->
+    <Window x:Class="WPFStory.WaitingStory"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
         Title="WaitingStory" Height="300" Width="300" WindowStartupLocation="CenterScreen">

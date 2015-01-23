@@ -43,7 +43,7 @@ namespace WPFStory
             ++Intcount;
             if (Intcount <= 40)
             {
-                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Send, new Action(delegate()
+                Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(delegate()
                 {
                     TimeTextBox.Text = Intcount.ToString();
                     Console.WriteLine(DateTime.Now.ToString());

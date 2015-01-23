@@ -30,7 +30,8 @@ namespace MouseButtonEvent
         }    
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Button2.Clicked");
+           
+            //MessageBox.Show("Button2.Clicked");
         }
 
         private void Button2_MouseUp(object sender, MouseButtonEventArgs e)
@@ -61,6 +62,19 @@ namespace MouseButtonEvent
         private void btnGo_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("ButtonClicked");
+        }
+
+        private void stringButton_Click(object sender, RoutedEventArgs e)
+        {
+            string str = textBox1.Text;
+            int i = str.IndexOf('[');
+            if (i >= 0)
+            {
+                str = str.Remove(i);
+                MessageBox.Show(str); 
+            }
+            else
+                MessageBox.Show(str);
         }
     }
 }
