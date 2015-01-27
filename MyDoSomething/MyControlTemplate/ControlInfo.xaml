@@ -1,0 +1,13 @@
+﻿<Window x:Class="MyControlTemplate.ControlInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlInfo" Height="300" Width="300">
+    <Grid>
+        <!--<StackPanel Background="Wheat" Height="60" VerticalAlignment="Center">
+            <Label Content="在这我想让StackPanel里的Label垂直居中，但是这样做显然是不可以的" VerticalAlignment="Bottom" Height="30" Background="Yellow"></Label>
+        </StackPanel>-->
+        <StackPanel VerticalAlignment="Center">
+            <Label Content="这样呢,貌似可以在StackPanel里垂直居中"/>
+        </StackPanel>
+    </Grid>
+</Window>
