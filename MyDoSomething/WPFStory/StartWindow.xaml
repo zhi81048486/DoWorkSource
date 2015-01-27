@@ -1,0 +1,10 @@
+﻿<Window x:Class="WPFStory.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StartWindow" Height="300" Width="300">
+    <StackPanel>
+        <Button Content="按钮等待动画" Name="Wait" Click="Wait_Click"/>
+        <Button Content="进度条" Name="ProgressBar" Click="ProgressBar_Click"/>
+        <Button Content="旋转" Name="Rotate" Click="Rotate_Click"/>
+    </StackPanel>
+</Window>
