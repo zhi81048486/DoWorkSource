@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFShadow.DIYWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DIYWindow1" Height="300" Width="300" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown" BorderThickness="0">
+    <Grid>
+        <Border BorderBrush="Red" BorderThickness="1" Background="#FFFFFF" Margin="2">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="1" BlurRadius="10" Direction="270" Opacity="0.75" Color="#FF211613"/>
+            </Border.Effect>
+        </Border>
+        <!--
+        在这里Margin倒是起作用了，因为我在window设置borderthicknes=0，不再window上添加阴影效果，而是选择在window里面添加阴影效果，这是必须要把window设置为透明，或者不设置背景色。总之border的父级节点都不要有背景色，有也必须是透明的。这时，还要在border上设置margin，因为没有margin的话外阴影是不会出现的。是超出了窗口的。所以必须设置margin，让阴影也出现在窗口里。It's OK.
+        -->
+    </Grid>
+</Window>

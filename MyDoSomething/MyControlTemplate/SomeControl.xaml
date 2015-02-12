@@ -1,0 +1,8 @@
+﻿<Window x:Class="MyControlTemplate.SomeControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SomeControl" Height="300" Width="300">
+    <Grid>
+        <TextBlock TextDecorations="{Binding null}" Text="hello"/>
+    </Grid>
+</Window>
