@@ -18,7 +18,7 @@ namespace AdvancedProgrammingCode
 
             Console.ReadKey();
         }
-
+        //委托的异步线程都是线程池中的
         public delegate int TakesAWhileDelegate(int data, int ms);
 
         static int TakesAWhile(int data, int ms)
@@ -28,7 +28,7 @@ namespace AdvancedProgrammingCode
             Console.WriteLine("TakesAWhile Completed!");
             return ++data;
         }
-
+        
         
         #region 委托异步调用
         /*这几个方法都是委托的异步实现，即在主线程中判断委托是否执行完，若完成则继续主线程下面的方法*/
@@ -125,6 +125,7 @@ namespace AdvancedProgrammingCode
             }
         }
         #endregion
+
     }
 
 
