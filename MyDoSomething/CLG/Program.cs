@@ -16,9 +16,10 @@ namespace CLG
             //int[] ss = new int[] {0,0,0,0,92,0,-3002,0,0,0,-10,-19,0,65,0,0,293,0,1,1,1,9,9,9,10,11,1001,2001,-404,201,203,201,999,345,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,1,1,-1200,1,1,1,1,1,2,1202,2,2,-4,2,2,2,2,4,5,6,1,1,-11,1,1,1,1,1,1,1,1,101,1,1,1,1,1,-1,1,-6};
             //threeSum(ss);
 
-            int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
-            int target = 77;
-            Console.WriteLine(threeSumClosest(nums, target));
+            //int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
+            //int target = 77;
+            //Console.WriteLine(threeSumClosest(nums, target));
+            
             Console.ReadKey();
         }
         static void DoSort()
