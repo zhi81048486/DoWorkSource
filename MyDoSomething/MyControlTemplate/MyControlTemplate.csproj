@@ -56,11 +56,17 @@
     <Compile Include="MyTabControl.xaml.cs">
       <DependentUpon>MyTabControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyTextBox.xaml.cs">
+      <DependentUpon>MyTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UCFilter.xaml.cs">
       <DependentUpon>UCFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="ControlInfo.xaml">
       <SubType>Designer</SubType>
@@ -108,11 +114,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UCFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
