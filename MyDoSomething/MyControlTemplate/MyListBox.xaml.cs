@@ -21,25 +21,21 @@ namespace MyControlTemplate
         public MyListBox()
         {
             InitializeComponent();
-            GetSource();
-            this.MyLb.ItemsSource = ListSour;
+            //GetSource();
+            //this.MyLb.ItemsSource = ListSour;
         }
 
-        List<Person> ListSour=new List<Person>();
-        void GetSource()
-        {
-            for (int i = 0; i < 50; i++)
-            {
-                Person p = new Person() {Name = "Lily", Age = i};
-                ListSour.Add(p);
-            }
-        }
+        //List<Person> ListSour=new List<Person>();
+        //void GetSource()
+        //{
+        //    for (int i = 0; i < 50; i++)
+        //    {
+        //        Person p = new Person() {Name = "Lily", Age = i};
+        //        ListSour.Add(p);
+        //    }
+        //}
     }
 
-    public class Person
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
+   
 }
 

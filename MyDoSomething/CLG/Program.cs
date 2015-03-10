@@ -16,9 +16,10 @@ namespace CLG
             //int[] ss = new int[] {0,0,0,0,92,0,-3002,0,0,0,-10,-19,0,65,0,0,293,0,1,1,1,9,9,9,10,11,1001,2001,-404,201,203,201,999,345,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,1,1,-1200,1,1,1,1,1,2,1202,2,2,-4,2,2,2,2,4,5,6,1,1,-11,1,1,1,1,1,1,1,1,101,1,1,1,1,1,-1,1,-6};
             //threeSum(ss);
 
-            int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
-            int target = 77;
-            Console.WriteLine(threeSumClosest(nums, target));
+            //int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
+            //int target = 77;
+            //Console.WriteLine(threeSumClosest(nums, target));
+            fourSum2(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
             Console.ReadKey();
         }
         static void DoSort()
@@ -114,9 +115,9 @@ namespace CLG
             bool IsOk = true;
             for (int i = 0; i < numbers.Length - 2; i++)
             {
-                for (int j = i+1; j < numbers.Length-1; j++)
+                for (int j = i + 1; j < numbers.Length - 1; j++)
                 {
-                    for (int k =j+1; k < numbers.Length ; k++)
+                    for (int k = j + 1; k < numbers.Length; k++)
                     {
                         IsOk = true;
                         int v = numbers[i] + numbers[j] + numbers[k];
@@ -140,7 +141,7 @@ namespace CLG
                         }
                     }
                 }
-                
+
             }
             for (int i = 0; i < sumResults.Count; i++)
             {
@@ -155,6 +156,7 @@ namespace CLG
                     }
                 }
             }
+            //loca为目标的位置，再与左右比大小，输出
             int loca = 0;
             for (int i = 0; i < sumResults.Count; i++)
             {
@@ -169,13 +171,482 @@ namespace CLG
                 return sumResults[loca];
             if (loca == 0)
                 return sumResults[0];
-            if (System.Math.Abs(sumResults[loca] - target) < System.Math.Abs(sumResults[loca + 1]-target))
+            if (System.Math.Abs(sumResults[loca] - target) < System.Math.Abs(sumResults[loca + 1] - target))
             {
                 return sumResults[loca];
             }
             else
             {
-                return sumResults[loca+1];
+                return sumResults[loca + 1];
+            }
+        }
+        /// <summary>
+        /// 第一版，一个个的遍历
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        static public List<List<int>> fourSum(int[] numbers, int target)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            List<List<int>> collections = new List<List<int>>();
+            List<int> collection = new List<int>();
+            for (int i = 0; i < numbers.Length - 3; i++)
+            {
+                for (int j = i + 1; j < numbers.Length - 2; j++)
+                {
+                    for (int k = j + 1; k < numbers.Length - 1; k++)
+                    {
+                        for (int w = k + 1; w < numbers.Length; w++)
+                        {
+                            if ((numbers[i] + numbers[j] + numbers[k]) + numbers[w] == target)
+                            {
+                                int[] result = new int[4];
+                                result[0] = numbers[i];
+                                result[1] = numbers[j];
+                                result[2] = numbers[k];
+                                result[3] = numbers[w];
+                                //单个集合中按大小排序
+                                for (int n = 0; n <= 2; n++)
+                                {
+                                    for (int m = 0; m < 3; m++)
+                                    {
+                                        int temp;
+                                        if (result[m] > result[m + 1])
+                                        {
+                                            temp = result[m + 1];
+                                            result[m + 1] = result[m];
+                                            result[m] = temp;
+                                        }
+                                    }
+                                }
+                                if (collections.Count > 0)
+                                {
+                                    //查找是否有重复值
+                                    for (int l = 0; l < collections.Count; l++)
+                                    {
+                                        if (collections[l][0] == result[0] && collections[l][1] == result[1] && collections[l][2] == result[2])
+                                            break;
+                                        if (l == collections.Count - 1)
+                                        {
+                                            collection = new List<int>();
+                                            collection.Add(result[0]);
+                                            collection.Add(result[1]);
+                                            collection.Add(result[2]);
+                                            collection.Add(result[3]);
+                                            collections.Add(collection);
+                                        }
+                                    }
+                                }
+
+
+                                if (collections.Count == 0)
+                                {
+                                    collection = new List<int>();
+                                    collection.Add(result[0]);
+                                    collection.Add(result[1]);
+                                    collection.Add(result[2]);
+                                    collection.Add(result[3]);
+                                    collections.Add(collection);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            stopwatch.Stop();
+
+            Stopwatch w2 = new Stopwatch();
+            w2.Start();
+            //按第一个数排序
+            for (int i = 0; i < collections.Count; i++)
+            {
+                for (int j = 0; j < collections.Count - 1; j++)
+                {
+                    if (collections[j][0] > collections[j + 1][0])
+                    {
+                        List<int> temp = new List<int>();
+                        temp = collections[j];
+                        collections[j] = collections[j + 1];
+                        collections[j + 1] = temp;
+                    }
+                }
+            }
+            //第一个数相等，按第二个数排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0])
+                    {
+                        if (collections[i][1] > collections[i + 1][1])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            //前两个数相等，按第三个排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0] && collections[i][1] == collections[i + 1][1])
+                    {
+                        if (collections[i][2] > collections[i + 1][2])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            w2.Stop();
+            return collections;
+        }
+
+        /// <summary>
+        /// 第二版，实现想法：输入的数组里包含有相同的数，相同的数其实就是一个数，把数字归类，相同的数归在一起，这样只对不同的数添加。
+        /// 漏洞：如果是四个相同的数只记录了一个，且如果数据量大，且基本不重复还是有问题。
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        static public List<List<int>> fourSum2(int[] numbers, int target)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            List<List<int>> collections = new List<List<int>>();
+            List<int> collection = new List<int>();
+            List<int> newNumbers = new List<int>();
+            newNumbers.Add(numbers[0]);
+            //去除掉输入数组里的重复的数据
+            for (int i = 1; i < numbers.Length; i++)
+            {
+
+                for (int j = 0; j < newNumbers.Count; j++)
+                {
+                    if (newNumbers[j] == numbers[i])
+                        break;
+                    if (j == newNumbers.Count - 1)
+                    {
+                        newNumbers.Add(numbers[i]);
+                    }
+                }
+            }
+            for (int i = 0; i < newNumbers.Count - 3; i++)
+            {
+                for (int j = i + 1; j < newNumbers.Count - 2; j++)
+                {
+                    for (int k = j + 1; k < newNumbers.Count- 1; k++)
+                    {
+                        for (int w = k + 1; w < newNumbers.Count; w++)
+                        {
+                            if ((numbers[i] + numbers[j] + numbers[k]) + numbers[w] == target)
+                            {
+                                int[] result = new int[4];
+                                result[0] = numbers[i];
+                                result[1] = numbers[j];
+                                result[2] = numbers[k];
+                                result[3] = numbers[w];
+                                //单个集合中按大小排序
+                                for (int n = 0; n <= 2; n++)
+                                {
+                                    for (int m = 0; m < 3; m++)
+                                    {
+                                        int temp;
+                                        if (result[m] > result[m + 1])
+                                        {
+                                            temp = result[m + 1];
+                                            result[m + 1] = result[m];
+                                            result[m] = temp;
+                                        }
+                                    }
+                                }
+                                if (collections.Count > 0)
+                                {
+                                    //查找是否有重复值
+                                    for (int l = 0; l < collections.Count; l++)
+                                    {
+                                        if (collections[l][0] == result[0] && collections[l][1] == result[1] && collections[l][2] == result[2])
+                                            break;
+                                        if (l == collections.Count - 1)
+                                        {
+                                            collection = new List<int>();
+                                            collection.Add(result[0]);
+                                            collection.Add(result[1]);
+                                            collection.Add(result[2]);
+                                            collection.Add(result[3]);
+                                            collections.Add(collection);
+                                        }
+                                    }
+                                }
+
+
+                                if (collections.Count == 0)
+                                {
+                                    collection = new List<int>();
+                                    collection.Add(result[0]);
+                                    collection.Add(result[1]);
+                                    collection.Add(result[2]);
+                                    collection.Add(result[3]);
+                                    collections.Add(collection);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            stopwatch.Stop();
+
+            Stopwatch w2 = new Stopwatch();
+            w2.Start();
+            //按第一个数排序
+            for (int i = 0; i < collections.Count; i++)
+            {
+                for (int j = 0; j < collections.Count - 1; j++)
+                {
+                    if (collections[j][0] > collections[j + 1][0])
+                    {
+                        List<int> temp = new List<int>();
+                        temp = collections[j];
+                        collections[j] = collections[j + 1];
+                        collections[j + 1] = temp;
+                    }
+                }
+            }
+            //第一个数相等，按第二个数排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0])
+                    {
+                        if (collections[i][1] > collections[i + 1][1])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            //前两个数相等，按第三个排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0] && collections[i][1] == collections[i + 1][1])
+                    {
+                        if (collections[i][2] > collections[i + 1][2])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            w2.Stop();
+            return collections;
+        }
+
+        /// <summary>
+        /// 第三版，不再计算重复值，选择三个数和，target对比，使用二分法查找，不再一个个的遍历试数，估计会快很多。
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        static public List<List<int>> fourSum3(int[] numbers, int target)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            List<List<int>> collections = new List<List<int>>();
+            List<int> collection = new List<int>();
+            int[] SortNumbers =new int[numbers.Length];
+            int[] result = new int[4];
+            for (int i = 0; i < numbers.Length-1; i++)
+            {
+
+                for (int j = 0; j < SortNumbers.Length-1; j++)
+                {
+                    int temp;
+                    if (SortNumbers[j] > SortNumbers[j + 1])
+                    {
+                        temp = SortNumbers[j];
+                        SortNumbers[j] = SortNumbers[j + 1];
+                        SortNumbers[j + 1] = temp;
+                    }
+                }
+            }
+            for (int i = 0; i < SortNumbers.Length - 3; i++)
+            {
+                for (int j = i + 1; j < SortNumbers.Length - 2; j++)
+                {
+                    for (int k = j + 1; k < SortNumbers.Length - 1; k++)
+                    {
+                       // for (int w = k + 1; w < numbers.Length; w++)
+                        {
+                            int FindNum = target - (SortNumbers[i] + SortNumbers[j] + SortNumbers[k]);
+
+                            if (FindNum > SortNumbers[SortNumbers.Length / 2] && SortNumbers[SortNumbers.Length - 1] > FindNum)
+                            {
+                                
+                            }
+                            if (FindNum < SortNumbers[SortNumbers.Length/2] && FindNum>SortNumbers[0])
+                            {
+                                
+                            }
+                            if (FindNum == SortNumbers[SortNumbers.Length/2])
+                            {
+                                result[0] = SortNumbers[i];
+                                result[1] = SortNumbers[j];
+                                result[2] = SortNumbers[k];
+                                result[3] = FindNum;
+                            }
+                            if (SortNumbers[i] + SortNumbers[j] + SortNumbers[k] + SortNumbers[w] == target)
+                            {
+                                
+                                result[0] = SortNumbers[i];
+                                result[1] = SortNumbers[j];
+                                result[2] = SortNumbers[k];
+                                result[3] = SortNumbers[w];
+                                //单个集合中按大小排序
+                                for (int n = 0; n <= 2; n++)
+                                {
+                                    for (int m = 0; m < 3; m++)
+                                    {
+                                        int temp;
+                                        if (result[m] > result[m + 1])
+                                        {
+                                            temp = result[m + 1];
+                                            result[m + 1] = result[m];
+                                            result[m] = temp;
+                                        }
+                                    }
+                                }
+                                if (collections.Count > 0)
+                                {
+                                    //查找是否有重复值
+                                    for (int l = 0; l < collections.Count; l++)
+                                    {
+                                        if (collections[l][0] == result[0] && collections[l][1] == result[1] && collections[l][2] == result[2])
+                                            break;
+                                        if (l == collections.Count - 1)
+                                        {
+                                            collection = new List<int>();
+                                            collection.Add(result[0]);
+                                            collection.Add(result[1]);
+                                            collection.Add(result[2]);
+                                            collection.Add(result[3]);
+                                            collections.Add(collection);
+                                        }
+                                    }
+                                }
+
+
+                                if (collections.Count == 0)
+                                {
+                                    collection = new List<int>();
+                                    collection.Add(result[0]);
+                                    collection.Add(result[1]);
+                                    collection.Add(result[2]);
+                                    collection.Add(result[3]);
+                                    collections.Add(collection);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            stopwatch.Stop();
+
+            Stopwatch w2 = new Stopwatch();
+            w2.Start();
+            //按第一个数排序
+            for (int i = 0; i < collections.Count; i++)
+            {
+                for (int j = 0; j < collections.Count - 1; j++)
+                {
+                    if (collections[j][0] > collections[j + 1][0])
+                    {
+                        List<int> temp = new List<int>();
+                        temp = collections[j];
+                        collections[j] = collections[j + 1];
+                        collections[j + 1] = temp;
+                    }
+                }
+            }
+            //第一个数相等，按第二个数排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0])
+                    {
+                        if (collections[i][1] > collections[i + 1][1])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            //前两个数相等，按第三个排序
+            for (int j = 0; j < collections.Count; j++)
+            {
+                for (int i = 0; i < collections.Count - 1; i++)
+                {
+                    if (collections[i][0] == collections[i + 1][0] && collections[i][1] == collections[i + 1][1])
+                    {
+                        if (collections[i][2] > collections[i + 1][2])
+                        {
+                            List<int> temp = new List<int>();
+                            temp = collections[i];
+                            collections[i] = collections[i + 1];
+                            collections[i + 1] = temp;
+                        }
+                    }
+                }
+            }
+            w2.Stop();
+            return collections;
+        }
+
+        static int OneHalfMethod(int[] nums, int target)
+        {
+            if (target == nums[nums.Length/2])
+            {
+                return nums[nums.Length/2];
+            }
+            if (target > nums[nums.Length/2] && target < nums[nums.Length - 1])
+            {
+                int[] newnums=new int[nums.Length/2];
+                for (int i = 0; i < newnums.Length; i++)
+                {
+                    newnums[i] = nums[nums.Length/2 + i];
+                }
+                OneHalfMethod(newnums,target);
+            }
+            else if (target <nums[nums.Length / 2] && target > nums[0])
+            {
+                
             }
         }
 

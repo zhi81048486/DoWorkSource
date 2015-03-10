@@ -22,6 +22,7 @@ namespace MyControlTemplate
         {
             InitializeComponent();
             MylistView.ItemsSource = getsou();
+            
         }
 
         List<sou> getsou()
@@ -36,6 +37,11 @@ namespace MyControlTemplate
         {
             public string ff { get; set; }
             public string dd { get; set; }
+        }
+
+        private void TextBoxBase_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+          
         }
     }
 }
