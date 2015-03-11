@@ -52,9 +52,32 @@
     <Compile Include="ControlInfo.xaml.cs">
       <DependentUpon>ControlInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FixedWindow.cs" />
+    <Compile Include="GridSplitterControl2.xaml.cs">
+      <DependentUpon>GridSplitterControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridSplitterControl1.xaml.cs">
+      <DependentUpon>GridSplitterControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridSplitterControl3.xaml.cs">
+      <DependentUpon>GridSplitterControl3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridSplitterHelp.cs" />
     <Compile Include="MyConvert.cs" />
+    <Compile Include="MyGridSplitter.xaml.cs">
+      <DependentUpon>MyGridSplitter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyGridSplitter2.xaml.cs">
+      <DependentUpon>MyGridSplitter2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyGridSplitter3.xaml.cs">
+      <DependentUpon>MyGridSplitter3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyTabControl.xaml.cs">
       <DependentUpon>MyTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyTextBox.xaml.cs">
+      <DependentUpon>MyTextBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
@@ -62,7 +85,22 @@
     <Compile Include="UCFilter.xaml.cs">
       <DependentUpon>UCFilter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="ControlInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridSplitterControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridSplitterControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridSplitterControl3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +138,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyGridSplitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyGridSplitter2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyGridSplitter3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,11 +158,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StyleMGridSplitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UCFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -143,6 +205,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyConverter\MyConverter.csproj">
+      <Project>{17c2d26d-ccf5-4b63-8126-ff1ecb5308d8}</Project>
+      <Name>MyConverter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

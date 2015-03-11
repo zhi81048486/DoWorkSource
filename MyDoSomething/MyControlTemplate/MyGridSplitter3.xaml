@@ -1,0 +1,141 @@
+﻿<Window x:Class="MyControlTemplate.MyGridSplitter3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:con="clr-namespace:MyControlTemplate"
+
+        Title="MyGridSplitter3" Height="600" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border 
+            Name="Border"
+            Margin="0,0,-4,0" 
+            Background="#FFFFFF"
+            BorderBrush="BlueViolet" 
+            BorderThickness="1,1,1,1" 
+            CornerRadius="2,12,0,0" >
+                                <!--<ContentPresenter x:Name="ContentSite"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              ContentSource="Header"
+              Margin="12,2,12,2"
+              RecognizesAccessKey="True"/>-->
+                                <TextBlock Margin="0,5,0,0"  TextWrapping="Wrap" Padding="0"  Foreground="{TemplateBinding Foreground}" VerticalAlignment="Top" HorizontalAlignment="Center" Text="{TemplateBinding Header}" Width="20">
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background" Value="DarkKhaki" />
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!--<Style  TargetType="{x:Type TabControl}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid KeyboardNavigation.TabNavigation="Local">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TabPanel 
+            Name="HeaderPanel"
+            Grid.Column="1"
+            Panel.ZIndex="1" 
+            Margin="0,0,4,-1" 
+            IsItemsHost="True"
+            KeyboardNavigation.TabIndex="1"
+            Background="Transparent" />
+                            <Border 
+            Name="Border" 
+            Grid.Column="0" 
+            Background="#FFFFFF" 
+            BorderBrush="Peru" 
+            BorderThickness="1" 
+            CornerRadius="2" 
+            KeyboardNavigation.TabNavigation="Local"
+            KeyboardNavigation.DirectionalNavigation="Contained"
+            KeyboardNavigation.TabIndex="2" >
+                                <ContentPresenter 
+              Name="PART_SelectedContentHost"
+              Margin="4"
+              ContentSource="SelectedContent" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+        <Style x:Key="Delete" TargetType="Button">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Foreground" Value="#7997B9"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <StackPanel Orientation="Horizontal"  Background="#EAF3FA" Name="stack">
+                            <StackPanel Orientation="Horizontal" Margin="20,0,20,0">
+                                <Canvas VerticalAlignment="Center" Width="16" Height="16">
+                                    <!--<Path Data="M3,7 7,7 7,3 9,3 9,7 13,7 13,9 9,9 9,13 7,13 7,9 3,9 Z" Fill="#6789AF"/>-->
+                                    <Path Data="M6,3 10,3 10,10,6,10 M 6,11 10,11 10,13,6,13" Fill="PaleVioletRed"></Path>
+                                    <Ellipse Height="16" Width="16" Stroke="#6789AF" StrokeThickness="1"/>
+                                    <!--<Canvas.RenderTransform>
+                                        <RotateTransform Angle="45" CenterY="8" CenterX="8"/>
+                                    </Canvas.RenderTransform>-->
+                                </Canvas>
+                                <ContentPresenter 
+			Margin="2,0,0,0"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Center"
+			RecognizesAccessKey="True"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#aac9e0" TargetName="stack"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" MaxWidth="330"/>
+        </Grid.ColumnDefinitions>
+        <Label Background="CadetBlue" Grid.Column="0"/>
+        <TabControl Grid.Column="1" TabStripPlacement="Right">
+            <!--<TabItem Header="第一选择">
+                <con:GridSplitterControl1 x:Name="Control1"/>
+            </TabItem>
+            <TabItem Header="第二选择">
+                <con:GridSplitterControl2 x:Name="Control2"/>
+            </TabItem>-->
+            <TabItem Header="第三个选择">
+                <Button Style="{StaticResource Delete}"></Button>
+            </TabItem>
+        </TabControl>
+        <GridSplitter Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="5" Background="Brown"/>
+    </Grid>
+</Window>
