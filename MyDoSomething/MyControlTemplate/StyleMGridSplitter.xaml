@@ -59,4 +59,71 @@
     <Style x:Key="MGridSplitterTextStyle"  TargetType="{x:Type controls:GridSplitterHelp}">
         <Setter Property="Template" Value="{StaticResource MGridSplitterTextTemplate}"/>
     </Style>
+    
+    
+    <Style x:Key="WindowStyleBase" TargetType="{x:Type Window}">
+    </Style>
+
+    <ControlTemplate x:Key="MessageWindowControlTemplate" TargetType="{x:Type Window}">
+        <Border  BorderBrush="{DynamicResource Window_BorderBrush}" Background="#FFFFFF" BorderThickness="1">
+            <DockPanel LastChildFill="True">
+                <!--外边框-->
+                <Border   DockPanel.Dock="Top" x:Name="borderTitle">
+                    <DockPanel x:Name="dpTitle" Background="CadetBlue" Height="35">
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Left">
+                            <Image Name="myImage" Width="16" Height="16"  Margin="20,0,0,0" ToolTip="{TemplateBinding Title}" Source="{TemplateBinding Icon}" VerticalAlignment="Center"/>
+                            <Label Name="myTitle" Margin="5,0,0,0" VerticalAlignment="Center" Padding="0" Content="{TemplateBinding Title}" FontSize="16px" Foreground="Black" SnapsToDevicePixels="True"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Height="25"  Orientation="Horizontal" DockPanel.Dock="Right">
+                          <Button Width="20" Height="20" Content="x"/>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+                <Border>
+                    <AdornerDecorator>
+                        <ContentPresenter />
+                    </AdornerDecorator>
+                </Border>
+            </DockPanel>
+        </Border>
+    </ControlTemplate>
+    <!--End MessageWindowControlTemplate-->
+    <!--Begin MyMessageWindowStyle-->
+    <Style x:Key="MyMessageWindowStyle" BasedOn="{StaticResource  WindowStyleBase}" TargetType="{x:Type Window}">
+        <Setter Property="Foreground" Value="Black" />
+
+        <Setter Property="AllowsTransparency" Value="false" />
+        <Setter Property="ResizeMode" Value="CanResize"/>
+
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Border_Brush}" />
+        <Setter Property="BorderThickness" Value="1,0,1,1" />
+        <Setter Property="Template" Value="{DynamicResource MessageWindowControlTemplate}" />
+    </Style>
+    <!--End MyMessageWindowStyle-->
+
+    
+    <Style x:Key="UserControlSideBarStyle" TargetType="UserControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="UserControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                            <Button Width="20" Height="20" Content="!" HorizontalAlignment="Right" Grid.Row="0" Margin="25,0"/>
+                            <Button Width="20" Height="20" Content="x" HorizontalAlignment="Right" Grid.Row="0"/>
+                   
+                        <Label Content="{TemplateBinding Tag}" HorizontalAlignment="Left" Width="200"/>
+                        <Grid Grid.Row="1">
+                            <ContentPresenter/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

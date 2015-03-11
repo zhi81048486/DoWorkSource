@@ -52,6 +52,7 @@
     <Compile Include="ControlInfo.xaml.cs">
       <DependentUpon>ControlInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FixedWindow.cs" />
     <Compile Include="GridSplitterControl2.xaml.cs">
       <DependentUpon>GridSplitterControl2.xaml</DependentUpon>
     </Compile>

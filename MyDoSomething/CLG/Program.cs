@@ -19,7 +19,16 @@ namespace CLG
             //int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
             //int target = 77;
             //Console.WriteLine(threeSumClosest(nums, target));
-            fourSum2(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
+       List<List<int>> result= fourSum3(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
+
+            foreach (var varitems in result)
+            {
+                foreach (var item in varitems)
+                {
+                    Console.Write(item+",");
+                }
+                Console.WriteLine();
+            }
             Console.ReadKey();
         }
         static void DoSort()
@@ -476,85 +485,98 @@ namespace CLG
             stopwatch.Start();
             List<List<int>> collections = new List<List<int>>();
             List<int> collection = new List<int>();
-            int[] SortNumbers = new int[numbers.Length];
             int[] result = new int[4];
+            //冒泡排序，由小到大
             for (int i = 0; i < numbers.Length - 1; i++)
             {
 
-                for (int j = 0; j < SortNumbers.Length - 1; j++)
+                for (int j = 0; j < numbers.Length - 1; j++)
                 {
                     int temp;
-                    if (SortNumbers[j] > SortNumbers[j + 1])
+                    if (numbers[j] > numbers[j + 1])
                     {
-                        temp = SortNumbers[j];
-                        SortNumbers[j] = SortNumbers[j + 1];
-                        SortNumbers[j + 1] = temp;
+                        temp = numbers[j];
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = temp;
                     }
                 }
             }
-            for (int i = 0; i < SortNumbers.Length - 3; i++)
+           // List<int> targetInts = numbers.ToList();
+            for (int i = 0; i < numbers.Length - 3; i++)
             {
-                for (int j = i + 1; j < SortNumbers.Length - 2; j++)
+                for (int j = i + 1; j < numbers.Length - 2; j++)
                 {
-                    for (int k = j + 1; k < SortNumbers.Length - 1; k++)
+                    for (int k = j + 1; k < numbers.Length - 1; k++)
                     {
-                        // for (int w = k + 1; w < numbers.Length; w++)
-                        {
-                            int FindNum = target - (SortNumbers[i] + SortNumbers[j] + SortNumbers[k]);
-                            
-                            if (SortNumbers[i] + SortNumbers[j] + SortNumbers[k] + SortNumbers[w] == target)
+                        List<int> targetInts = numbers.ToList();
+
+                            targetInts.RemoveAt(i);
+                            targetInts.RemoveAt(j-1);
+                            targetInts.RemoveAt(k-2);
+
+                        if(numbers[i]==0 && numbers[j]==0)
+                        { }
+                            int FindNum = target - (numbers[i] + numbers[j] + numbers[k]);
+
+                       
+                            int? FindInt = OneHalfMethod(targetInts, FindNum);
+                            if (FindInt == null) continue;
+
+                            result[0] = numbers[i];
+                            result[1] = numbers[j];
+                            result[2] = numbers[k];
+                            result[3] = (int)FindInt;
+                            //单个集合中按大小排序
+                            for (int n = 0; n <= 2; n++)
                             {
-
-                                result[0] = SortNumbers[i];
-                                result[1] = SortNumbers[j];
-                                result[2] = SortNumbers[k];
-                                result[3] = SortNumbers[w];
-                                //单个集合中按大小排序
-                                for (int n = 0; n <= 2; n++)
+                                for (int m = 0; m < 3; m++)
                                 {
-                                    for (int m = 0; m < 3; m++)
+                                    int temp;
+                                    if (result[m] > result[m + 1])
                                     {
-                                        int temp;
-                                        if (result[m] > result[m + 1])
-                                        {
-                                            temp = result[m + 1];
-                                            result[m + 1] = result[m];
-                                            result[m] = temp;
-                                        }
+                                        temp = result[m + 1];
+                                        result[m + 1] = result[m];
+                                        result[m] = temp;
                                     }
                                 }
-                                if (collections.Count > 0)
-                                {
-                                    //查找是否有重复值
-                                    for (int l = 0; l < collections.Count; l++)
-                                    {
-                                        if (collections[l][0] == result[0] && collections[l][1] == result[1] && collections[l][2] == result[2])
-                                            break;
-                                        if (l == collections.Count - 1)
-                                        {
-                                            collection = new List<int>();
-                                            collection.Add(result[0]);
-                                            collection.Add(result[1]);
-                                            collection.Add(result[2]);
-                                            collection.Add(result[3]);
-                                            collections.Add(collection);
-                                        }
-                                    }
-                                }
-
-
-                                if (collections.Count == 0)
-                                {
-                                    collection = new List<int>();
-                                    collection.Add(result[0]);
-                                    collection.Add(result[1]);
-                                    collection.Add(result[2]);
-                                    collection.Add(result[3]);
-                                    collections.Add(collection);
-                                }
-
                             }
-                        }
+                            if (collections.Count > 0)
+                            {
+                                //查找是否有重复值
+                                for (int l = 0; l < collections.Count; l++)
+                                {
+                                    if (collections[l][0] == result[0] && collections[l][1] == result[1] &&
+                                        collections[l][2] == result[2])
+
+                                    {
+                                        
+                                        break;
+                                    }
+                                    if (l == collections.Count - 1)
+                                    {
+                                        collection = new List<int>();
+                                        collection.Add(result[0]);
+                                        collection.Add(result[1]);
+                                        collection.Add(result[2]);
+                                        collection.Add(result[3]);
+                                        collections.Add(collection);
+                                    }
+                                }
+                            }
+
+
+                            if (collections.Count == 0)
+                            {
+                                collection = new List<int>();
+                                collection.Add(result[0]);
+                                collection.Add(result[1]);
+                                collection.Add(result[2]);
+                                collection.Add(result[3]);
+                                collections.Add(collection);
+                            }
+
+                        
+
                     }
                 }
             }
@@ -620,10 +642,10 @@ namespace CLG
         /// <param name="nums"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        private static int OneHalfMethod(int[] nums, int target)
+        private static int? OneHalfMethod(List<int> nums, int target)
         {
             int low = 0;
-            int high = nums.Length - 1;
+            int high = nums.Count - 1;
             int mid;
             while (low < high)
             {
@@ -632,7 +654,7 @@ namespace CLG
                 {
                     low = mid + 1;
                 }
-                else if(nums[mid]>target)
+                else if (nums[mid] > target)
                 {
                     high = mid - 1;
                 }
@@ -641,7 +663,7 @@ namespace CLG
                     return nums[mid];
                 }
             }
-            return -1;
+            return null;
 
         }
 
