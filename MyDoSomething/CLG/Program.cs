@@ -347,7 +347,7 @@ namespace CLG
             {
                 for (int j = i + 1; j < newNumbers.Count - 2; j++)
                 {
-                    for (int k = j + 1; k < newNumbers.Count- 1; k++)
+                    for (int k = j + 1; k < newNumbers.Count - 1; k++)
                     {
                         for (int w = k + 1; w < newNumbers.Count; w++)
                         {
@@ -476,12 +476,12 @@ namespace CLG
             stopwatch.Start();
             List<List<int>> collections = new List<List<int>>();
             List<int> collection = new List<int>();
-            int[] SortNumbers =new int[numbers.Length];
+            int[] SortNumbers = new int[numbers.Length];
             int[] result = new int[4];
-            for (int i = 0; i < numbers.Length-1; i++)
+            for (int i = 0; i < numbers.Length - 1; i++)
             {
 
-                for (int j = 0; j < SortNumbers.Length-1; j++)
+                for (int j = 0; j < SortNumbers.Length - 1; j++)
                 {
                     int temp;
                     if (SortNumbers[j] > SortNumbers[j + 1])
@@ -498,28 +498,13 @@ namespace CLG
                 {
                     for (int k = j + 1; k < SortNumbers.Length - 1; k++)
                     {
-                       // for (int w = k + 1; w < numbers.Length; w++)
+                        // for (int w = k + 1; w < numbers.Length; w++)
                         {
                             int FindNum = target - (SortNumbers[i] + SortNumbers[j] + SortNumbers[k]);
-
-                            if (FindNum > SortNumbers[SortNumbers.Length / 2] && SortNumbers[SortNumbers.Length - 1] > FindNum)
-                            {
-                                
-                            }
-                            if (FindNum < SortNumbers[SortNumbers.Length/2] && FindNum>SortNumbers[0])
-                            {
-                                
-                            }
-                            if (FindNum == SortNumbers[SortNumbers.Length/2])
-                            {
-                                result[0] = SortNumbers[i];
-                                result[1] = SortNumbers[j];
-                                result[2] = SortNumbers[k];
-                                result[3] = FindNum;
-                            }
+                            
                             if (SortNumbers[i] + SortNumbers[j] + SortNumbers[k] + SortNumbers[w] == target)
                             {
-                                
+
                                 result[0] = SortNumbers[i];
                                 result[1] = SortNumbers[j];
                                 result[2] = SortNumbers[k];
@@ -629,25 +614,35 @@ namespace CLG
             return collections;
         }
 
-        static int OneHalfMethod(int[] nums, int target)
+        /// <summary>
+        /// 二分法
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        private static int OneHalfMethod(int[] nums, int target)
         {
-            if (target == nums[nums.Length/2])
+            int low = 0;
+            int high = nums.Length - 1;
+            int mid;
+            while (low < high)
             {
-                return nums[nums.Length/2];
-            }
-            if (target > nums[nums.Length/2] && target < nums[nums.Length - 1])
-            {
-                int[] newnums=new int[nums.Length/2];
-                for (int i = 0; i < newnums.Length; i++)
+                mid = (low + high) / 2;
+                if (nums[mid] < target)
                 {
-                    newnums[i] = nums[nums.Length/2 + i];
+                    low = mid + 1;
                 }
-                OneHalfMethod(newnums,target);
+                else if(nums[mid]>target)
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    return nums[mid];
+                }
             }
-            else if (target <nums[nums.Length / 2] && target > nums[0])
-            {
-                
-            }
+            return -1;
+
         }
 
     }
