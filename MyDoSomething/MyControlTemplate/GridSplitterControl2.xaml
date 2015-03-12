@@ -6,6 +6,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="300">
     <Grid Background="Cyan">
-            
+            <Label Content="第二个页面"/>
     </Grid>
 </UserControl>

@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyConverter", "MyConverter\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateFileOrFolder", "CreateFileOrFolder\CreateFileOrFolder.csproj", "{19C63F82-91B3-4881-8915-2EDD45E4DAD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlOperation", "XmlOperation\XmlOperation.csproj", "{714822D8-ECCF-4B71-AAB7-512A4043D8CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{19C63F82-91B3-4881-8915-2EDD45E4DAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19C63F82-91B3-4881-8915-2EDD45E4DAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19C63F82-91B3-4881-8915-2EDD45E4DAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714822D8-ECCF-4B71-AAB7-512A4043D8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714822D8-ECCF-4B71-AAB7-512A4043D8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714822D8-ECCF-4B71-AAB7-512A4043D8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714822D8-ECCF-4B71-AAB7-512A4043D8CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
