@@ -76,6 +76,9 @@
     <Compile Include="MyGridSplitter4.xaml.cs">
       <DependentUpon>MyGridSplitter4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyGridSplitter5.xaml.cs">
+      <DependentUpon>MyGridSplitter5.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyTabControl.xaml.cs">
       <DependentUpon>MyTabControl.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyGridSplitter4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyGridSplitter5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

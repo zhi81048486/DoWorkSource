@@ -72,6 +72,9 @@
                     <CheckBox Content="选择三" Style="{StaticResource MGridSplitterCheckText_Ritht}" Name="CheckBox3"/>
                 </StackPanel>
             </DockPanel>
+            <DockPanel Name="DockingPanel" DockPanel.Dock="Right">
+                
+            </DockPanel>
             <DockPanel DockPanel.Dock="Left" Name="LeftPanel">
                 <Label Content="LabelLeft" Background="BurlyWood"></Label>
             </DockPanel>
@@ -81,14 +84,18 @@
             <DockPanel DockPanel.Dock="Bottom" Name="BottomPanel">
                 <Label Content="LabelBottom" Background="Yellow"></Label>
             </DockPanel>
+           
+
             <DockPanel DockPanel.Dock="Bottom" Name="CenterPanel" Background="BlueViolet">
-             <Button Content="Add" Name="AddButton" Width="80" Height="30" Click="AddButton_OnClick"></Button>
+             <Button Content="Add" Name="AddButton" Width="80" Height="30" />
             </DockPanel>
+
         </DockPanel>
-        <DockPanel Dock="Right" Margin="0,0,25,0">
-            <con:GridSplitterControl1  Visibility="{Binding ElementName=CheckBox1,Path=IsChecked,Converter={StaticResource BoolToVisibleKey}}" x:Name="Control1" HorizontalAlignment="Right"  DockPanel.Dock="Right"/>
-            <con:GridSplitterControl2 Visibility="{Binding ElementName=CheckBox2,Path=IsChecked,Converter={StaticResource BoolToVisibleKey}}" x:Name="Control2" HorizontalAlignment="Right"  DockPanel.Dock="Right"/>
-            <con:GridSplitterControl3  Visibility="{Binding ElementName=CheckBox3,Path=IsChecked,Converter={StaticResource BoolToVisibleKey}}" x:Name="Control3" HorizontalAlignment="Right" DockPanel.Dock="Right"/>
+
+        <DockPanel HorizontalAlignment="Right" Margin="0,0,25,0" Name="SideBarPanel" Width="300" >
+            <con:GridSplitterControl1  Visibility="{Binding ElementName=CheckBox1,Path=IsChecked,Converter={StaticResource BoolToVisibleKey},Mode=TwoWay}" x:Name="Control1" HorizontalAlignment="Right"  DockPanel.Dock="Right"/>
+            <con:GridSplitterControl2 Visibility="{Binding ElementName=CheckBox2,Path=IsChecked,Converter={StaticResource BoolToVisibleKey},Mode=TwoWay}" x:Name="Control2" HorizontalAlignment="Right"  DockPanel.Dock="Right"/>
+            <con:GridSplitterControl3  Visibility="{Binding ElementName=CheckBox3,Path=IsChecked,Converter={StaticResource BoolToVisibleKey},Mode=TwoWay}" x:Name="Control3" HorizontalAlignment="Right" DockPanel.Dock="Right"/>
         </DockPanel>
     </Grid>
 </Window>

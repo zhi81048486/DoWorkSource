@@ -32,6 +32,10 @@ namespace MyControlTemplate
             cboxs.Add(this.CheckBox1);
             cboxs.Add(this.CheckBox2);
             cboxs.Add(this.CheckBox3);
+            Control1.DockAction = Dock;
+            Control2.DockAction = Dock;
+            Control3.DockAction = Dock;
+
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
@@ -40,19 +44,44 @@ namespace MyControlTemplate
             foreach (var item in cboxs)
             {
                 if (item.Name == cb.Name && cb.IsChecked.Value)
+                {
                     item.IsChecked = true;
+                    //if (cb.Name=="CheckBox1")
+                    //{
+                    //    control1 = new GridSplitterControl1();
+                    //    control1.HorizontalAlignment = HorizontalAlignment.Right;
+                    //    this.SideBarPanel.Children.Insert(0, control1);
+
+                    //}
+                }
                 else
                     item.IsChecked = false;
             }
         }
 
-        private void AddButton_OnClick(object sender, RoutedEventArgs e)
+
+        public void Dock(string PanelName)
         {
-
-            Label l2 = new Label();
-            l2.Content = "label2";
-
-            this.RightPanel.Children.Insert(0,l2);
+            if (PanelName == "Con1")
+            {
+                this.SideBarPanel.Children.Remove(Control1);
+                DockingPanel.Children.Clear();
+                this.DockingPanel.Children.Add(Control1);
+                Control1.Visibility = Visibility.Visible;   
+            }
+            if (PanelName == "Con2")
+            {
+                this.SideBarPanel.Children.Remove(Control2);
+                DockingPanel.Children.Clear();
+                this.DockingPanel.Children.Add(Control2);
+                Control2.Visibility = Visibility.Visible;
+            } if (PanelName == "Con3")
+            {
+                this.SideBarPanel.Children.Remove(Control3);
+                DockingPanel.Children.Clear();
+                this.DockingPanel.Children.Add(Control3);
+                Control3.Visibility = Visibility.Visible;
+            }
         }
     }
 }
