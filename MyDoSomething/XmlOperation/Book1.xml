@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<SettingColumns>
+  <!--记录列的信息-->
+  <BiddingColumns name="Manage_Plan_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Group_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Idea_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Keyword_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Sublink_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Image_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Phone_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Plan_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Group_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Idea_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Keyword_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Sublink_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Manage_Image_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Setting_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Analyzes_Baidu">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Setting_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Analyzes_Qh">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Setting_Sogou">
+    <ColumnValue />
+  </BiddingColumns>
+  <BiddingColumns name="Bidding_Analyzes_Sogou">
+    <ColumnValue />
+  </BiddingColumns>
+</SettingColumns>

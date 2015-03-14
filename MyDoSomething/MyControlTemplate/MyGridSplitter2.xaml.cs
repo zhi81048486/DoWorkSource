@@ -18,7 +18,7 @@ namespace MyControlTemplate
     /// MyGridSplitter2.xaml 的交互逻辑
     /// </summary>
     public partial class MyGridSplitter2 : Window
-    {
+    { 
         public MyGridSplitter2()
         {
             InitializeComponent();

@@ -126,12 +126,12 @@
         </Grid.ColumnDefinitions>
         <Label Background="CadetBlue" Grid.Column="0"/>
         <TabControl Grid.Column="1" TabStripPlacement="Right">
-            <!--<TabItem Header="第一选择">
+            <TabItem Header="第一选择">
                 <con:GridSplitterControl1 x:Name="Control1"/>
             </TabItem>
             <TabItem Header="第二选择">
                 <con:GridSplitterControl2 x:Name="Control2"/>
-            </TabItem>-->
+            </TabItem>
             <TabItem Header="第三个选择">
                 <Button Style="{StaticResource Delete}"></Button>
             </TabItem>

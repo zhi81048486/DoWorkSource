@@ -30,11 +30,14 @@ namespace CreateFileOrFolder
            
             //创建目录
             System.IO.Directory.CreateDirectory(pathString); 
-            string fileName = System.IO.Path.GetRandomFileName();
+            //string fileName = System.IO.Path.GetRandomFileName();
+            string fileName = "Setting.xml";
+
             pathString = System.IO.Path.Combine(pathString, fileName);
             Console.WriteLine("Path to my file: {0}\n", pathString);
             if (!System.IO.File.Exists(pathString))
             {
+                //创建文件
                 using (System.IO.FileStream fs = System.IO.File.Create(pathString))
                 {
                     for (byte i = 0; i < 100; i++)

@@ -5,7 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="300">
-    <Grid Background="DarkRed">
-            
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Title" Grid.Row="0"/>
+        <Button Grid.Row="0" Content="!" Width="20" Height="20" HorizontalAlignment="Right" Name="DockButton" Click="DockButton_OnClick" Margin="25,0"/>
+        <Button Grid.Row="0" Content="x" Width="20" Height="20" HorizontalAlignment="Right" Name="CloseButton" Click="CloseButton_OnClick"/>
+        <Grid Background="CadetBlue" Grid.Row="1">
+            <Label>第三个页面</Label>
+        </Grid>
     </Grid>
 </UserControl>

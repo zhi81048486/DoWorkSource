@@ -19,9 +19,21 @@ namespace MyControlTemplate
     /// </summary>
     public partial class GridSplitterControl2 : UserControl
     {
+        public Action<string> DockAction;
         public GridSplitterControl2()
         {
             InitializeComponent();
+        }
+
+        private void CloseButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void DockButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (null != DockAction)
+                DockAction("Con1");
         }
     }
 }

@@ -11,10 +11,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="Title" Grid.Row="0"/>
-        <Button Grid.Row="0" Content="!" Width="20" Height="20" HorizontalAlignment="Right" Margin="25,0"/>
-        <Button Grid.Row="0" Content="x" Width="20" Height="20" HorizontalAlignment="Right"/>
+        <Button Grid.Row="0" Content="!" Width="20" Height="20" HorizontalAlignment="Right" Margin="25,0" Name="DockButton" Click="DockButton_OnClick"/>
+        <Button Grid.Row="0" Content="x" Width="20" Height="20" HorizontalAlignment="Right" Name="CloseButton" Click="CloseButton_OnClick"/>
         <Grid Background="CadetBlue" Grid.Row="1">
-            <Label>dd</Label>
+            <Label>第一个页面</Label>
         </Grid>
     </Grid>
 
