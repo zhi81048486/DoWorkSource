@@ -33,8 +33,11 @@ namespace MyControlTemplate
             cboxs.Add(this.CheckBox2);
             cboxs.Add(this.CheckBox3);
             Control1.DockAction = Dock;
+            Control1.RemoveAction = RemoveDock;
             Control2.DockAction = Dock;
+            Control2.RemoveAction = RemoveDock;
             Control3.DockAction = Dock;
+            Control3.RemoveAction = RemoveDock;
 
         }
 
@@ -45,6 +48,7 @@ namespace MyControlTemplate
             {
                 if (item.Name == cb.Name && cb.IsChecked.Value)
                 {
+                    
                     item.IsChecked = true;
                     //if (cb.Name=="CheckBox1")
                     //{
@@ -53,12 +57,48 @@ namespace MyControlTemplate
                     //    this.SideBarPanel.Children.Insert(0, control1);
 
                     //}
+
                 }
                 else
                     item.IsChecked = false;
             }
         }
 
+        public void RemoveDock(string name)
+        {
+            
+            UIElement ui = null;
+            switch (name)
+            {
+                case "Con1":
+                    ui = this.Control1;
+                    if(!cboxs.Contains(CheckBox1))
+                    this.cboxs.Add(CheckBox1);
+                    this.CheckBox1.Visibility = Visibility.Visible;
+                    break;
+                case "Con2":
+                    ui = this.Control2;
+                    if (!cboxs.Contains(CheckBox2))
+                    this.cboxs.Add(CheckBox2);
+                    this.CheckBox2.Visibility = Visibility.Visible;
+                    break;
+                case "Con3":
+                    ui = this.Control3;
+                    if (!cboxs.Contains(CheckBox3))
+                    this.cboxs.Add(CheckBox3);
+                    this.CheckBox3.Visibility = Visibility.Visible;
+                    break;
+
+            }
+            if (ui != null)
+            {
+                if (!SideBarPanel.Children.Contains(ui))
+                {
+                    DockingPanel.Children.Remove(ui);
+                    SideBarPanel.Children.Add(ui);
+                }
+            }
+        }
 
         public void Dock(string PanelName)
         {
@@ -67,20 +107,26 @@ namespace MyControlTemplate
                 this.SideBarPanel.Children.Remove(Control1);
                 DockingPanel.Children.Clear();
                 this.DockingPanel.Children.Add(Control1);
-                Control1.Visibility = Visibility.Visible;   
+                this.cboxs.Remove(CheckBox1);
+                Control1.Visibility = Visibility.Visible;
+                this.CheckBox1.Visibility = Visibility.Collapsed;
             }
             if (PanelName == "Con2")
             {
                 this.SideBarPanel.Children.Remove(Control2);
                 DockingPanel.Children.Clear();
                 this.DockingPanel.Children.Add(Control2);
+                this.cboxs.Remove(CheckBox2);
                 Control2.Visibility = Visibility.Visible;
+                this.CheckBox2.Visibility = Visibility.Collapsed;
             } if (PanelName == "Con3")
             {
                 this.SideBarPanel.Children.Remove(Control3);
                 DockingPanel.Children.Clear();
                 this.DockingPanel.Children.Add(Control3);
+                this.cboxs.Remove(CheckBox3);
                 Control3.Visibility = Visibility.Visible;
+                this.CheckBox3.Visibility = Visibility.Collapsed;
             }
         }
     }
