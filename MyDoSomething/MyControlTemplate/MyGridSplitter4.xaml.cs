@@ -48,7 +48,7 @@ namespace MyControlTemplate
             {
                 if (item.Name == cb.Name && cb.IsChecked.Value)
                 {
-                    
+
                     item.IsChecked = true;
                     //if (cb.Name=="CheckBox1")
                     //{
@@ -66,26 +66,26 @@ namespace MyControlTemplate
 
         public void RemoveDock(string name)
         {
-            
+
             UIElement ui = null;
             switch (name)
             {
                 case "Con1":
                     ui = this.Control1;
-                    if(!cboxs.Contains(CheckBox1))
-                    this.cboxs.Add(CheckBox1);
+                    if (!cboxs.Contains(CheckBox1))
+                        this.cboxs.Add(CheckBox1);
                     this.CheckBox1.Visibility = Visibility.Visible;
                     break;
                 case "Con2":
                     ui = this.Control2;
                     if (!cboxs.Contains(CheckBox2))
-                    this.cboxs.Add(CheckBox2);
+                        this.cboxs.Add(CheckBox2);
                     this.CheckBox2.Visibility = Visibility.Visible;
                     break;
                 case "Con3":
                     ui = this.Control3;
                     if (!cboxs.Contains(CheckBox3))
-                    this.cboxs.Add(CheckBox3);
+                        this.cboxs.Add(CheckBox3);
                     this.CheckBox3.Visibility = Visibility.Visible;
                     break;
 
@@ -119,7 +119,8 @@ namespace MyControlTemplate
                 this.cboxs.Remove(CheckBox2);
                 Control2.Visibility = Visibility.Visible;
                 this.CheckBox2.Visibility = Visibility.Collapsed;
-            } if (PanelName == "Con3")
+            }
+            if (PanelName == "Con3")
             {
                 this.SideBarPanel.Children.Remove(Control3);
                 DockingPanel.Children.Clear();
