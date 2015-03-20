@@ -67,7 +67,7 @@
                 FontWeight="ExtraBlack"
                 FontSize="16"
                 HorizontalContentAlignment="Center">
-                Docking Yeahhh!!!!
+                Docking !!!!
             </Label>
             <!--<Border.BitmapEffect>
                 <EmbossBitmapEffect  />
@@ -82,11 +82,11 @@
                                 Grid.Column="2"
                                 Grid.RowSpan="3">
             <controls:LayeredGrid.Layers>
-                <controls:Layer Level="2" Orientation="Row" Name="Text Manager 2">
+                <controls:Layer Level="2" Orientation="Row" Name="Text Manager L2">
                     <controls:Layer.Content>
                         <controls:LayeredGrid>
                             <controls:LayeredGrid.Layers>
-                                <controls:Layer Level="1" Orientation="Row" Name="Logger">
+                                <controls:Layer Level="1" Orientation="Row" Name="Logger L1">
                                     <controls:Layer.Content>
                                         <ListBox  
                                                             MinHeight="60"
@@ -95,7 +95,7 @@
                                         </ListBox>
                                     </controls:Layer.Content>
                                 </controls:Layer>
-                                <controls:Layer Level="1" Orientation="Column" Name="Solution Explorer" ColumnLocation="Right">
+                                <controls:Layer Level="1" Orientation="Column" Name="Solution Explorer L1" ColumnLocation="Right">
                                     <controls:Layer.Content>
                                         <Grid >
                                             <Grid.RowDefinitions>
@@ -141,7 +141,7 @@
                                         </Grid>
                                     </controls:Layer.Content>
                                 </controls:Layer>
-                                <controls:Layer Level="2" Orientation="Column" Name="Toolbox">
+                                <controls:Layer Level="2" Orientation="Column" Name="Toolbox L2">
                                     <controls:Layer.Content>
                                         <ListBox >
                                             <ListBoxItem>Button</ListBoxItem>
@@ -151,7 +151,7 @@
                                         </ListBox>
                                     </controls:Layer.Content>
                                 </controls:Layer>
-                                <controls:Layer Level="3" Orientation="Column" Name="Toolbox Manager">
+                                <controls:Layer Level="3" Orientation="Column" Name="Toolbox Manager L3">
                                     <controls:Layer.Content>
                                         <ListBox >
                                             <ListBoxItem>Button</ListBoxItem>
@@ -161,7 +161,7 @@
                                         </ListBox>
                                     </controls:Layer.Content>
                                 </controls:Layer>
-                                <controls:Layer Level="4" Orientation="Column" Name="Numbers">
+                                <controls:Layer Level="4" Orientation="Column" Name="Numbers L4">
                                     <controls:Layer.Content>
                                         <ListBox >
                                             <ListBoxItem>1</ListBoxItem>
@@ -171,7 +171,7 @@
                                         </ListBox>
                                     </controls:Layer.Content>
                                 </controls:Layer>
-                                <controls:Layer Level="5" Orientation="Column" Name="Names">
+                                <controls:Layer Level="5" Orientation="Column" Name="Names l5">
                                     <controls:Layer.Content>
                                         <ListBox >
                                             <ListBoxItem>Ty</ListBoxItem>
@@ -187,7 +187,7 @@
                                                 HorizontalAlignment="Stretch"
                                                 VerticalAlignment="Stretch"
                                                 BorderBrush="Wheat">
-                                            <ListBoxItem>Article #1</ListBoxItem>
+                                            <ListBoxItem>Article #1 L0</ListBoxItem>
                                             <ListBoxItem>Article #2</ListBoxItem>
                                             <ListBoxItem>Article #3</ListBoxItem>
                                             <ListBoxItem>Article #4</ListBoxItem>
@@ -199,7 +199,7 @@
                         </controls:LayeredGrid>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="1" Orientation="Column" Name="Solution Explorer" ColumnLocation="Right">
+                <controls:Layer Level="1" Orientation="Column" Name="Solution Explorer L1" ColumnLocation="Right">
                     <controls:Layer.Content>
                         <Grid >
                             <Grid.RowDefinitions>
@@ -245,7 +245,7 @@
                         </Grid>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="2" Orientation="Column" Name="Explorer" ColumnLocation="Right">
+                <controls:Layer Level="2" Orientation="Column" Name="Explorer L2" ColumnLocation="Right">
                     <controls:Layer.Content>
                         <Grid >
                             <Grid.RowDefinitions>
@@ -291,7 +291,7 @@
                         </Grid>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="3" Orientation="Column" Name="Toolbox">
+                <controls:Layer Level="3" Orientation="Column" Name="Toolbox L3">
                     <controls:Layer.Content>
                         <ListBox >
                             <ListBoxItem>Button</ListBoxItem>
@@ -301,7 +301,7 @@
                         </ListBox>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="4" Orientation="Column" Name="Toolbox Manager">
+                <controls:Layer Level="4" Orientation="Column" Name="Toolbox Manager L4">
                     <controls:Layer.Content>
                         <ListBox >
                             <ListBoxItem>Button</ListBoxItem>
@@ -311,7 +311,7 @@
                         </ListBox>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="5" Orientation="Column" Name="Numbers">
+                <controls:Layer Level="5" Orientation="Column" Name="Numbers L5">
                     <controls:Layer.Content>
                         <ListBox >
                             <ListBoxItem>1</ListBoxItem>
@@ -321,7 +321,7 @@
                         </ListBox>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="6" Orientation="Column" Name="Names">
+                <controls:Layer Level="6" Orientation="Column" Name="Names L6">
                     <controls:Layer.Content>
                         <ListBox >
                             <ListBoxItem>Ty</ListBoxItem>
@@ -331,7 +331,7 @@
                         </ListBox>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="1" Orientation="Row" Name="Text Manager">
+                <controls:Layer Level="1" Orientation="Row" Name="Text Manager L1">
                     <controls:Layer.Content>
                         <ListBox  
                             MinHeight="60"
@@ -365,7 +365,7 @@
                                 Background="White"
                                 VerticalAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"
-                                Header="Recent Projects">…
+                                Header="Recent Projects L0">…
                             </GroupBox>
                             <GroupBox
                                 Grid.Row="2" 
