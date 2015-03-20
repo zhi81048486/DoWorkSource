@@ -641,7 +641,9 @@ namespace Controls
             var rtTrans = new RotateTransform(90);
             btn.LayoutTransform = rtTrans;
             if (_columnLayers[0].ColumnLocations[level - 1] == Layer.LayerColumnLocation.Right)
-                _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
+                //_columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
+                _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[0]);
+
             else
             {
                 _columnLayers[0].MainContentPositionIncrement();
