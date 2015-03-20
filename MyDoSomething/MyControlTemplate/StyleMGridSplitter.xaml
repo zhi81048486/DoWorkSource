@@ -138,10 +138,10 @@
                         HorizontalAlignment="Stretch"
                         LastChildFill="True"
                         Name="PART_ParentPanel">
-                        <DockPanel.BitmapEffect>
-                            <BevelBitmapEffect  BevelWidth="15" EdgeProfile="BulgedUp"/>
-                        </DockPanel.BitmapEffect>
-                        <DockPanel.Resources>
+                        <!--<DockPanel.BitmapEffect>
+                            --><!--<BevelBitmapEffect  BevelWidth="15" EdgeProfile="BulgedUp"/>--><!--
+                        </DockPanel.BitmapEffect>-->
+                        <!--<DockPanel.Resources>
                             <Color x:Key="PrimaryColor">Red</Color>
                             <Color x:Key="SecondaryColor">#CC0D1000</Color>
                             <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
@@ -172,7 +172,7 @@
                                                     <RowDefinition Height="50*" />
                                                     <RowDefinition Height="50*" />
                                                 </Grid.RowDefinitions>
-                                                <!--<VisualStateManager.VisualStateGroups>
+                                                --><!--<VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="FocusStates">
                                                         <VisualState x:Name="Unfocused" />
                                                         <VisualState x:Name="Focused">
@@ -281,9 +281,9 @@
                                                             </Storyboard>
                                                         </VisualState>
                                                     </VisualStateGroup>
-                                                </VisualStateManager.VisualStateGroups>-->
+                                                </VisualStateManager.VisualStateGroups>--><!--
                                                 <Border CornerRadius="0,0,0,0" Grid.RowSpan="2" x:Name="White" BorderBrush="#FFFFFDDD" BorderThickness="1.2">
-                                                    <Border.Background>
+                                                    --><!--<Border.Background>
                                                         <RadialGradientBrush>
                                                             <RadialGradientBrush.RelativeTransform>
                                                                 <TransformGroup>
@@ -293,18 +293,18 @@
                                                             <GradientStop Color="#FFFFDDDD" Offset="0" />
                                                             <GradientStop Color="#FFFFFF00" Offset="1" />
                                                         </RadialGradientBrush>
-                                                    </Border.Background>
+                                                    </Border.Background>--><!--
                                                 </Border>
                                                 <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1.2" CornerRadius="0,0,0,0" x:Name="Background" Grid.RowSpan="2" Opacity="0.65">
-                                                    <Border.Background>
+                                                    --><!--<Border.Background>
                                                         <LinearGradientBrush EndPoint="0.5,1.0" StartPoint="0.5,0">
                                                             <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.55" />
                                                             <GradientStop Color="{StaticResource SecondaryColor}" Offset="1" />
                                                         </LinearGradientBrush>
-                                                    </Border.Background>
+                                                    </Border.Background>--><!--
                                                 </Border>
                                                 <Border Background="{TemplateBinding Background}" BorderBrush="#5FFFFFDD" BorderThickness="1"  CornerRadius="0,0,0,0" x:Name="InnerBorder" Margin="1" Grid.RowSpan="2" />
-                                                <Border CornerRadius="3.5,3.5,0,0" x:Name="Shadow" Margin="2" Grid.RowSpan="2">
+                                                --><!--<Border CornerRadius="3.5,3.5,0,0" x:Name="Shadow" Margin="2" Grid.RowSpan="2">
                                                     <Border.OpacityMask>
                                                         <RadialGradientBrush>
                                                             <RadialGradientBrush.RelativeTransform>
@@ -328,9 +328,9 @@
                                                             <GradientStop Color="#33000000" Offset="1" />
                                                         </RadialGradientBrush>
                                                     </Border.Background>
-                                                </Border>
+                                                </Border>--><!--
                                                 <Border Margin="1,1,1,0" CornerRadius="0,0,0,0" x:Name="Highlight" Opacity="0.8" RenderTransformOrigin="0.5,1">
-                                                    <Border.Background>
+                                                    --><!--<Border.Background>
                                                         <RadialGradientBrush>
                                                             <RadialGradientBrush.RelativeTransform>
                                                                 <TransformGroup>
@@ -341,7 +341,7 @@
                                                             <GradientStop Color="#BFFFFFFF" Offset="0" />
                                                             <GradientStop Color="#4CFFFFFF" Offset="1" />
                                                         </RadialGradientBrush>
-                                                    </Border.Background>
+                                                    </Border.Background>--><!--
                                                 </Border>
                                                 <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" />
                                             </Grid>
@@ -365,17 +365,15 @@
                                 <GradientStop Color="#CC3D2614" Offset="0.3"/>
                                 <GradientStop Color="Gold" Offset="0.8"/>
                             </RadialGradientBrush>
-                        </DockPanel.Resources>
+                        </DockPanel.Resources>-->
                         <StackPanel 
                             Name="PART_BottomCntl"
-                            Background="{StaticResource myColorfulLabelBrush}"
                             Orientation="Horizontal" 
                             Panel.ZIndex="1"
                             DockPanel.Dock="Bottom">
                         </StackPanel>
                         <StackPanel 
                              Name="PART_LeftCntl"
-                            Background="{StaticResource myColorfulLabelBrush}"
                             Orientation="Horizontal" 
                             DockPanel.Dock="Left">
                             <StackPanel.LayoutTransform>
@@ -384,7 +382,6 @@
                         </StackPanel>
                         <StackPanel 
                              Name="PART_RightCntl"
-                            Background="{StaticResource myColorfulLabelBrush}"
                             Orientation="Horizontal" 
                             DockPanel.Dock="Right">
                             <StackPanel.LayoutTransform>
