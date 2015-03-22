@@ -20,6 +20,7 @@ namespace MyControlTemplate
     public partial class GridSplitterControl1 : UserControl
     {
         public Action<string> DockAction;
+        public Action<string> RemoveAction;
         public GridSplitterControl1()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace MyControlTemplate
         private void CloseButton_OnClick(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Collapsed;
+            RemoveAction("Con1");
         }
 
         private void DockButton_OnClick(object sender, RoutedEventArgs e)

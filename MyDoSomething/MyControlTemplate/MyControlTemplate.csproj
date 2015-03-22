@@ -63,6 +63,7 @@
       <DependentUpon>GridSplitterControl3.xaml</DependentUpon>
     </Compile>
     <Compile Include="GridSplitterHelp.cs" />
+    <Compile Include="LayeredGrid.cs" />
     <Compile Include="MyConvert.cs" />
     <Compile Include="MyGridSplitter.xaml.cs">
       <DependentUpon>MyGridSplitter.xaml</DependentUpon>
@@ -78,6 +79,9 @@
     </Compile>
     <Compile Include="MyGridSplitter5.xaml.cs">
       <DependentUpon>MyGridSplitter5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyGridSplitter6.xaml.cs">
+      <DependentUpon>MyGridSplitter6.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyTabControl.xaml.cs">
       <DependentUpon>MyTabControl.xaml</DependentUpon>
@@ -164,6 +168,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyGridSplitter6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +233,13 @@
       <Project>{17c2d26d-ccf5-4b63-8126-ff1ecb5308d8}</Project>
       <Name>MyConverter</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Home-icon.png" />
+    <Resource Include="Images\Next-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MyIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
