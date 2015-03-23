@@ -68,7 +68,7 @@ namespace MyControlTemplate
             public readonly List<Layer.LayerColumnLocation> ColumnLocations;
             public readonly List<RowDefinition> RowDefinitions;
             public int MainContentLocation { get; private set; }
-
+            //Button 就是侧边栏的按钮
             public GridnFloatingBtnCombo(Grid grid, Button btn)
             {
                 Grid = grid;
@@ -144,15 +144,18 @@ namespace MyControlTemplate
             var parentGrid = new Grid();
             SetUpParentGrid(parentGrid);
             //set up layers
+            //layer0为主显示控件
             var layer0 = Layers.FirstOrDefault(x => x.Level == 0);
             if (layer0 == null)
                 return;
-
+            //获取依靠列来布局的
             var columnLayers =
                 Layers.Select(x => x).Where(x => x.Level > 0 && x.Orientation == Layer.LayerOrientation.Column).OrderBy(
                     x => x.Level);
+            //获取依靠行来布局的
             var rowLayers =
                 Layers.Select(x => x).Where(x => x.Level > 0 && x.Orientation == Layer.LayerOrientation.Row).OrderBy(x => x.Level);
+            //grid 2
             var item = SetupLayer0(layer0,
                                    columnLayers,
                                    rowLayers.Count());
@@ -199,6 +202,7 @@ namespace MyControlTemplate
             if (layer0.Content != null)
                 grid.Children.Add(layer0.Content);
             if (layer0.Content != null)
+                //layer0排在第二列
                 Grid.SetColumn(layer0.Content, 1);
             grid.MouseEnter += (o, e) =>
             {
@@ -219,6 +223,7 @@ namespace MyControlTemplate
                 }
             };
             //layer zero does not need a pin
+            //显示的控件，主控件不需要大头钉
             var gnb = new GridnFloatingBtnCombo(grid, null);
             if (columnLayers.Any())
             {
@@ -575,6 +580,7 @@ namespace MyControlTemplate
                // Style = (Style)PART_MasterGrid.FindResource("buttonStyle"),
                 Content = layer.Name
             };
+            //点击侧边栏按钮触发的事件
             btn.Click += (o, e) =>
             {
                 var level = layer.Level;
@@ -643,29 +649,32 @@ namespace MyControlTemplate
             item.Btn.Visibility = Visibility.Collapsed;
             var rtTrans = new RotateTransform(90);
             btn.LayoutTransform = rtTrans;
+            #region 当前选中项显示
             if (_columnLayers[0].ColumnLocations[level - 1] == Layer.LayerColumnLocation.Right)
+                //选中项显示
                 _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
-            //{
-               // _columnLayers[0].Grid.ColumnDefinitions.Clear();
-               // _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[0]);
-            //}
 
             else
             {
                 _columnLayers[0].MainContentPositionIncrement();
+                //选中项显示
                 _columnLayers[0].Grid.ColumnDefinitions.Insert(0, _columnLayers[0].ColumnDefinitions[level - 1]);
                 Grid.SetColumn(_columnLayers[0].Grid.Children[0], _columnLayers[0].MainContentLocation);
-            }
+            } 
+            #endregion
 
+            #region 
             for (var i = level + 1; i < _columnLayers.Count; i++)
             {
                 if (_columnLayers[i].Btn.Visibility != Visibility.Collapsed)
                     continue;
                 if (item.ColumnLocations[i - level - 1] == Layer.LayerColumnLocation.Right)
+                    //显示项
                     item.Grid.ColumnDefinitions.Add(item.ColumnDefinitions[i - level - 1]);
                 else
                 {
                     item.MainContentPositionIncrement();
+                    //显示项
                     item.Grid.ColumnDefinitions.Insert(0, item.ColumnDefinitions[i - level - 1]);
                     foreach (UIElement child in item.Grid.Children)
                     {
@@ -673,6 +682,7 @@ namespace MyControlTemplate
                     }
                 }
             }
+            #endregion
             for (var i = 1; i < level; i++)
             {
                 var loc = _columnLayers[i];
@@ -690,7 +700,7 @@ namespace MyControlTemplate
                     }
 
                 }
-            }
+            } 
         }
 
         private void ColumnUndockPane(int level, Button btn)
