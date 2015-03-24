@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -63,13 +64,13 @@ namespace MyControlTemplate
         private class GridnFloatingBtnCombo
         {
             public readonly Grid Grid;
-            public readonly Button Btn;
+            public readonly ToggleButton Btn;
             public readonly List<ColumnDefinition> ColumnDefinitions;
             public readonly List<Layer.LayerColumnLocation> ColumnLocations;
             public readonly List<RowDefinition> RowDefinitions;
             public int MainContentLocation { get; private set; }
             //Button 就是侧边栏的按钮
-            public GridnFloatingBtnCombo(Grid grid, Button btn)
+            public GridnFloatingBtnCombo(Grid grid, ToggleButton btn)
             {
                 Grid = grid;
                 Btn = btn;
@@ -316,12 +317,14 @@ namespace MyControlTemplate
                     ColumnUndockPane(level, o as Button);
                 else
                     ColumnDockPane(level, o as Button);
+
+
             };
             var textblock = new TextBlock
             {
                 Padding = new Thickness(8),
                 TextTrimming = TextTrimming.CharacterEllipsis,
-                Foreground = Brushes.Gold,
+                Foreground = Brushes.Black,
                 Text = layer.Name
             };
             dockpanel.Children.Add(textblock);
@@ -343,6 +346,7 @@ namespace MyControlTemplate
             Grid.SetColumn(gridSplitter,
                            layer.ColumnLocation == Layer.LayerColumnLocation.Right ? 2 : 0
                           );
+            //根据ToggleButton的Visible属性来实现是否钉住
             grid.MouseEnter += (o, e) =>
             {
                 var level = layer.Level;
@@ -395,7 +399,7 @@ namespace MyControlTemplate
             {
                 Margin = new Thickness(0, 4, 0, 0),
                 //Background = (RadialGradientBrush)PART_MasterGrid.FindResource("myColorfulLabelBrush"),
-                Background =Brushes.BlueViolet,
+                Background = Brushes.BlueViolet,
                 LastChildFill = true
             };
             grid.Children.Add(dockpanel);
@@ -426,7 +430,7 @@ namespace MyControlTemplate
                 HorizontalAlignment = HorizontalAlignment.Right,
                 Background = Brushes.Transparent,
                 BorderBrush = Brushes.Transparent,
-               // Style = (Style)PART_MasterGrid.FindResource("buttonStyle"),
+                // Style = (Style)PART_MasterGrid.FindResource("buttonStyle"),
                 BorderThickness = new Thickness(0)
             };
             stackpanel.Children.Add(btn);
@@ -531,9 +535,10 @@ namespace MyControlTemplate
             };
         }
 
-        private Button AddToRowStackPanel(Layer layer)
+
+        private ToggleButton AddToRowStackPanel(Layer layer)
         {
-            var btn = new Button
+            var btn = new ToggleButton
             {
                 Background = Brushes.Transparent,
                 BorderBrush = Brushes.Transparent,
@@ -566,9 +571,9 @@ namespace MyControlTemplate
             return btn;
         }
 
-        private Button AddToColumnStackPanel(Layer layer)
+        private ToggleButton AddToColumnStackPanel(Layer layer)
         {
-            var btn = new Button
+            var btn = new ToggleButton
             {
                 Background = Brushes.Transparent,
                 BorderBrush = Brushes.Transparent,
@@ -577,25 +582,38 @@ namespace MyControlTemplate
                 MinWidth = 65.0,
                 Padding = new Thickness(10, 0, 15, 0),
                 FontWeight = FontWeights.Bold,
-               // Style = (Style)PART_MasterGrid.FindResource("buttonStyle"),
+                // Style = (Style)PART_MasterGrid.FindResource("buttonStyle"),
                 Content = layer.Name
             };
             //点击侧边栏按钮触发的事件
             btn.Click += (o, e) =>
             {
-                var level = layer.Level;
-                var item = _columnLayers[level];
-                item.Grid.Visibility = Visibility.Visible;
-                Grid.SetZIndex(item.Grid, 1);
-                for (int i = 1; i < _columnLayers.Count; i++)
+                ToggleButton t = e.OriginalSource as ToggleButton;
                 {
-                    if (i == level)
-                        continue;
-                    var loc = _columnLayers[i];
-                    Grid.SetZIndex(loc.Grid, 0);
-                    if (loc.Btn.Visibility == Visibility.Visible)
-                        loc.Grid.Visibility = Visibility.Collapsed;
+                    var level = layer.Level;
+                    var item = _columnLayers[level];
+                    if (t.IsChecked.Value)
+                    {
+                        item.Grid.Visibility = Visibility.Visible;
+                        Grid.SetZIndex(item.Grid, 1);
+                        for (int i = 1; i < _columnLayers.Count; i++)
+                        {
+                            if (i == level)
+                                continue;
+                            var loc = _columnLayers[i];
+                            Grid.SetZIndex(loc.Grid, 0);
+                            if (loc.Btn.Visibility == Visibility.Visible)
+                            {
+                                loc.Btn.IsChecked = false;
+                                loc.Grid.Visibility = Visibility.Collapsed;
+                            }
 
+                        }
+                    }
+                    else
+                    {
+                        item.Grid.Visibility = Visibility.Collapsed;
+                    }
                 }
 
             };
@@ -645,25 +663,36 @@ namespace MyControlTemplate
 
         private void ColumnDockPane(int level, Button btn)
         {
+            //实现只钉住一个Panel
+            //for (var i = 1; i < _columnLayers.Count; i++)
+            //{
+            //    if (_columnLayers[i].Btn.Visibility == Visibility.Collapsed)
+            //        _columnLayers[i].Btn.Visibility = Visibility.Visible;
+            //}
             var item = _columnLayers[level];
             item.Btn.Visibility = Visibility.Collapsed;
+            item.Btn.IsChecked = false;
             var rtTrans = new RotateTransform(90);
+            //大头针
             btn.LayoutTransform = rtTrans;
-            #region 当前选中项显示
+
+
+            #region 实现多列同时钉住
+
             if (_columnLayers[0].ColumnLocations[level - 1] == Layer.LayerColumnLocation.Right)
-                //选中项显示
+            {
                 _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
+
+            }
 
             else
             {
                 _columnLayers[0].MainContentPositionIncrement();
-                //选中项显示
+
                 _columnLayers[0].Grid.ColumnDefinitions.Insert(0, _columnLayers[0].ColumnDefinitions[level - 1]);
                 Grid.SetColumn(_columnLayers[0].Grid.Children[0], _columnLayers[0].MainContentLocation);
-            } 
-            #endregion
+            }
 
-            #region 
             for (var i = level + 1; i < _columnLayers.Count; i++)
             {
                 if (_columnLayers[i].Btn.Visibility != Visibility.Collapsed)
@@ -682,7 +711,7 @@ namespace MyControlTemplate
                     }
                 }
             }
-            #endregion
+
             for (var i = 1; i < level; i++)
             {
                 var loc = _columnLayers[i];
@@ -700,16 +729,19 @@ namespace MyControlTemplate
                     }
 
                 }
-            } 
+            }
+            #endregion
         }
 
         private void ColumnUndockPane(int level, Button btn)
         {
             var item = _columnLayers[level];
             item.Btn.Visibility = Visibility.Visible;
+            item.Btn.IsChecked = false;
             btn.LayoutTransform = null;
             item.Grid.Visibility = Visibility.Visible;
 
+            #region 移除多列显示的空间
             for (var i = 0; i < level; i++)
             {
 
@@ -745,7 +777,7 @@ namespace MyControlTemplate
                 item.Grid.ColumnDefinitions.Remove(t);
             }
         }
-
+            #endregion
 
         #endregion
     }

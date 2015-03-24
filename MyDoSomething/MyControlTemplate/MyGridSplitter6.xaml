@@ -75,7 +75,7 @@
         </Border>
         <StatusBar 
             DockPanel.Dock="Bottom" 
-            Background="SandyBrown"
+            Background="AliceBlue"
             Height="15"/>
         <controls:LayeredGrid
                                 Grid.Row="1" 
