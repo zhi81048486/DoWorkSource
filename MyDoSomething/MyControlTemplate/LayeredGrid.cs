@@ -350,10 +350,13 @@ namespace MyControlTemplate
             grid.MouseEnter += (o, e) =>
             {
                 var level = layer.Level;
+                _columnLayers[level].Btn.IsChecked = false;
                 for (var i = (level + 1); i < _columnLayers.Count; i++)
                 {
                     if (_columnLayers[i].Btn.Visibility == Visibility.Visible)
+                    {
                         _columnLayers[i].Grid.Visibility = Visibility.Collapsed;
+                    }
                 }
             };
             parentGrid.Children.Add(grid);
@@ -588,6 +591,7 @@ namespace MyControlTemplate
             //点击侧边栏按钮触发的事件
             btn.Click += (o, e) =>
             {
+
                 ToggleButton t = e.OriginalSource as ToggleButton;
                 {
                     var level = layer.Level;
