@@ -75,7 +75,7 @@
         </Border>
         <StatusBar 
             DockPanel.Dock="Bottom" 
-            Background="SandyBrown"
+            Background="AliceBlue"
             Height="15"/>
         <controls:LayeredGrid
                                 Grid.Row="1" 
@@ -199,7 +199,7 @@
                         </controls:LayeredGrid>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="1" Orientation="Column" Name="Solution Explorer L1" ColumnLocation="Right">
+                <controls:Layer Level="1" Orientation="Column" Name="调价设置1" ColumnLocation="Right">
                     <controls:Layer.Content>
                         <Grid >
                             <Grid.RowDefinitions>
@@ -301,7 +301,7 @@
                         </ListBox>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="4" Orientation="Column" Name="Toolbox Manager L4">
+                <controls:Layer Level="4" Orientation="Column" Name="调价设置 L4">
                     <controls:Layer.Content>
                         <ListBox >
                             <ListBoxItem>Button</ListBoxItem>
@@ -342,7 +342,7 @@
                 </controls:Layer>
                 <controls:Layer Level="0" >
                     <controls:Layer.Content>
-                        <Grid>
+                        <Grid Background="Peru">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition/>
