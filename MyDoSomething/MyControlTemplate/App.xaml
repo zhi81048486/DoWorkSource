@@ -1,11 +1,6 @@
 ﻿<Application x:Class="MyControlTemplate.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-<<<<<<< HEAD
-             StartupUri="B_T_Panel.xaml">
-=======
-             StartupUri="MyGridsplitter2.xaml">
->>>>>>> 7a01f49340010ce92455068c461d089eb7cfe92c
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Resources>
         <ResourceDictionary Source="/StyleMGridSplitter.xaml"></ResourceDictionary>
 
