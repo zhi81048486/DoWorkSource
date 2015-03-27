@@ -24,17 +24,29 @@ namespace MyControlTemplate
             InitializeComponent();
         }
 
-        private void SwitchCheckBox_OnClick(object sender, RoutedEventArgs e)
+        //private void SwitchCheckBox_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    if (!SwitchCheckBox.IsChecked.Value)
+        //    {
+        //        BaseSet.Visibility = Visibility.Visible;
+        //        AdvancedPanel.Visibility = Visibility.Collapsed;
+        //    }
+        //    else
+        //    {
+        //        AdvancedPanel.Visibility = Visibility.Visible;
+        //        BaseSet.Visibility = Visibility.Collapsed;
+        //    }
+        //}
+
+        private void BottomPanelCheckBox_OnClick(object sender, RoutedEventArgs e)
         {
-            if (SwitchCheckBox.IsChecked.Value)
+            if (BottomPanelCheckBox.IsChecked.Value)
             {
-                BaseSet.Visibility = Visibility.Visible;
-                AdvancedPanel.Visibility = Visibility.Collapsed;
+                this.Panel.Visibility = Visibility.Collapsed;
             }
             else
             {
-                AdvancedPanel.Visibility = Visibility.Visible;
-                BaseSet.Visibility = Visibility.Collapsed;
+                this.Panel.Visibility = Visibility.Visible;
             }
         }
     }

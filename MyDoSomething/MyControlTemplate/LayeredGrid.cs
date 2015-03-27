@@ -213,6 +213,7 @@ namespace MyControlTemplate
                     if (_columnLayers[i].Btn.Visibility == Visibility.Visible)
                     {
                         _columnLayers[i].Grid.Visibility = Visibility.Collapsed;
+                        _columnLayers[i].Btn.IsChecked = false;
                     }
                 }
 
@@ -418,7 +419,7 @@ namespace MyControlTemplate
             grid.Children.Add(gridsplitter);
             Grid.SetRow(gridsplitter, 1);
             //set up stackpanel
-           //侧边栏按钮控件
+            //侧边栏按钮控件
             var stackpanel = new StackPanel
             {
                 Height = 25.0,
@@ -572,11 +573,11 @@ namespace MyControlTemplate
 
         private ToggleButton AddToColumnStackPanel(Layer layer)
         {
-           
+
             var btn = new ToggleButton
-            { 
+            {
                 Style = (Style)PART_MasterGrid.FindResource("SideButtonStyle"),
-                Width=20,
+                Width = 20,
                 Height = double.NaN,
                 Content = layer.Name
             };
@@ -597,8 +598,8 @@ namespace MyControlTemplate
                             if (i == level)
                                 continue;
                             var loc = _columnLayers[i];
-                           //这句话就是控制，当前选中项显示在最外层，不会被覆盖掉。
-                           Grid.SetZIndex(loc.Grid, 0);
+                            //这句话就是控制，当前选中项显示在最外层，不会被覆盖掉。
+                            Grid.SetZIndex(loc.Grid, 0);
                             if (loc.Btn.Visibility == Visibility.Visible)
                             {
                                 loc.Btn.IsChecked = false;
@@ -665,10 +666,12 @@ namespace MyControlTemplate
             {
                 if (_columnLayers[i].Btn.Visibility == Visibility.Collapsed)
                 {
+                    ColumnUndockPane(i, null);
                     _columnLayers[i].Btn.Visibility = Visibility.Visible;
                     _columnLayers[i].Grid.Visibility = Visibility.Collapsed;
                 }
             }
+
             var item = _columnLayers[level];
             item.Btn.Visibility = Visibility.Collapsed;
             item.Btn.IsChecked = false;
@@ -677,60 +680,59 @@ namespace MyControlTemplate
             btn.LayoutTransform = rtTrans;
 
 
-            //#region 实现多列同时钉住
+            #region 实现多列同时钉住
 
-            //if (_columnLayers[0].ColumnLocations[level - 1] == Layer.LayerColumnLocation.Right)
-            //{
-            //    _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
+            if (_columnLayers[0].ColumnLocations[level - 1] == Layer.LayerColumnLocation.Right)
+            {
+                _columnLayers[0].Grid.ColumnDefinitions.Add(_columnLayers[0].ColumnDefinitions[level - 1]);
+            }
 
-            //}
+            else
+            {
+                _columnLayers[0].MainContentPositionIncrement();
 
-            //else
-            //{
-            //    _columnLayers[0].MainContentPositionIncrement();
+                _columnLayers[0].Grid.ColumnDefinitions.Insert(0, _columnLayers[0].ColumnDefinitions[level - 1]);
+                Grid.SetColumn(_columnLayers[0].Grid.Children[0], _columnLayers[0].MainContentLocation);
+            }
 
-            //    _columnLayers[0].Grid.ColumnDefinitions.Insert(0, _columnLayers[0].ColumnDefinitions[level - 1]);
-            //    Grid.SetColumn(_columnLayers[0].Grid.Children[0], _columnLayers[0].MainContentLocation);
-            //}
+            for (var i = level + 1; i < _columnLayers.Count; i++)
+            {
+                if (_columnLayers[i].Btn.Visibility != Visibility.Collapsed)
+                    continue;
+                if (item.ColumnLocations[i - level - 1] == Layer.LayerColumnLocation.Right)
+                    //显示项
+                    item.Grid.ColumnDefinitions.Add(item.ColumnDefinitions[i - level - 1]);
+                else
+                {
+                    item.MainContentPositionIncrement();
+                    //显示项
+                    item.Grid.ColumnDefinitions.Insert(0, item.ColumnDefinitions[i - level - 1]);
+                    foreach (UIElement child in item.Grid.Children)
+                    {
+                        Grid.SetColumn(child, item.MainContentLocation - 1);
+                    }
+                }
+            }
 
-            //for (var i = level + 1; i < _columnLayers.Count; i++)
-            //{
-            //    if (_columnLayers[i].Btn.Visibility != Visibility.Collapsed)
-            //        continue;
-            //    if (item.ColumnLocations[i - level - 1] == Layer.LayerColumnLocation.Right)
-            //        //显示项
-            //        item.Grid.ColumnDefinitions.Add(item.ColumnDefinitions[i - level - 1]);
-            //    else
-            //    {
-            //        item.MainContentPositionIncrement();
-            //        //显示项
-            //        item.Grid.ColumnDefinitions.Insert(0, item.ColumnDefinitions[i - level - 1]);
-            //        foreach (UIElement child in item.Grid.Children)
-            //        {
-            //            Grid.SetColumn(child, item.MainContentLocation - 1);
-            //        }
-            //    }
-            //}
+            for (var i = 1; i < level; i++)
+            {
+                var loc = _columnLayers[i];
+                if (loc.Btn.Visibility != Visibility.Collapsed)
+                    continue;
+                if (loc.ColumnLocations[level - 1 - i] == Layer.LayerColumnLocation.Right)
+                    loc.Grid.ColumnDefinitions.Add(loc.ColumnDefinitions[level - 1 - i]);
+                else
+                {
+                    loc.MainContentPositionIncrement();
+                    loc.Grid.ColumnDefinitions.Insert(0, loc.ColumnDefinitions[level - 1 - i]);
+                    foreach (UIElement child in loc.Grid.Children)
+                    {
+                        Grid.SetColumn(child, loc.MainContentLocation - 1);
+                    }
 
-            //for (var i = 1; i < level; i++)
-            //{
-            //    var loc = _columnLayers[i];
-            //    if (loc.Btn.Visibility != Visibility.Collapsed)
-            //        continue;
-            //    if (loc.ColumnLocations[level - 1 - i] == Layer.LayerColumnLocation.Right)
-            //        loc.Grid.ColumnDefinitions.Add(loc.ColumnDefinitions[level - 1 - i]);
-            //    else
-            //    {
-            //        loc.MainContentPositionIncrement();
-            //        loc.Grid.ColumnDefinitions.Insert(0, loc.ColumnDefinitions[level - 1 - i]);
-            //        foreach (UIElement child in loc.Grid.Children)
-            //        {
-            //            Grid.SetColumn(child, loc.MainContentLocation - 1);
-            //        }
-
-            //    }
-            //}
-            //#endregion
+                }
+            }
+            #endregion
         }
 
         private void ColumnUndockPane(int level, Button btn)
@@ -738,7 +740,10 @@ namespace MyControlTemplate
             var item = _columnLayers[level];
             item.Btn.Visibility = Visibility.Visible;
             item.Btn.IsChecked = false;
-            btn.LayoutTransform = null;
+            if (btn != null)
+            {
+                btn.LayoutTransform = new RotateTransform(90);
+            }
             item.Grid.Visibility = Visibility.Collapsed;
 
             #region 移除多列显示的空间

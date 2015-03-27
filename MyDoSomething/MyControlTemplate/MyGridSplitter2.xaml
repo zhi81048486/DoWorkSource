@@ -4,174 +4,256 @@
         xmlns:con="clr-namespace:MyControlTemplate"
             xmlns:controls="clr-namespace:MyControlTemplate"
         Title="调价设置" Height="600" Width="800">
-    <DockPanel>
-        <Border
-            DockPanel.Dock="Top"
-            BorderBrush="Red"
-            BorderThickness="0">
-        </Border>
-        <con:LayeredGrid>
+    <Window.Resources>
+        <Style x:Key="Triangle_CheckBox" TargetType="{x:Type CheckBox}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <StackPanel Background="Transparent" FlowDirection="RightToLeft" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <Border x:Name="Border"
+                                Width="12px" 
+                                Height="12px"
+                                CornerRadius="0"
+                                BorderThickness="0"
+                                BorderBrush="#c5d8ea"
+                                    VerticalAlignment="Center"
+                                Background="#ffffff">
+                                <Path  x:Name="CheckMark"
+                                   Fill="#6888AE"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Data="M 1 7 L 6 1 L 11 7 Z"
+                                   StrokeThickness="1"/>
+                            </Border>
+                            <ContentPresenter Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            RecognizesAccessKey="True"
+                            >
+                            </ContentPresenter>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="false">
+                                <Setter TargetName="CheckMark" Property="Data" Value="M 1 0 L 6 6 L 11 0 Z "/>
+                                <Setter TargetName="Border" Property="Background" Value="#f1f7fb"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#3584d8"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#3584d8"/>
+                                <Setter TargetName="Border" Property="Background" Value="#ffffff"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#c5d8ea"/>
+                                <Setter TargetName="Border" Property="Background" Value="#f1f7fb"/>
+                                <Setter TargetName="CheckMark" Property="Fill" Value="#c5d8ea"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <con:LayeredGrid Grid.Row="0">
             <controls:LayeredGrid.Layers>
                 <con:Layer Level="1" Orientation="Column" Name="调价规则设置" ColumnLocation="Right">
                     <con:Layer.Content>
-                        <StackPanel>
-                            <Label Content="基础设置" FontSize="13"/>
-                            <StackPanel Name="BaseSet">
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="调价设备:"/>
-                                    <ComboBox Name="DeviceComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="请选择"/>
-                                        <ComboBoxItem Content="计算机"/>
-                                        <ComboBoxItem Content="移动设备"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="目标排名:"/>
-                                    <ComboBox Name="RankComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="左侧区间"/>
-                                        <ComboBoxItem Content="首页展现"/>
-                                        <ComboBoxItem Content="左侧位置"/>
-                                        <ComboBoxItem Content="右侧位置"/>
-                                        <ComboBoxItem Content="锁定第一"/>
-                                        <ComboBoxItem Content="右侧区间"/>
-                                    </ComboBox>
-                                    <Label Content="第"/>
-                                    <TextBox Width="60"/>
-                                    <Label Content="至"/>
-                                    <TextBox Width="60"/>
-                                    <Label Content="名"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="出价范围:"/>
-                                    <TextBox Width="80"/>
-                                    <Label Content="至"/>
-                                    <TextBox Width="80"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="调价地域:"/>
-                                    <ComboBox Name="RegionComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="推广计划默认地域"/>
-                                        <ComboBoxItem Content="北京"/>
-                                        <ComboBoxItem Content="上海"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="调价方式:"/>
-                                    <ComboBox Name="ModeComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="单次调价"/>
-                                        <ComboBoxItem Content="循环调价"/>
-                                    </ComboBox>
-                                    <ComboBox Name="TimeComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="5"/>
-                                        <ComboBoxItem Content="10"/>
-                                        <ComboBoxItem Content="15"/>
-                                        <ComboBoxItem Content="30"/>
-                                        <ComboBoxItem Content="自定义"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="优先方式:"/>
-                                    <ComboBox Name="PriorityComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="价格优先"/>
-                                        <ComboBoxItem Content="排名优先"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="最高价未达标:"/>
-                                    <ComboBox Name="UnReachComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="保留到最优排名"/>
-                                        <ComboBoxItem Content="还原出价"/>
-                                        <ComboBoxItem Content="保留最高价格"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="调价文件夹:"/>
-                                    <ComboBox Name="FolderComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="新增调价文件夹"/>
-                                    </ComboBox>
-                                </StackPanel>
-                            </StackPanel>
-                            <CheckBox Name="SwitchCheckBox" Click="SwitchCheckBox_OnClick"/>
-                            <Label Content="高级设置"></Label>
-                            <StackPanel Visibility="Collapsed" Name="AdvancedPanel">
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="任务优先级:"/>
-                                    <ComboBox Name="PriorityLevelComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="高"/>
-                                        <ComboBoxItem Content="中"/>
-                                        <ComboBoxItem Content="底"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="忽略设置:"/>
-                                    <ComboBox Name="IgnoreComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="不忽略"/>
-                                        <ComboBoxItem Content="忽略到达期望排名的"/>
-                                        <ComboBoxItem Content="忽略超过期望排名的"/>
-                                        <ComboBoxItem Content="忽略达到和超过期望排名的"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="调价算法:"/>
-                                    <ComboBox Name="ALGComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="智能调价"/>
-                                        <ComboBoxItem Content="比例调价"/>
-                                        <ComboBoxItem Content="固定调价"/>
-                                    </ComboBox>
-                                    <TextBox Width="60"/>
-                                    <Label Content="%"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="虚高设置:"/>
-                                    <ComboBox Name="MoreComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="不设置"/>
-                                        <ComboBoxItem Content="固定虚高"/>
-                                        <ComboBoxItem Content="比列虚高"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="运行设置:"/>
-                                    <ComboBox Name="DoSetComboBox" Width="100" Margin="10,0">
-                                        <ComboBoxItem Content="立即开始"/>
-                                        <ComboBoxItem Content="周期时间设定"/>
-                                    </ComboBox>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="开始时间:"/>
-
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="结束时间:"/>
-
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <CheckBox Content="周一"/>
-                                    <CheckBox Content="周二"/>
-                                    <CheckBox Content="周三"/>
-                                    <CheckBox Content="周四"/>
-                                    <CheckBox Content="周五"/>
-                                    <CheckBox Content="周六"/>
-                                    <CheckBox Content="周日"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,5">
-                                    <Label Content="时间段设定:"/>
-                                    <ComboBox Width="60"/>
-                                    <Label Content="-"/>
-                                    <ComboBox Width="60"/>
-                                    
-                                </StackPanel>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="保存并运行"/>
-                                <Button Content="保存" Margin="10,5"/>
-                                <Button Content="取消"/>
-                            </StackPanel>
-                        </StackPanel>
+                        <Border BorderBrush="Black" BorderThickness="2" Margin="2" Name="SideBorder">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ScrollViewer Name="SidePanelScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Row="0">
+                                    <Grid Name="SidePanel">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Content="基础设置" FontSize="14" FontWeight="Bold" Grid.Row="0"/>
+                                        <StackPanel Name="BaseSet" Grid.Row="1">
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="调价设备:" Width="100"/>
+                                                <ComboBox Name="DeviceComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="请选择"/>
+                                                    <ComboBoxItem Content="计算机"/>
+                                                    <ComboBoxItem Content="移动设备"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="目标排名:" Width="100"/>
+                                                <ComboBox Name="RankComboBox" Width="100" Margin="0" SelectedIndex="2">
+                                                    <ComboBoxItem Content="左侧区间"/>
+                                                    <ComboBoxItem Content="首页展现"/>
+                                                    <ComboBoxItem Content="左侧位置"/>
+                                                    <ComboBoxItem Content="右侧位置"/>
+                                                    <ComboBoxItem Content="锁定第一"/>
+                                                    <ComboBoxItem Content="右侧区间"/>
+                                                </ComboBox>
+                                                <Label Content="第"/>
+                                                <TextBox Width="40"/>
+                                                <Label Content="至"/>
+                                                <TextBox Width="40"/>
+                                                <Label Content="名"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="出价范围:" Width="100"/>
+                                                <TextBox Width="40" Margin="5,0"/>
+                                                <Label Content="至"/>
+                                                <TextBox Width="40"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="调价地域:" Width="100"/>
+                                                <ComboBox Name="RegionComboBox" Width="100" Margin="0" SelectedIndex="1">
+                                                    <ComboBoxItem Content="推广计划默认地域"/>
+                                                    <ComboBoxItem Content="北京"/>
+                                                    <ComboBoxItem Content="上海"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="调价方式:" Width="100"/>
+                                                <ComboBox Name="ModeComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="单次调价"/>
+                                                    <ComboBoxItem Content="循环调价"/>
+                                                </ComboBox>
+                                                <ComboBox Name="TimeComboBox" Width="100" Margin="5,0" SelectedIndex="2">
+                                                    <ComboBoxItem Content="5"/>
+                                                    <ComboBoxItem Content="10"/>
+                                                    <ComboBoxItem Content="15"/>
+                                                    <ComboBoxItem Content="30"/>
+                                                    <ComboBoxItem Content="自定义"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="优先方式:" Width="100"/>
+                                                <ComboBox Name="PriorityComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="价格优先"/>
+                                                    <ComboBoxItem Content="排名优先"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="最高价未达标:" Width="100"/>
+                                                <ComboBox Name="UnReachComboBox" Width="110" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="保留到最优排名"/>
+                                                    <ComboBoxItem Content="还原出价"/>
+                                                    <ComboBoxItem Content="保留最高价格"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="调价文件夹:" Width="100"/>
+                                                <ComboBox Name="FolderComboBox" Width="110" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="新增调价文件夹"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <Line StrokeThickness="1" Stroke="#314D34" StrokeDashArray="3,1" X1="0" Y1="1" Y2="1" X2="{Binding ElementName=BaseSet ,Path=ActualWidth}" Margin="0,15"></Line>
+                                        </StackPanel>
+                                        <!--<CheckBox Name="SwitchCheckBox" Click="SwitchCheckBox_OnClick" Width="30" HorizontalAlignment="Center" Margin="0,15" Grid.Row="2" Style="{StaticResource Triangle_CheckBox}"/>-->
+                                        <Label Content="高级设置" FontSize="14" FontWeight="Bold" Grid.Row="3"></Label>
+                                        <StackPanel Visibility="Visible" Name="AdvancedPanel" Grid.Row="4">
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="任务优先级:" Width="100"/>
+                                                <ComboBox Name="PriorityLevelComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="高"/>
+                                                    <ComboBoxItem Content="中"/>
+                                                    <ComboBoxItem Content="底"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="忽略设置:" Width="100"/>
+                                                <ComboBox Name="IgnoreComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="不忽略"/>
+                                                    <ComboBoxItem Content="忽略到达期望排名的"/>
+                                                    <ComboBoxItem Content="忽略超过期望排名的"/>
+                                                    <ComboBoxItem Content="忽略达到和超过期望排名的"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="调价算法:" Width="100"/>
+                                                <ComboBox Name="ALGComboBox" Width="100" Margin="0" SelectedIndex="1">
+                                                    <ComboBoxItem Content="智能调价"/>
+                                                    <ComboBoxItem Content="比例调价"/>
+                                                    <ComboBoxItem Content="固定调价"/>
+                                                </ComboBox>
+                                                <TextBox Width="60" Margin="5,0"/>
+                                                <Label Content="%"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="虚高设置:" Width="100"/>
+                                                <ComboBox Name="MoreComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="不设置"/>
+                                                    <ComboBoxItem Content="固定虚高"/>
+                                                    <ComboBoxItem Content="比列虚高"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="运行设置:" Width="100"/>
+                                                <ComboBox Name="DoSetComboBox" Width="100" Margin="0" SelectedIndex="0">
+                                                    <ComboBoxItem Content="立即开始"/>
+                                                    <ComboBoxItem Content="周期时间设定"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="开始时间:" Width="100"/>
+                                                <TextBox Width="100"></TextBox>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="结束时间:" Width="100"/>
+                                                <TextBox Width="100"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <CheckBox Content="周一"/>
+                                                <CheckBox Content="周二"/>
+                                                <CheckBox Content="周三"/>
+                                                <CheckBox Content="周四"/>
+                                                <CheckBox Content="周五"/>
+                                                <CheckBox Content="周六"/>
+                                                <CheckBox Content="周日"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                                <Label Content="时间段设定:" Width="100"/>
+                                                <ComboBox Width="60" SelectedIndex="1">
+                                                    <ComboBoxItem Content="0:00"/>
+                                                    <ComboBoxItem Content="1:00"/>
+                                                    <ComboBoxItem Content="2:00"/>
+                                                </ComboBox>
+                                                <Label Content="-"/>
+                                                <ComboBox Width="60" SelectedIndex="0">
+                                                    <ComboBoxItem Content="2:00"/>
+                                                    <ComboBoxItem Content="3:00"/>
+                                                    <ComboBoxItem Content="4:00"/>
+                                                </ComboBox>
+                                                <Button Content="+" Margin="5,0"/>
+                                                <Button Content="*"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </ScrollViewer>
+                                <DockPanel  Width="{Binding ElementName=BaseSet,Path=ActualWidth}" Grid.Row="1"   Margin="0">
+                                <Line StrokeThickness="1" Stroke="#314D34" StrokeDashArray="3,1" X1="0" Y1="1" X2="{Binding ElementName=SidePanel,Path=ActualWidth}" Y2="1" Margin="0,15" Grid.Row="0" DockPanel.Dock="Top"></Line>
+                                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                                <Button Content="保存并运行" Height="30" Grid.Row="1" Width="80" Margin="60,0,0,0"/>
+                                <Button Content="保存" Margin="10,5" Height="30" Grid.Row="1" Width="60"/>
+                                <Button Content="取消" Height="30" Grid.Row="1" Width="60"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
                     </con:Layer.Content>
                 </con:Layer>
                 <controls:Layer Level="2" Orientation="Column" Name="调价任务列表" ColumnLocation="Right">
                     <controls:Layer.Content>
-                        <Border BorderThickness="2,2,2,2" BorderBrush="Black" >
+                        <Border BorderThickness="2,2,2,2" BorderBrush="Black" Margin="2">
                             <DockPanel>
                                 <DockPanel DockPanel.Dock="Top" Margin="0,0,0,0">
                                     <StackPanel DockPanel.Dock="Left" Margin="5,0,0,0" Orientation="Horizontal" Height="30px">
@@ -230,10 +312,10 @@
                         </Border>
                     </controls:Layer.Content>
                 </controls:Layer>
-                <controls:Layer Level="0" >
+                <controls:Layer Level="0">
                     <controls:Layer.Content>
-                        <Grid Background="Peru">
-                            <Grid.RowDefinitions>
+                        <Grid  Margin="0,0,0,0">
+                            <!--<Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition/>
                                 <RowDefinition/>
@@ -255,7 +337,7 @@
                                 Background="White"
                                 VerticalAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"
-                                Header="Recent Projects L0">…
+                                Header="Recent Projects L0">
                             </GroupBox>
                             <GroupBox
                                 Grid.Row="2" 
@@ -277,8 +359,8 @@
                                 Grid.Column="1" 
                                 Grid.RowSpan="4"
                                 Background="Transparent"
-                                HorizontalAlignment="Left" />
-                            <ListBox
+                                HorizontalAlignment="Left" />-->
+                            <!--<ListBox
                                 Grid.Column="2"
                                 Grid.Row="0"
                                 Grid.RowSpan="4"
@@ -289,12 +371,22 @@
                                 <ListBoxItem>Article #2</ListBoxItem>
                                 <ListBoxItem>Article #3</ListBoxItem>
                                 <ListBoxItem>Article #4</ListBoxItem>
-                            </ListBox>
+                            </ListBox>-->
+                            <Border BorderThickness="1" BorderBrush="Black">
+                            <Label Content="some" Grid.Column="2" Grid.Row="0" Width="100" Height="60" Background="BlueViolet"></Label>
+                            </Border>
                         </Grid>
                     </controls:Layer.Content>
 
                 </controls:Layer>
             </controls:LayeredGrid.Layers>
         </con:LayeredGrid>
-    </DockPanel>
+
+        <StackPanel Grid.Row="1" Background="PaleVioletRed">
+            <CheckBox Name="BottomPanelCheckBox" Click="BottomPanelCheckBox_OnClick" Width="30" HorizontalAlignment="Center" Style="{StaticResource Triangle_CheckBox}"/>
+            <StackPanel Height="200" Name="Panel">
+                <Label Content="LastPanel"></Label>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </Window>

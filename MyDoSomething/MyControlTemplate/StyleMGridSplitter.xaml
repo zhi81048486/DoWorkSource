@@ -141,8 +141,8 @@
                         Name="PART_ParentPanel">
                         <DockPanel.Resources>
                             <Style x:Key="SideButtonStyle" TargetType="ToggleButton">
-                                <Setter Property="Background" Value="Black"/>
-                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="Background" Value="YellowGreen"/>
+                                <Setter Property="Foreground" Value="Black"/>
                                 <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Margin" Value="5,0"></Setter>
                                 <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -153,7 +153,7 @@
                                         <ControlTemplate TargetType="ToggleButton">
                                             <Border CornerRadius="0"  Padding="0"  Width="{TemplateBinding Width}">
                                                 <StackPanel VerticalAlignment="Center" Margin="0,5,0,5"  >
-                                                    <TextBlock Margin="0,5,0,0"  TextWrapping="Wrap" Padding="0"  Foreground="{TemplateBinding Foreground}" VerticalAlignment="Top" HorizontalAlignment="Center" Text="{TemplateBinding Content}" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}">
+                                                    <TextBlock Margin="0,5,0,0"  TextWrapping="Wrap" Padding="5,0"  Foreground="{TemplateBinding Foreground}" VerticalAlignment="Top" HorizontalAlignment="Center" Text="{TemplateBinding Content}" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}">
                                                     </TextBlock>
                                                 </StackPanel>
                                             </Border>
