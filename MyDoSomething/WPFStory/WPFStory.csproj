@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MoveLeftAndRight.xaml.cs">
+      <DependentUpon>MoveLeftAndRight.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewStory.xaml.cs">
       <DependentUpon>NewStory.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MoveLeftAndRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewStory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
