@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,7 +27,7 @@ namespace MouseDownEvent
             InitializeComponent();
         }
         ObservableCollection<string> zoneList = new ObservableCollection<string>();
-      
+
         private void PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             Console.WriteLine((sender as FrameworkElement).Tag + " Preview");
@@ -39,7 +40,7 @@ namespace MouseDownEvent
 
         private void StackPanel_MouseMove(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void ListView_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -65,6 +66,12 @@ namespace MouseDownEvent
         private void ListView_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Console.WriteLine("LeftDown");
+        }
+
+
+        private void test([CallerMemberName] string callerName = "")
+        {
+
         }
     }
 }

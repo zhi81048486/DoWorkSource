@@ -2,31 +2,52 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:con="clr-namespace:WPFStory"
-        Title="MoveLeftAndRight" Height="400" Width="500" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="MoveLeftAndRight" Height="400" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="Red">
+        <Label Background="Pink" Width="250" Height="220" Grid.ZIndex="2" Margin="0,0,400,0"></Label>
         <con:UserControl1 x:Name="MyControl1">
+            <con:UserControl1.Style>
+                <Style TargetType="UserControl">
+                    <Setter Property="Grid.ZIndex" Value="1"/>
+                </Style>
+            </con:UserControl1.Style>
             <con:UserControl1.Triggers>
-                <EventTrigger RoutedEvent="con:UserControl1.MouseDown" >
+                <EventTrigger RoutedEvent="con:UserControl1.MouseEnter" >
                     <EventTrigger.Actions>
-                        <!--<BeginStoryboard>
-                            <Storyboard TargetProperty="Left">
-                                <DoubleAnimation From="200" To="215" Duration="0:0:0.5"
-                                     AutoReverse="True" RepeatBehavior="3x"
-                                     FillBehavior="Stop"/>
-                            </Storyboard>
-                        </BeginStoryboard>-->
                         <BeginStoryboard>
                             <Storyboard >
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00" Completed="BeginStory_OnCompleted" Duration="0:0:0.5" FillBehavior="HoldEnd">
+                                    <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60,0,0,0" />
+                                    <!--<SplineThicknessKeyFrame KeyTime="00:00:01" Value="0, 0,0,0" />-->
+                                </ThicknessAnimationUsingKeyFrames>
                                 <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                    <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60, 0,0,0" />
+                                    <SplineThicknessKeyFrame KeyTime="00:00:1" Value="0,0,0,0" />
+                                    </ThicknessAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="con:UserControl1.MouseLeave" >
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard >
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00" Completed="EndStory_OnCompleted">
+                                    <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60, 0,0,0" />
+                                    <!--<SplineThicknessKeyFrame KeyTime="00:00:01" Value="0, 0,0,0" />-->
+                                </ThicknessAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard >
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00" Completed="EndStory_OnCompleted">
                                     <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60, 0,0,0" />
                                     <SplineThicknessKeyFrame KeyTime="00:00:01" Value="0, 0,0,0" />
                                 </ThicknessAnimationUsingKeyFrames>
                             </Storyboard>
-
                         </BeginStoryboard>
                     </EventTrigger.Actions>
                 </EventTrigger>
-
             </con:UserControl1.Triggers>
         </con:UserControl1>
         <Label Content="hello" Background="Bisque" Width="100" Height="50">

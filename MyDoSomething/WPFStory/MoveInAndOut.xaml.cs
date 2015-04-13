@@ -15,22 +15,13 @@ using System.Windows.Shapes;
 namespace WPFStory
 {
     /// <summary>
-    /// MoveLeftAndRight.xaml 的交互逻辑
+    /// MoveInAndOut.xaml 的交互逻辑
     /// </summary>
-    public partial class MoveLeftAndRight : Window
+    public partial class MoveInAndOut : Window
     {
-        public MoveLeftAndRight()
+        public MoveInAndOut()
         {
             InitializeComponent();
-        }
-
-        private void BeginStory_OnCompleted(object sender, EventArgs e)
-        {
-            Grid.SetZIndex(MyControl1,3);
-        }
-        private void EndStory_OnCompleted(object sender, EventArgs e)
-        {
-            Grid.SetZIndex(MyControl1, 1);
         }
     }
 }

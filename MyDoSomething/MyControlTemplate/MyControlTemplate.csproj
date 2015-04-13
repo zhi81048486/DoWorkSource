@@ -92,6 +92,9 @@
     <Compile Include="MyTextBox.xaml.cs">
       <DependentUpon>MyTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PartiallyOverlay.xaml.cs">
+      <DependentUpon>PartiallyOverlay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PartiallyOverlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
