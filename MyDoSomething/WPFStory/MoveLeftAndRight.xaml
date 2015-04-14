@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:con="clr-namespace:WPFStory"
         Title="MoveLeftAndRight" Height="400" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="Red">
+    <Grid Background="YellowGreen">
         <Label Background="Pink" Width="250" Height="220" Grid.ZIndex="2" Margin="0,0,400,0"></Label>
         <con:UserControl1 x:Name="MyControl1">
             <con:UserControl1.Style>
