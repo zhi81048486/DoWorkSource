@@ -92,9 +92,6 @@
     <Compile Include="MyTextBox.xaml.cs">
       <DependentUpon>MyTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartiallyOverlay.xaml.cs">
-      <DependentUpon>PartiallyOverlay.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SomeControl.xaml.cs">
       <DependentUpon>SomeControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +100,9 @@
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFButton.xaml.cs">
+      <DependentUpon>WPFButton.xaml</DependentUpon>
     </Compile>
     <Page Include="B_T_Panel.xaml">
       <SubType>Designer</SubType>
@@ -194,10 +194,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PartiallyOverlay.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="SomeControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

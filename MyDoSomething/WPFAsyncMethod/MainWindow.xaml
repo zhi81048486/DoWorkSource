@@ -1,0 +1,10 @@
+﻿<Window x:Class="WPFAsyncMethod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBox BorderThickness="1" BorderBrush="Brown" Width="400" Height="60" VerticalAlignment="Top"></TextBox>
+        <Label Content="INFO:"/>
+        <TextBox Height="100"></TextBox>
+    </StackPanel>
+</Window>

@@ -9,6 +9,20 @@
             <con:UserControl1.Style>
                 <Style TargetType="UserControl">
                     <Setter Property="Grid.ZIndex" Value="1"/>
+                    <!--<Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60, 0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:1" Value="0,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </Style.Triggers>-->
                 </Style>
             </con:UserControl1.Style>
             <con:UserControl1.Triggers>
