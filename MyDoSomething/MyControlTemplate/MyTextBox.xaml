@@ -43,6 +43,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TextBox Width="100" Height="30"></TextBox>
+        <TextBox Width="100" Height="30" TextChanged="TextBoxBase_OnTextChanged"></TextBox>
     </Grid>
 </Window>

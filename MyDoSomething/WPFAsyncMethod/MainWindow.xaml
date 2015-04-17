@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
-        <TextBox BorderThickness="1" BorderBrush="Brown" Width="400" Height="60" VerticalAlignment="Top"></TextBox>
+        <TextBox BorderThickness="1" BorderBrush="Brown" Width="400" Height="60" VerticalAlignment="Top" Name="TextBoxURL"/>
+        <Button Content="DownLoad" Width="100" Height="60" Name="ButtonDown"/>
         <Label Content="INFO:"/>
-        <TextBox Height="100"></TextBox>
+        <TextBox Height="100" Name="TextBoxInfo"/>
     </StackPanel>
 </Window>

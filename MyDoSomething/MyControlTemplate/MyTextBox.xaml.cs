@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,6 +22,17 @@ namespace MyControlTemplate
         public MyTextBox()
         {
             InitializeComponent();
+        }
+
+        private void TextBoxBase_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+
+        }
+
+        void Timecallback()
+        {
+            
         }
     }
 }

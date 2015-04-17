@@ -133,6 +133,7 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        
     </Window.Resources>
     <Grid>
         <Slider TickPlacement="BottomRight" Template="{StaticResource WPFHorizontalSlider}" Orientation="Horizontal" Minimum="-1" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Height="50" Width="300"></Slider>
