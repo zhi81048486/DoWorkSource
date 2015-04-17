@@ -21,6 +21,14 @@ namespace MyControlTemplate
         public WPFButton()
         {
             InitializeComponent();
+            //MyRButton.IncreaceButton.Click += IncreaceButton_Click;
+        }
+
+        void IncreaceButton_Click(object sender, RoutedEventArgs e)
+        {
+            //int v = Convert.ToInt32(MyRButton.RButtonDefaultValue);
+            //v += MyRButton.RButtonChangeValue;
+            //MyRButton.RButtonDefaultValue = v.ToString();
         }
 
         private void MyRepeatButton_OnClick(object sender, RoutedEventArgs e)

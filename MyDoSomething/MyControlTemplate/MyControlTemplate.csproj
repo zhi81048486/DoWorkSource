@@ -86,6 +86,10 @@
     <Compile Include="MyGridSplitter6.xaml.cs">
       <DependentUpon>MyGridSplitter6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyRepeatButton.cs" />
+    <Compile Include="MyRepeatButtonControl.xaml.cs">
+      <DependentUpon>MyRepeatButtonControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MyTabControl.xaml.cs">
       <DependentUpon>MyTabControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +107,9 @@
     </Compile>
     <Compile Include="WPFButton.xaml.cs">
       <DependentUpon>WPFButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFSlider.xaml.cs">
+      <DependentUpon>WPFSlider.xaml</DependentUpon>
     </Compile>
     <Page Include="B_T_Panel.xaml">
       <SubType>Designer</SubType>
@@ -186,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyRepeatButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MyTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +222,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPFButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFSlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
