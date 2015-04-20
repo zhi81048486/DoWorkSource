@@ -118,7 +118,7 @@
                         <Path Data="M 4,0 8,8 0,8" Fill="Green" HorizontalAlignment="Right" Margin="0,0,7,0"/>
                         <Label Content="third"  Name="t" HorizontalAlignment="Right"/>
                     </StackPanel>
-                    
+
                 </Grid>
             </Grid>
             <ControlTemplate.Triggers>
@@ -133,9 +133,14 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        
+
     </Window.Resources>
     <Grid>
         <Slider TickPlacement="BottomRight" Template="{StaticResource WPFHorizontalSlider}" Orientation="Horizontal" Minimum="-1" Maximum="1" TickFrequency="1" IsSnapToTickEnabled="True" Height="50" Width="300"></Slider>
+        <StackPanel>
+            <TextBox Name="TextBoxAdd" Width="100" Height="30" Margin="0"></TextBox>
+            <Button Name="Button_Add" Content="Add" Width="100" Click="Button_Add_OnClick"/>
+            <Button Name="Button_OK" Content="OK" Width="100" Click="Button_OK_OnClick"/>
+        </StackPanel>
     </Grid>
 </Window>

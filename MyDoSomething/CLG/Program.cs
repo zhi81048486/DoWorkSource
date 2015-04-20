@@ -5,13 +5,40 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LeetCode_CSharp;
 
 namespace CLG
 {
+    class  MYClass
+    {
+        public string name { get; set; }
+    }
     class Program
     {
         static void Main(string[] args)
         {
+            MYClass m1=new MYClass(){ name="first"};
+            MYClass m2 = m1;
+         
+            m2.name = "third";
+            m2 = new MYClass();
+            
+            ListNode<int> LA = new ListNode<int>(0);
+            ListNode<int> LA0 = new ListNode<int>(1);
+            ListNode<int> LA1 = new ListNode<int>(3);
+            ListNode<int> LA2 = new ListNode<int>(5);
+            LA.Next = LA0;
+            LA0.Next = LA1;
+            LA1.Next = LA2;
+            ListNode<int> LB = new ListNode<int>(0);
+            ListNode<int> LB0 = new ListNode<int>(2);
+            ListNode<int> LB1 = new ListNode<int>(4);
+            ListNode<int> LB2 = new ListNode<int>(6);
+            LB.Next = LB0;
+            LB0.Next = LB1;
+            LB1.Next = LB2;
+            AddTwoNum a = new AddTwoNum();
+            a.addTwoNumbers(LA, LB);
             // DoSort();
             //int[] ss = new int[] {0,0,0,0,92,0,-3002,0,0,0,-10,-19,0,65,0,0,293,0,1,1,1,9,9,9,10,11,1001,2001,-404,201,203,201,999,345,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,1,1,-1200,1,1,1,1,1,2,1202,2,2,-4,2,2,2,2,4,5,6,1,1,-11,1,1,1,1,1,1,1,1,101,1,1,1,1,1,-1,1,-6};
             //threeSum(ss);
@@ -19,16 +46,16 @@ namespace CLG
             //int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
             //int target = 77;
             //Console.WriteLine(threeSumClosest(nums, target));
-       List<List<int>> result= fourSum3(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
+            //List<List<int>> result= fourSum3(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
 
-            foreach (var varitems in result)
-            {
-                foreach (var item in varitems)
-                {
-                    Console.Write(item+",");
-                }
-                Console.WriteLine();
-            }
+            //     foreach (var varitems in result)
+            //     {
+            //         foreach (var item in varitems)
+            //         {
+            //             Console.Write(item+",");
+            //         }
+            //         Console.WriteLine();
+            //     }
             Console.ReadKey();
         }
         static void DoSort()
@@ -501,7 +528,7 @@ namespace CLG
                     }
                 }
             }
-           // List<int> targetInts = numbers.ToList();
+            // List<int> targetInts = numbers.ToList();
             for (int i = 0; i < numbers.Length - 3; i++)
             {
                 for (int j = i + 1; j < numbers.Length - 2; j++)
@@ -510,72 +537,71 @@ namespace CLG
                     {
                         List<int> targetInts = numbers.ToList();
 
-                            targetInts.RemoveAt(i);
-                            targetInts.RemoveAt(j-1);
-                            targetInts.RemoveAt(k-2);
+                        targetInts.RemoveAt(i);
+                        targetInts.RemoveAt(j - 1);
+                        targetInts.RemoveAt(k - 2);
 
-                        if(numbers[i]==0 && numbers[j]==0)
+                        if (numbers[i] == 0 && numbers[j] == 0)
                         { }
-                            int FindNum = target - (numbers[i] + numbers[j] + numbers[k]);
+                        int FindNum = target - (numbers[i] + numbers[j] + numbers[k]);
 
-                       
-                            int? FindInt = OneHalfMethod(targetInts, FindNum);
-                            if (FindInt == null) continue;
 
-                            result[0] = numbers[i];
-                            result[1] = numbers[j];
-                            result[2] = numbers[k];
-                            result[3] = (int)FindInt;
-                            //单个集合中按大小排序
-                            for (int n = 0; n <= 2; n++)
+                        int? FindInt = OneHalfMethod(targetInts, FindNum);
+                        if (FindInt == null) continue;
+
+                        result[0] = numbers[i];
+                        result[1] = numbers[j];
+                        result[2] = numbers[k];
+                        result[3] = (int)FindInt;
+                        //单个集合中按大小排序
+                        for (int n = 0; n <= 2; n++)
+                        {
+                            for (int m = 0; m < 3; m++)
                             {
-                                for (int m = 0; m < 3; m++)
+                                int temp;
+                                if (result[m] > result[m + 1])
                                 {
-                                    int temp;
-                                    if (result[m] > result[m + 1])
-                                    {
-                                        temp = result[m + 1];
-                                        result[m + 1] = result[m];
-                                        result[m] = temp;
-                                    }
+                                    temp = result[m + 1];
+                                    result[m + 1] = result[m];
+                                    result[m] = temp;
                                 }
                             }
-                            if (collections.Count > 0)
+                        }
+                        if (collections.Count > 0)
+                        {
+                            //查找是否有重复值
+                            for (int l = 0; l < collections.Count; l++)
                             {
-                                //查找是否有重复值
-                                for (int l = 0; l < collections.Count; l++)
+                                if (collections[l][0] == result[0] && collections[l][1] == result[1] &&
+                                    collections[l][2] == result[2])
                                 {
-                                    if (collections[l][0] == result[0] && collections[l][1] == result[1] &&
-                                        collections[l][2] == result[2])
 
-                                    {
-                                        
-                                        break;
-                                    }
-                                    if (l == collections.Count - 1)
-                                    {
-                                        collection = new List<int>();
-                                        collection.Add(result[0]);
-                                        collection.Add(result[1]);
-                                        collection.Add(result[2]);
-                                        collection.Add(result[3]);
-                                        collections.Add(collection);
-                                    }
+                                    break;
+                                }
+                                if (l == collections.Count - 1)
+                                {
+                                    collection = new List<int>();
+                                    collection.Add(result[0]);
+                                    collection.Add(result[1]);
+                                    collection.Add(result[2]);
+                                    collection.Add(result[3]);
+                                    collections.Add(collection);
                                 }
                             }
+                        }
 
 
-                            if (collections.Count == 0)
-                            {
-                                collection = new List<int>();
-                                collection.Add(result[0]);
-                                collection.Add(result[1]);
-                                collection.Add(result[2]);
-                                collection.Add(result[3]);
-                                collections.Add(collection);
-                            }
+                        if (collections.Count == 0)
+                        {
+                            collection = new List<int>();
+                            collection.Add(result[0]);
+                            collection.Add(result[1]);
+                            collection.Add(result[2]);
+                            collection.Add(result[3]);
+                            collections.Add(collection);
+                        }
 
-                        
+
 
                     }
                 }

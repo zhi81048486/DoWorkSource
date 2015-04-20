@@ -42,7 +42,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <StackPanel>
         <TextBox Width="100" Height="30" TextChanged="TextBoxBase_OnTextChanged"></TextBox>
-    </Grid>
+    </StackPanel>
 </Window>

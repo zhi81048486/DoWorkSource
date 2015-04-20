@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,9 +19,33 @@ namespace MyControlTemplate
     /// </summary>
     public partial class WPFSlider : Window
     {
+        List<string> liststr=new List<string>();
+        
         public WPFSlider()
         {
             InitializeComponent();
+            liststr.Add("hello");
+            liststr.Add("hello1");
+        }
+        List<string> strs=new List<string>();
+        void add(string str)
+        {
+            strs.Add(str);
+        }
+
+        void ok()
+        {
+            liststr = strs;
+        }
+
+        private void Button_Add_OnClick(object sender, RoutedEventArgs e)
+        {
+           add(TextBoxAdd.Text);
+        }
+
+        private void Button_OK_OnClick(object sender, RoutedEventArgs e)
+        {
+            ok();
         }
     }
 }
