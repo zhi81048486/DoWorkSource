@@ -3,11 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:myControlTemplate="clr-namespace:MyControlTemplate"
         Title="ListVIewTest2" Height="300" Width="600">
+    <Window.Resources>
+        <Style x:Key="MuStyle" TargetType="ListViewItem">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border 
+          Name="Border"
+          Padding="2"
+          SnapsToDevicePixels="true"
+          Background="Transparent"
+                            BorderBrush="#C0C0C0" BorderThickness="0,0,0,1">
+                            <GridViewRowPresenter
+            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <ListView Name="MyListView"
           IsSynchronizedWithCurrentItem="True"
           myControlTemplate:GridViewSort.AutoSort="True"
-          myControlTemplate:GridViewSort.ShowSortGlyph="True">
+          myControlTemplate:GridViewSort.ShowSortGlyph="True" ItemContainerStyle="{StaticResource MuStyle}">
             <ListView.View>
                 <GridView >
                     <GridViewColumn  Width="100" DisplayMemberBinding="{Binding First}" myControlTemplate:GridViewSort.PropertyName="First">
