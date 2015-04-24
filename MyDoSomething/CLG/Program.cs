@@ -17,45 +17,12 @@ namespace CLG
     {
         static void Main(string[] args)
         {
-            MYClass m1=new MYClass(){ name="first"};
-            MYClass m2 = m1;
-         
-            m2.name = "third";
-            m2 = new MYClass();
-            
-            ListNode<int> LA = new ListNode<int>(0);
-            ListNode<int> LA0 = new ListNode<int>(1);
-            ListNode<int> LA1 = new ListNode<int>(3);
-            ListNode<int> LA2 = new ListNode<int>(5);
-            LA.Next = LA0;
-            LA0.Next = LA1;
-            LA1.Next = LA2;
-            ListNode<int> LB = new ListNode<int>(0);
-            ListNode<int> LB0 = new ListNode<int>(2);
-            ListNode<int> LB1 = new ListNode<int>(4);
-            ListNode<int> LB2 = new ListNode<int>(6);
-            LB.Next = LB0;
-            LB0.Next = LB1;
-            LB1.Next = LB2;
-            AddTwoNum a = new AddTwoNum();
-            a.addTwoNumbers(LA, LB);
-            // DoSort();
-            //int[] ss = new int[] {0,0,0,0,92,0,-3002,0,0,0,-10,-19,0,65,0,0,293,0,1,1,1,9,9,9,10,11,1001,2001,-404,201,203,201,999,345,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,-2,1,1,1,1,1,1,1,1,1,1,-1200,1,1,1,1,1,2,1202,2,2,-4,2,2,2,2,4,5,6,1,1,-11,1,1,1,1,1,1,1,1,101,1,1,1,1,1,-1,1,-6};
-            //threeSum(ss);
 
-            //int[] nums = new int[] { -2, -3, -4, -5, -100, 99, 1, 4, 4, 4, 5, 1, 0, -1, 2, 3, 4, 5 };
-            //int target = 77;
-            //Console.WriteLine(threeSumClosest(nums, target));
-            //List<List<int>> result= fourSum3(new int[] { 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 0, 0, -2, 2, -5, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99, 1, 2, 5, 6, 7, 3, 5, 8, -33, -5, -72, 12, -34, 100, 99 }, 11);
-
-            //     foreach (var varitems in result)
-            //     {
-            //         foreach (var item in varitems)
-            //         {
-            //             Console.Write(item+",");
-            //         }
-            //         Console.WriteLine();
-            //     }
+            int[] nums = new int[7];
+            foreach (var n in nums)
+            {
+                Console.WriteLine(n);
+            }
             Console.ReadKey();
         }
         static void DoSort()

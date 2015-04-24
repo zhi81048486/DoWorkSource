@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="AddBinary.cs" />
     <Compile Include="AddTwoNum.cs" />
+    <Compile Include="Anagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
