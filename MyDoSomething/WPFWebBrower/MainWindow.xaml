@@ -6,13 +6,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="200" Height="30" Grid.Row="0" Margin="10" Name="TextBox_Url"/>
+            <TextBox Width="400" Height="30" Grid.Row="0" Margin="10" Name="TextBox_Url"/>
             <Button Content="GO" Width="60" Height="30" Name="Button_Go"></Button>
         </StackPanel>
         <WebBrowser Grid.Row="1" Name="MyBrowser">
 
         </WebBrowser>
+        <StackPanel Grid.Row="2" Height="200" Visibility="Collapsed"></StackPanel>
     </Grid>
 </Window>
