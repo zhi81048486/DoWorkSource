@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncMethod", "AsyncMethod\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFAsyncMethod", "WPFAsyncMethod\WPFAsyncMethod.csproj", "{1C828F97-D7F7-4AA6-B9D2-511EE4F67B55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFWebBrower", "WPFWebBrower\WPFWebBrower.csproj", "{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -265,6 +267,16 @@ Global
 		{1C828F97-D7F7-4AA6-B9D2-511EE4F67B55}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1C828F97-D7F7-4AA6-B9D2-511EE4F67B55}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1C828F97-D7F7-4AA6-B9D2-511EE4F67B55}.Release|x86.ActiveCfg = Release|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{04DB9800-2BFF-4D41-AB8B-8866CDBA79DC}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

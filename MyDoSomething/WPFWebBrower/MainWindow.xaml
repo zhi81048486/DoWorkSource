@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFWebBrower.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="200" Height="30" Grid.Row="0" Margin="10" Name="TextBox_Url"/>
+            <Button Content="GO" Width="60" Height="30" Name="Button_Go"></Button>
+        </StackPanel>
+        <WebBrowser Grid.Row="1" Name="MyBrowser">
+
+        </WebBrowser>
+    </Grid>
+</Window>
