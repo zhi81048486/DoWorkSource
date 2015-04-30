@@ -34,10 +34,14 @@
                                     <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60,0,0,0" />
                                     <!--<SplineThicknessKeyFrame KeyTime="00:00:01" Value="0, 0,0,0" />-->
                                 </ThicknessAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                        <BeginStoryboard>
+                            <Storyboard >
                                 <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
                                     <SplineThicknessKeyFrame KeyTime="00:00:0.5" Value="60, 0,0,0" />
                                     <SplineThicknessKeyFrame KeyTime="00:00:1" Value="0,0,0,0" />
-                                    </ThicknessAnimationUsingKeyFrames>
+                                </ThicknessAnimationUsingKeyFrames>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
