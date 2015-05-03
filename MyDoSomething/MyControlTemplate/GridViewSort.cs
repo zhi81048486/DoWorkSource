@@ -225,6 +225,9 @@ namespace MyControlTemplate
                 return null;
         }
 
+        /*
+         * 这里的排序其实还是使用了试图的排序。
+         */
         public static void ApplySort(ICollectionView view, string propertyName, ListView listView, GridViewColumnHeader sortedColumnHeader)
         {
             ListSortDirection direction = ListSortDirection.Ascending;
