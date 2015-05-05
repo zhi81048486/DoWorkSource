@@ -1,0 +1,47 @@
+﻿<Window x:Class="WPF_MulitFilter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <CollectionViewSource x:Key="CVSKey" Source="{Binding lists}"></CollectionViewSource>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <ComboBox Width="50" Name="ComboBox_Name"/>
+                <Button Content="X" Width="30" Height="25"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <ComboBox Width="50" Name="ComboBox_Age"/>
+                <Button Content="X" Width="30" Height="25"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <ComboBox Width="50" Name="ComboBox_Country"/>
+                <Button Content="X" Width="30" Height="25"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0">
+                <ComboBox Width="50" Name="ComboBox_Sex"/>
+                <Button Content="X" Width="30" Height="25"/>
+            </StackPanel>
+<StackPanel Orientation="Horizontal" Margin="10,0">
+    <Button Content="Add" Width="60" Height="25" Name="Button_Add"/>
+</StackPanel>
+
+        </StackPanel>
+        <ListView Grid.Row="1" Name="ListView_Filter">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                    <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" Width="100"/>
+
+                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}" Width="100"/>
+                    <GridViewColumn Header="Sex" DisplayMemberBinding="{Binding Sex}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

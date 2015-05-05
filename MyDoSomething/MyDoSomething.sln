@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFWebBrower", "WPFWebBrowe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Filter", "WPF_Filter\WPF_Filter.csproj", "{B06BA2A8-4750-49B5-8E24-401330102C02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MulitFilter", "WPF_MulitFilter\WPF_MulitFilter.csproj", "{3E81418A-67DB-4628-8CEE-987FFC6508DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -289,6 +291,16 @@ Global
 		{B06BA2A8-4750-49B5-8E24-401330102C02}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B06BA2A8-4750-49B5-8E24-401330102C02}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B06BA2A8-4750-49B5-8E24-401330102C02}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3E81418A-67DB-4628-8CEE-987FFC6508DF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
