@@ -19,9 +19,15 @@ namespace WPFTreeView
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int i = 0;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void TreeView_OnSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            CountLabel.Content = ++i;
         }
     }
 }

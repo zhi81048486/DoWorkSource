@@ -37,6 +37,7 @@ namespace WPF_MulitFilter
         private CollectionView CVS;
         private ObservableCollection<Persons> lists;
         private List<Persons> DonePersons = new List<Persons>();
+        private List<SearchCondition> searchs;
         void DoSource()
         {
             lists = new ObservableCollection<Persons>()
@@ -66,6 +67,7 @@ namespace WPF_MulitFilter
             ComboBox_Name.SelectionChanged += ComboBox_Name_SelectionChanged;
             ComboBox_Country.SelectionChanged += ComboBox_Country_SelectionChanged;
             isLoad = true;
+            searchs=new List<SearchCondition>();
         }
 
         private bool isLoad = false;
@@ -78,6 +80,7 @@ namespace WPF_MulitFilter
             else
             {
                 Coun = from i in lists where i.Country == _country select i;
+                var id=from i in lists where !(i.Country.Contains(_country.ToString())) select i;
             }
             CVS.Filter += (p) =>
             {
@@ -145,5 +148,12 @@ namespace WPF_MulitFilter
         public string Age { get; set; }
         public string Country { get; set; }
         public string Sex { get; set; }
+    }
+
+    public class SearchCondition
+    {
+        public string ConditionType { get; set; }
+        public string SearchValue { get; set; }
+        public string SearchType { get; set; }
     }
 }

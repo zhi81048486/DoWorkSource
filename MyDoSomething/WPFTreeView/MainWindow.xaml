@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Label Name="CountLabel" Background="MistyRose" Width="100" Height="30" VerticalAlignment="Top"></Label>
         <TreeView Margin="20"  VirtualizingStackPanel.IsVirtualizing="True"
                           VirtualizingStackPanel.VirtualizationMode="Recycling" Height="143"
-                                 ScrollViewer.CanContentScroll="True">
+                                 ScrollViewer.CanContentScroll="True" SelectedItemChanged="TreeView_OnSelectedItemChanged" >
             <TreeViewItem Header="123" Height="25">
                 <TreeViewItem Height="25" Header="Tree"/>
                 <TreeViewItem Header="Tree" Height="25"/>
