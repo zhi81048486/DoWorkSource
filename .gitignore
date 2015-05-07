@@ -1,7 +1,3 @@
 obj/*
 bin/*
 *.suo
-/MyDoSomething/MouseButtonEvent/bin
-/MyDoSomething/MyControlTemplate/bin
-/MyDoSomething/StaticSomething/obj
-/MyDoSomething/StaticSomething/bin
