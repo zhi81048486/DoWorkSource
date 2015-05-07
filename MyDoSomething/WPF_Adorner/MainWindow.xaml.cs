@@ -25,6 +25,13 @@ namespace WPF_Adorner
             InitializeComponent();
             MyTextBox.LostFocus += MyTextBox_LostFocus;
             MyTextBox.GotFocus += MyTextBox_GotFocus;
+           
+        }
+
+        void t_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(t!=null)
+            MyTextBox.Focus();
         }
 
         void MyTextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -41,37 +48,40 @@ namespace WPF_Adorner
             }
         }
 
+        private TextBoxTipAdorner t;
         void MyTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(MyTextBox.Text.Trim()))
             {
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(MyTextBox);
-                layer.Add(new TextBoxTipAdorner("请输入", MyTextBox));
+                t = new TextBoxTipAdorner("请输入", MyTextBox);
+                layer.Add(t);
+                //t.MouseDown+=t_GotFocus;
                 //使得AdornerLayer可以获取焦点
-                layer.Focusable = true;
             }
         }
         private class TextBoxTipAdorner : Adorner
         {
             public string Str_Tips { get; set; }
+            private UIElement adorElement { get; set; }
 
             public TextBoxTipAdorner(string str, UIElement adornerElement)
                 : base(adornerElement)
             {
                 Str_Tips = str;
+                adorElement = adornerElement;
+            }
+
+            protected override void OnMouseDown(MouseButtonEventArgs e)
+            {
+                base.OnMouseDown(e);
+                adorElement.Focus();
             }
 
             protected override void OnRender(DrawingContext drawingContext)
             {
-                drawingContext.DrawText(
-      new FormattedText(Str_Tips,
-         CultureInfo.GetCultureInfo("en-us"),
-         FlowDirection.LeftToRight,
-         new Typeface("Verdana"),
-         12, System.Windows.Media.Brushes.Red),
-         new System.Windows.Point(10, 10));
-
-
+                drawingContext.DrawText( new FormattedText(Str_Tips, CultureInfo.GetCultureInfo("en-us"),  FlowDirection.LeftToRight,
+         new Typeface("Verdana"),  16, System.Windows.Media.Brushes.Red), new System.Windows.Point(20, 10));
             }
 
         }
