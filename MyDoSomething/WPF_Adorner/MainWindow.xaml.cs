@@ -25,13 +25,13 @@ namespace WPF_Adorner
             InitializeComponent();
             MyTextBox.LostFocus += MyTextBox_LostFocus;
             MyTextBox.GotFocus += MyTextBox_GotFocus;
-           
+
         }
 
         void t_GotFocus(object sender, RoutedEventArgs e)
         {
-            if(t!=null)
-            MyTextBox.Focus();
+            if (t != null)
+                MyTextBox.Focus();
         }
 
         void MyTextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -56,36 +56,84 @@ namespace WPF_Adorner
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(MyTextBox);
                 t = new TextBoxTipAdorner("请输入", MyTextBox);
                 layer.Add(t);
-                //t.MouseDown+=t_GotFocus;
-                //使得AdornerLayer可以获取焦点
             }
         }
-        private class TextBoxTipAdorner : Adorner
-        {
-            public string Str_Tips { get; set; }
-            private UIElement adorElement { get; set; }
 
-            public TextBoxTipAdorner(string str, UIElement adornerElement)
-                : base(adornerElement)
-            {
-                Str_Tips = str;
-                adorElement = adornerElement;
-            }
-
-            protected override void OnMouseDown(MouseButtonEventArgs e)
-            {
-                base.OnMouseDown(e);
-                adorElement.Focus();
-            }
-
-            protected override void OnRender(DrawingContext drawingContext)
-            {
-                drawingContext.DrawText( new FormattedText(Str_Tips, CultureInfo.GetCultureInfo("en-us"),  FlowDirection.LeftToRight,
-         new Typeface("Verdana"),  16, System.Windows.Media.Brushes.Red), new System.Windows.Point(20, 10));
-            }
-
-        }
     }
 
+    /// <summary>
+    /// 带提示文字的输入框
+    /// </summary>
+    public class TextBoxWithTip : TextBox
+    {
+        public static readonly DependencyProperty TipValueProperty = DependencyProperty.Register(
+            "TipValue", typeof(string), typeof(TextBoxWithTip), new PropertyMetadata(default(string)));
+
+        public string TipValue
+        {
+            get { return (string)GetValue(TipValueProperty); }
+            set { SetValue(TipValueProperty, value); }
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            if (string.IsNullOrEmpty(this.Text.Trim()))
+            {
+                AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
+                layer.Add(new TextBoxTipAdorner(TipValue, this));
+            }
+        }
+
+        protected override void OnGotFocus(RoutedEventArgs e)
+        {
+            base.OnGotFocus(e);
+            AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
+            Adorner[] adorners = layer.GetAdorners(this);
+            if (adorners != null)
+            {
+                foreach (Adorner adorner in adorners)
+                {
+                    if (adorner is TextBoxTipAdorner)
+                        layer.Remove(adorner);
+                }
+            }
+        }
+
+        protected override void OnLostFocus(RoutedEventArgs e)
+        {
+            base.OnLostFocus(e);
+            if (string.IsNullOrEmpty(this.Text.Trim()))
+            {
+                AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
+                layer.Add(new TextBoxTipAdorner(TipValue, this));
+            }
+        }
+    }
+    public class TextBoxTipAdorner : Adorner
+    {
+        public string Str_Tips { get; set; }
+        private UIElement adorElement { get; set; }
+
+        public TextBoxTipAdorner(string str, UIElement adornerElement)
+            : base(adornerElement)
+        {
+            Str_Tips = str;
+            adorElement = adornerElement;
+        }
+
+        protected override void OnMouseDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseDown(e);
+            adorElement.Focus();
+        }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            drawingContext.DrawText(new FormattedText(Str_Tips, CultureInfo.GetCultureInfo("en-us"), FlowDirection.LeftToRight,
+     new Typeface("Verdana"), 12, System.Windows.Media.Brushes.Red), new System.Windows.Point(10, 10));
+        }
+
+    }
 
 }
