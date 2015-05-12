@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="WPFTreeView.CustomTree_Xaml"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="ParTreeItemStyle" TargetType="TreeViewItem">
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Width="10" Height="15" Background="Aquamarine" Margin="0,0,5,0"/>
+                                    <TextBlock Text="{Binding }" VerticalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ChiTreeItemStyle" TargetType="TreeViewItem">
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Name="Image_Country"></Image>
+                                    <TextBlock Text="{Binding }" VerticalAlignment="Center"></TextBlock>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </Grid.Resources>
+        <TreeView>
+            <TreeViewItem>
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="Green" Width="8" Height="12" BorderBrush="#00000000"/>
+                        <Label Content="亚洲"/>
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources/china.png"/>
+                            <TextBlock Text="中国" Margin="4,0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources/japan.png"/>
+                            <TextBlock Text="日本" Margin="4,0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem>
+                <TreeViewItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Border Background="SaddleBrown" Width="8" Height="12" BorderBrush="#00000000"/>
+                        <TextBlock Text="欧洲" Margin="4,0"/>
+                    </StackPanel>
+                </TreeViewItem.Header>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources/uk.png"/>
+                            <TextBlock Text="英国" Margin="4,0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Resources/denmark.png"/>
+                            <TextBlock Text="丹麦" Margin="4,0"/>
+                        </StackPanel>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+            </TreeViewItem>
+
+        </TreeView>
+    </Grid>
+</UserControl>

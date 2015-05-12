@@ -54,7 +54,7 @@ namespace WPF_MulitFilter
             };
             CVS = (CollectionView)CollectionViewSource.GetDefaultView(lists);
             //ListView_Filter.ItemsSource = CVS;
-            
+
             Binding binding = new Binding();
             binding.Source = CVS;
             BindingOperations.SetBinding(ListView_Filter, ListView.ItemsSourceProperty, binding);
@@ -67,7 +67,7 @@ namespace WPF_MulitFilter
             ComboBox_Name.SelectionChanged += ComboBox_Name_SelectionChanged;
             ComboBox_Country.SelectionChanged += ComboBox_Country_SelectionChanged;
             isLoad = true;
-            searchs=new List<SearchCondition>();
+            searchs = new List<SearchCondition>();
         }
 
         private bool isLoad = false;
@@ -80,7 +80,7 @@ namespace WPF_MulitFilter
             else
             {
                 Coun = from i in lists where i.Country == _country select i;
-                var id=from i in lists where !(i.Country.Contains(_country.ToString())) select i;
+                var id = from i in lists where !(i.Country.Contains(_country.ToString())) select i;
             }
             CVS.Filter += (p) =>
             {
@@ -115,8 +115,8 @@ namespace WPF_MulitFilter
             }
             else
             {
-                items= from i in lists where i.Age == _age select i;
-                
+                items = from i in lists where i.Age == _age select i;
+
             }
             CVS.Filter += (p) =>
             {

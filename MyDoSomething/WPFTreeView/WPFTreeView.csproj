@@ -49,6 +49,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomTree_Code.xaml.cs">
+      <DependentUpon>CustomTree_Code.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTree_CustomItem.xaml.cs">
+      <DependentUpon>CustomTree_CustomItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomTree_Xaml.xaml.cs">
+      <DependentUpon>CustomTree_Xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\ImageSourceConvert.cs" />
+    <Compile Include="Library\ImageTreeViewItem.cs" />
+    <Compile Include="SimpleTree_Code.xaml.cs">
+      <DependentUpon>SimpleTree_Code.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleTree_Xaml.xaml.cs">
+      <DependentUpon>SimpleTree_Xaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeHeaderTemplate.xaml.cs">
+      <DependentUpon>TreeHeaderTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TreeHeaderTemplate_Code.xaml.cs">
+      <DependentUpon>TreeHeaderTemplate_Code.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomTree_Code.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomTree_CustomItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomTree_Xaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -61,6 +96,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SimpleTree_Code.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleTree_Xaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeHeaderTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeHeaderTemplate_Code.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -85,6 +136,27 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\argentina.png" />
+    <Resource Include="Resources\australia.gif" />
+    <Resource Include="Resources\brazil.png" />
+    <Resource Include="Resources\canada.png" />
+    <Resource Include="Resources\china.png" />
+    <Resource Include="Resources\Continent2.gif" />
+    <Resource Include="Resources\continents.png" />
+    <Resource Include="Resources\denmark.png" />
+    <Resource Include="Resources\egypt.png" />
+    <Resource Include="Resources\france.png" />
+    <Resource Include="Resources\japan.png" />
+    <Resource Include="Resources\mexico.png" />
+    <Resource Include="Resources\pakistan.png" />
+    <Resource Include="Resources\somalia.png" />
+    <Resource Include="Resources\tree_logo.png" />
+    <Resource Include="Resources\uganda.png" />
+    <Resource Include="Resources\uk.png" />
+    <Resource Include="Resources\uruguay.png" />
+    <Resource Include="Resources\usa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

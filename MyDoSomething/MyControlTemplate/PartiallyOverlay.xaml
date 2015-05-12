@@ -1,0 +1,38 @@
+﻿<Window x:Class="MyControlTemplate.PartiallyOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PartiallyOverlay" Height="700" Width="500">
+    <Grid>
+        <Canvas>
+            <Rectangle Canvas.ZIndex="3" Width="100" Height="100" Canvas.Top="100" Canvas.Left="100" Fill="blue"/>
+            <Rectangle Canvas.ZIndex="1" Width="100" Height="100" Canvas.Top="150" Canvas.Left="150" Fill="yellow"/>
+            <Rectangle Canvas.ZIndex="2" Width="100" Height="100" Canvas.Top="200" Canvas.Left="200" Fill="green"/>
+
+            
+         <!--Reverse the order to illustrate z-index property--> 
+        
+
+            <Rectangle Canvas.ZIndex="1" Width="100" Height="100" Canvas.Top="300" Canvas.Left="200" Fill="green"/>
+            <Rectangle Canvas.ZIndex="3" Width="100" Height="100" Canvas.Top="350" Canvas.Left="150" Fill="yellow"/>
+            <Rectangle Canvas.ZIndex="2" Width="100" Height="100" Canvas.Top="400" Canvas.Left="100" Fill="blue"/>
+        </Canvas>
+
+
+        <!--<Grid x:Name="LayoutRoot">
+
+            <Grid x:Name="Overlay" Panel.ZIndex="1000" Visibility="Collapsed">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity=".5"/>
+                </Grid.Background>
+
+                --><!-- Add controls as needed --><!--
+                <Label Background="Pink"></Label>
+            </Grid>
+
+            --><!-- Use whatever layout you need --><!--
+            <Label Background="Yellow"></Label>
+            <ContentControl x:Name="MainContent" />
+
+        </Grid>-->
+    </Grid>
+</Window>

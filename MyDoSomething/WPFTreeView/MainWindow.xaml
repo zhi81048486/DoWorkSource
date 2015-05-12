@@ -1,186 +1,49 @@
 ﻿<Window x:Class="WPFTreeView.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:local="clr-namespace:WPFTreeView"
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Label Name="CountLabel" Background="MistyRose" Width="100" Height="30" VerticalAlignment="Top"></Label>
-        <TreeView Margin="20"  VirtualizingStackPanel.IsVirtualizing="True"
-                          VirtualizingStackPanel.VirtualizationMode="Recycling" Height="143"
-                                 ScrollViewer.CanContentScroll="True" SelectedItemChanged="TreeView_OnSelectedItemChanged" >
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem Height="25" Header="Tree"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="Tree" Height="25"/>
-                <TreeViewItem Header="123" Height="25"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="123" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="Tree" Height="25">
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="Tree"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-                <TreeViewItem  Height="25" Header="123"/>
-            </TreeViewItem>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="Tree" Height="25"/>
-            <TreeViewItem Header="123" Height="25"/>
-            <TreeViewItem Header="123" Height="25"/>
-            <TreeViewItem Header="123" Height="25"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123" />
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="123"/>
-            <TreeViewItem  Height="25" Header="树"/>
-            <TreeViewItem  Height="25" Header="树"/>
-            <TreeViewItem  Height="25" Header="树"/>
-            <TreeViewItem  Height="25" Header="树"/>
-            <TreeViewItem  Height="25" Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="树"/>
-            <TreeViewItem Header="123"/>
-            <TreeViewItem Header="123"/>
-            <TreeViewItem Header="123"/>
-            <TreeViewItem Header="123"/>
-            <TreeViewItem Header="123"/>
-        </TreeView>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Button.Click="TreeTypeButton_Click" Margin="10">
+            <StackPanel>
+                <GroupBox Header="简单树创建">
+                    <StackPanel Margin="2">
+                        <Button Content="XAML" Width="80" Height="25" Margin="2" Name="Button_X_Simple" Tag=""/>
+                        <Button Content="Code" Width="80" Height="25" Margin="2" Name="Button_C_Simple"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="定制树创建">
+                    <StackPanel Margin="2">
+                        <Button Content="XAML" Width="80" Height="25" Margin="2" Name="Button_X_Custom" Tag=""/>
+                        <Button Content="Code" Width="80" Height="25" Margin="2" Name="Button_C_Custom"/>
+                        <Button Content="Class" Width="80" Height="25" Margin="2" Name="Button_Class_Custom"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="重写HeaderTemplate">
+                    <StackPanel Margin="2">
+                        <Button Content="XAML" Width="80" Height="25" Margin="2" Name="Button_X_Template" Tag=""/>
+                        <Button Content="Code" Width="80" Height="25" Margin="2" Name="Button_C_Template"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Name="TitleLabel" Background="MistyRose" Height="30" Grid.Row="0"></Label>
+            <ScrollViewer Grid.Row="1">
+                <Grid Name="Grid_Control">
+
+                </Grid>
+            </ScrollViewer>
+          
+        </Grid>
+        
     </Grid>
 </Window>
