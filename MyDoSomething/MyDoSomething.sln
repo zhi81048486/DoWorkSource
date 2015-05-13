@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MulitFilter", "WPF_Muli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Adorner", "WPF_Adorner\WPF_Adorner.csproj", "{2F567A85-3FFB-4CE0-9403-3CCAADF832DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RichListView", "RichListView\RichListView.csproj", "{2B62265E-BD5A-4137-AB91-DBFB7F62B511}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -313,6 +315,16 @@ Global
 		{2F567A85-3FFB-4CE0-9403-3CCAADF832DC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2F567A85-3FFB-4CE0-9403-3CCAADF832DC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2F567A85-3FFB-4CE0-9403-3CCAADF832DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2B62265E-BD5A-4137-AB91-DBFB7F62B511}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

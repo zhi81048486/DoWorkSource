@@ -1,0 +1,33 @@
+﻿<Window x:Class="RichListView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListView Name="MyListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Header="姓名" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding GameName}" Tag="{Binding GameName}">
+                                    <!--需要的仅仅只是通过trigger来改变颜色，所以没必要再重写模板，仅仅是把style给写出来，然后调用trigger来改变-->
+                                    <Label.Style>
+                                        <Style TargetType="Label">
+                                            <Style.Triggers>
+                                                <Trigger Property="Tag" Value="Halo">
+                                                    <Setter Property="Foreground" Value="OrangeRed"></Setter>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Label.Style>
+                                </Label>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Creator}" Header="作者" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Publisher}" Header="出版社" Width="120"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
