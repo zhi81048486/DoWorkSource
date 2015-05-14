@@ -43,6 +43,8 @@
     <Compile Include="AddTwoNum.cs" />
     <Compile Include="Anagrams.cs" />
     <Compile Include="BestTimetoBuyandSellStock.cs" />
+    <Compile Include="BestTimeToBuyAndSellStock2.cs" />
+    <Compile Include="BestTimeToBuyAndSellStock3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
