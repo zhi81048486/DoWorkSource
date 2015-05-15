@@ -94,7 +94,7 @@
         <Label Style="{StaticResource LabelStyle}" Name="MyLabel" Tag="0"/>
         <Label Style="{StaticResource UpDownStyle}" Tag="-1" Content="查看排名" Width="60"></Label>
         <Label Style="{StaticResource PriceStyle}" Content="some" Height="20" ToolTip="超越集团主域：
-当在调价过程中遇见集团主域时，在设置价格范围内超越集团主域。&#x0a;追随集团主域：当在调价过程中遇见集团主域时，在设置价格范围内紧跟集团主域。&#x0a;避让集团主域：当在调价过程中遇见集团主域时，关键词价格调至最低价格避让集团主域"></Label>
+当在调价过程中遇见集团主域时，在设置价格范围内超越集团主域。&#x0a;追随集团主域：当在调价过程中遇见集团主域时，在设置价格范围内紧跟集团主域。&#x0a;避让集团主域：当在调价过程中遇见集团主域时，关键词价格调至最低价格避让集团主域" ToolTipService.ShowDuration="5000"></Label>
         <ListView Name="MyListView">
             <ListView.View>
                 <GridView>
