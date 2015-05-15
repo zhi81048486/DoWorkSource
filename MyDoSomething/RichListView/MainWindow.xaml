@@ -1,8 +1,100 @@
 ﻿<Window x:Class="RichListView.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:data="clr-namespace:RichListView"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Window.Resources>
+        <Style x:Key="PriceStyle" TargetType="Label">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <StackPanel Background="#FFFFFF" Orientation="Horizontal">
+                            <ContentPresenter x:Name="LabelContent"/>
+                            <!--<Path x:Name="ArrowsPath" Data="M 4,6 8,2 12,6 10,6 10,14 6,14 6,6 Z" Fill="Red" Width="16" Height="16"></Path>-->
+                            <Path x:Name="ArrowsPath" Data="M 4,10 8,14 12,10 10,10 10,2 6,2 6,10 Z" Fill="Red" Width="16" Height="16"></Path>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Key="BiddingDeviceImageCellTemplate"  DataType="Label">
+            <StackPanel Orientation="Horizontal" >
+                <Image x:Name="aImage" Width="16" Height="16"  />
+            </StackPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Tag}" Value="0">
+                    <Setter TargetName="aImage" Property="Source" Value="/Resources/png_bidding_PC.png"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag}" Value="1">
+                    <Setter TargetName="aImage" Property="Source" Value="/Resources/png_bidding_Mobile.png"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <StackPanel Orientation="Horizontal" >
+                            <Image x:Name="aImage" Width="16" Height="16"  />
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Tag" Value="0">
+                                <Setter TargetName="aImage" Property="Source" Value="/Resources/png_bidding_PC.png"/>
+                            </Trigger>
+                            <Trigger Property="Tag" Value="1">
+                                <Setter TargetName="aImage" Property="Source" Value="/Resources/png_bidding_Mobile.png"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="UpDownStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="Microsoft YaHei"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <StackPanel Orientation="Horizontal">
+                            <ContentPresenter x:Name="LabelContent"/>
+                            <Path x:Name="ArrowsPath" Width="16" Height="16" Visibility="Hidden"></Path>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Tag" Value="1">
+                                <Setter Property="Visibility" TargetName="ArrowsPath" Value="Visible"/>
+                                <Setter Property="Data" TargetName="ArrowsPath" Value="M 4,6 8,2 12,6 10,6 10,14 6,14 6,6 Z"/>
+                                <Setter Property="Fill" TargetName="ArrowsPath" Value="Red"/>
+                                <Setter Property="Foreground"  Value="Red"/>
+                            </Trigger>
+                            <Trigger Property="Tag" Value="-1">
+                                <Setter Property="Visibility" TargetName="ArrowsPath" Value="Visible"/>
+                                <Setter Property="Data" TargetName="ArrowsPath" Value="M 4,10 8,14 12,10 10,10 10,2 6,2 6,10 Z"/>
+                                <Setter Property="Fill" TargetName="ArrowsPath" Value="Green"/>
+                                <Setter Property="Foreground" Value="Green"></Setter>
+                            </Trigger>
+                            <Trigger Property="Tag" Value="0">
+                                <Setter Property="Visibility" TargetName="ArrowsPath" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <StackPanel>
+
+        <Label Style="{StaticResource LabelStyle}" Name="MyLabel" Tag="0"/>
+        <Label Style="{StaticResource UpDownStyle}" Tag="-1" Content="查看排名" Width="60"></Label>
+        <Label Style="{StaticResource PriceStyle}" Content="some" Height="20" ToolTip="超越集团主域：
+当在调价过程中遇见集团主域时，在设置价格范围内超越集团主域。&#x0a;追随集团主域：当在调价过程中遇见集团主域时，在设置价格范围内紧跟集团主域。&#x0a;避让集团主域：当在调价过程中遇见集团主域时，关键词价格调至最低价格避让集团主域"></Label>
         <ListView Name="MyListView">
             <ListView.View>
                 <GridView>
@@ -26,8 +118,15 @@
                     </GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Creator}" Header="作者" Width="120"></GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Publisher}" Header="出版社" Width="120"></GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Publisher}" Header="备注" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="-"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-    </Grid>
+    </StackPanel>
 </Window>

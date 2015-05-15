@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -48,7 +49,7 @@ namespace RichListView
             });
         }
 
-      private readonly ObservableCollection<GameData> _GameCollection = new ObservableCollection<GameData>();
+        private readonly ObservableCollection<GameData> _GameCollection = new ObservableCollection<GameData>();
 
     }
 
@@ -58,4 +59,49 @@ namespace RichListView
         public string Creator { get; set; }
         public string Publisher { get; set; }
     }
+
+    public class DeviceImageCell : ImageCell
+    {
+        private string _sourceCode;
+
+        public string SourceCode
+        {
+            get { return _sourceCode; }
+            set { _sourceCode = value; OnpropertyChanged("SourceCode"); }
+        }
+        public DeviceImageCell(string code, string tip)
+            : base()
+        {
+            this.SourceCode = code;
+            this.SourceTip = tip;
+        }
+    }
+    public class ImageCell : INotifyPropertyChanged
+    {
+
+
+        private ImageSource _source;
+        private string _sourceTip;
+
+        public string SourceTip
+        {
+            get { return _sourceTip; }
+            set { _sourceTip = value; OnpropertyChanged("SourceTip"); }
+        }
+
+        public ImageSource Source
+        {
+            get { return _source; }
+            set { _source = value; OnpropertyChanged("Source"); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnpropertyChanged(string value)
+        {
+
+            if (null != PropertyChanged)
+                PropertyChanged(this, new PropertyChangedEventArgs(value));
+        }
+    }
+
 }
