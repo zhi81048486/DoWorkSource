@@ -42,6 +42,7 @@ namespace WPF_TextPath
             text.SetForegroundBrush(brush, 0, 4);			// Apply formatting to 4 chars starting from first char
             drawingContext.DrawText(text, new Point(10, 0));		// Draw text on the Window
             base.OnRender(drawingContext);
+            drawingContext.DrawText(text, new Point(10, 0));
         }
         //protected override void OnRender(DrawingContext drawingContext)
         //{
