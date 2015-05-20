@@ -59,6 +59,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Clock", "WPF_Clock\WPF_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TextPath", "WPF_TextPath\WPF_TextPath.csproj", "{2A17E349-6F0F-4105-AADC-62CB3F92A74D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Image", "WPF_Image\WPF_Image.csproj", "{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -349,6 +351,16 @@ Global
 		{2A17E349-6F0F-4105-AADC-62CB3F92A74D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2A17E349-6F0F-4105-AADC-62CB3F92A74D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2A17E349-6F0F-4105-AADC-62CB3F92A74D}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
