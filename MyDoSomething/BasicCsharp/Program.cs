@@ -8,6 +8,8 @@ namespace BasicCsharp
 {
     class Program
     {
+        static void Main(string[] args)
+        { }
         //static void Main(string[] args)
         //{
         //    //string str = "First";
@@ -124,7 +126,7 @@ namespace BasicCsharp
     }
 
     public class MethodParameters : abclass
-    {       
+    {
         public void Method1(int i)
         {
             i = 10;

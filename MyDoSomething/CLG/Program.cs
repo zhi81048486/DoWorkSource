@@ -18,11 +18,14 @@ namespace CLG
         static void Main(string[] args)
         {
 
-            int[] nums = new int[7];
-            foreach (var n in nums)
-            {
-                Console.WriteLine(n);
-            }
+            //int[] nums = new int[7];
+            //foreach (var n in nums)
+            //{
+            //    Console.WriteLine(n);
+            //}
+            BestTimeToBuyAndSellStock3 stock3 = new BestTimeToBuyAndSellStock3();
+            int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8};
+            stock3.maxProfit(money);
             Console.ReadKey();
         }
         static void DoSort()
