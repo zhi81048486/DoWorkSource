@@ -24,7 +24,7 @@ namespace CLG
             //    Console.WriteLine(n);
             //}
             BestTimeToBuyAndSellStock3 stock3 = new BestTimeToBuyAndSellStock3();
-            int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8};
+            int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8,200};
             stock3.maxProfit(money);
             Console.ReadKey();
         }
