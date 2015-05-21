@@ -16,8 +16,7 @@ namespace LeetCode_CSharp
      * must sell the stock before you buy again).
      */
     /*
-     * 可以有两次操作。所以就是第一次操作之后，再剩下的数据中再进行一次同第一次一样的操作。不同的就是两次操作的起始值很有可能是不同的。
-     * 所以第一次操作时找到最小值，就看什么时候卖出能获得最大收益，第二次操作找到最大值，就看什么时候买进能获得最大收益。
+     * 可以有两次操作。把利润分成了两个区间， 首先是在0-k之间找到最大值，然后在k+1-n之间找最大值。最后得到两者和的最大值即为结果。
      */
 
     public class BestTimeToBuyAndSellStock3
@@ -30,6 +29,7 @@ namespace LeetCode_CSharp
             int lowest = prices[0];
             int[] left = new int[length];
             int[] right = new int[length];
+            //因为可以确定是从第一天开始的，所以可以确定第一天的值来获取最大值。依次对比最小值，和最大插值。
             for (int i = 1; i < length; i++)
             {
                 if (prices[i] < lowest)
@@ -40,11 +40,13 @@ namespace LeetCode_CSharp
                 {
                     profit = prices[i] - lowest;
                 }
+                
                 //跟据最小值从第一天往后开始计算最大利润
                 left[i] = profit;
             }
             profit = 0;
             int topest = prices[length - 1];
+            //因为肯定是要对比到最后一天才可以知道结果，所以就从最后一天开始算起
             for (int j = length - 2; j >= 0; j--)
             {
                 if (prices[j] > topest)
