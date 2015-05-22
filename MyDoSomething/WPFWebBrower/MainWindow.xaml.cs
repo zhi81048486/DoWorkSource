@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,9 +39,22 @@ namespace WPFWebBrower
             {
                 uri = new Uri("http://" + this.TextBox_Url.Text, UriKind.RelativeOrAbsolute);
 
-            } 
-            if(uri!=null)
-            this.MyBrowser.Navigate(uri);
+            }
+            if (uri != null)
+
+                this.MyBrowser.Source = uri;
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+                request.Method = "GET";
+                request.Timeout = 5000;
+                HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+            }
+            catch (Exception esx)
+            {
+                MessageBox.Show(esx.ToString());
+            }
+          
         }
     }
 }
