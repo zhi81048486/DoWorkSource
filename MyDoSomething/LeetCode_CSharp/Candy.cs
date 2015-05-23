@@ -19,19 +19,20 @@ namespace LeetCode_CSharp
 
     public class Candy
     {
+        //相邻两个小孩等级高的糖果至少要比等级低的多一个。简单来说就是两两对比看谁等级高。等级高的话，就比等级低的多一个。否则就是一个。但是有个起始值的问题。假设第一个小孩是等级最低的和假设第一个小孩是等级最高的是两种不同的情况。所以就先假设第一个小孩是等级最低的。默认糖果个数为1.然后再倒叙，两两对比检查等级高的是否糖果数也多，若正确就不改变，若不正确就比等级低的多一个。
         public int candy(int[] ratings)
         {
             int[] candy = new int[ratings.Length];
             candy[0] = 1;
             for (int i = 1; i < ratings.Length; i++)
             {
-                //第i个人的等级比第前一个人的等级高，那么第i个人糖果至少要比他前面的一个人多一个糖果，否则就是最少的糖果个数1。这里只是两两相互比较。
+                //假设第一个小孩等级交底，相邻两项对比，如果等级高就比相邻的多一个，否则就是一个。
                 candy[i] = ratings[i] > ratings[i - 1] ? candy[i - 1] + 1 : 1;
             }
             int totalCandy = candy[ratings.Length - 1];
             for (int i = ratings.Length - 2; i >= 0; i--)
             {
-                //如果第i个人的等级比他后面的人的等级要高，但是糖果个数却是后面等级低的人多于前面等级高的人。这时等级高的人就要比后面的人多一个糖果。否则就是之前的糖果个数。
+                //倒叙检查，排除第一个小孩等级最高的情况。
                 candy[i] = (ratings[i] > ratings[i + 1] && candy[i + 1] + 1 > candy[i]) ? candy[i + 1] + 1 : candy[i];
                 totalCandy += candy[i];
             }

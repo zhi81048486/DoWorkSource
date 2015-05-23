@@ -25,7 +25,10 @@ namespace CLG
             //}
             BestTimeToBuyAndSellStock3 stock3 = new BestTimeToBuyAndSellStock3();
             int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8,200};
-            stock3.maxProfit(money);
+           // stock3.maxProfit(money);
+            int[] rating = new[] {1, 2, 6, 4, 5,3, 8, 10};
+            Candy candy=new Candy();
+            candy.candy(rating);
             Console.ReadKey();
         }
         static void DoSort()
