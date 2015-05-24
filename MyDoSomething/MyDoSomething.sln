@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseButtonEvent", "MouseButtonEvent\MouseButtonEvent.csproj", "{3527EC78-0C2C-451B-97A4-5C86EE286900}"
 EndProject
@@ -60,6 +60,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TextPath", "WPF_TextPath\WPF_TextPath.csproj", "{2A17E349-6F0F-4105-AADC-62CB3F92A74D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Image", "WPF_Image\WPF_Image.csproj", "{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Async", "WPF_Async\WPF_Async.csproj", "{34043F04-B885-414D-8AE9-B64F1A5806BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Error", "WPF_Error\WPF_Error.csproj", "{7B9D1616-C987-467E-B54A-65C1E17BBE7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -361,6 +365,26 @@ Global
 		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6B16DD63-1A04-4EEE-90CE-AB916373E2CB}.Release|x86.ActiveCfg = Release|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{34043F04-B885-414D-8AE9-B64F1A5806BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
