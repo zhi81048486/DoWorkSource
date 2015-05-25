@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseButtonEvent", "MouseButtonEvent\MouseButtonEvent.csproj", "{3527EC78-0C2C-451B-97A4-5C86EE286900}"
 EndProject
@@ -64,6 +64,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Async", "WPF_Async\WPF_Async.csproj", "{34043F04-B885-414D-8AE9-B64F1A5806BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Error", "WPF_Error\WPF_Error.csproj", "{7B9D1616-C987-467E-B54A-65C1E17BBE7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF4.0", "WPF4.0", "{A2610400-0E39-4E27-9B1B-FBF9E0073B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TextBox", "WPF_TextBox\WPF_TextBox.csproj", "{1E28AED6-6CCF-4755-A13F-34DE362D9040}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -385,8 +389,21 @@ Global
 		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7B9D1616-C987-467E-B54A-65C1E17BBE7B}.Release|x86.ActiveCfg = Release|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E28AED6-6CCF-4755-A13F-34DE362D9040} = {A2610400-0E39-4E27-9B1B-FBF9E0073B99}
 	EndGlobalSection
 EndGlobal
