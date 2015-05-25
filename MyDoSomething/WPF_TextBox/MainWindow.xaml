@@ -91,50 +91,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TextBoxBase}">
-                        <Border Name="Border"
-                CornerRadius="2"
-                Padding="2"
-                BorderThickness="1">
-                            <Border.Background>
-                                <SolidColorBrush Color="LightGoldenrodYellow" />
-                            </Border.Background>
-                            <Border.BorderBrush>
-                                <SolidColorBrush Color="LightGreen" />
-                            </Border.BorderBrush>
+                        <Grid Name="Grid" Background="Red">
                             <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="Disabled">
-                                        <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                                Storyboard.TargetProperty="(Panel.Background).
-                    (SolidColorBrush.Color)">
-                                                <EasingColorKeyFrame KeyTime="0"
-                                         Value="Lavender" />
-                                            </ColorAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="ReadOnly">
-                                        <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                                Storyboard.TargetProperty="(Panel.Background).
-                    (SolidColorBrush.Color)">
-                                                <EasingColorKeyFrame KeyTime="0"
-                                         Value="Lavender" />
-                                            </ColorAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
-                                                Storyboard.TargetProperty="(Border.BorderBrush).
-                    (SolidColorBrush.Color)">
-                                                <EasingColorKeyFrame KeyTime="0"
-                                         Value="#C0C0C0" />
-                                            </ColorAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
                                 <VisualStateGroup x:Name="FocusStates">
                                     <VisualState Name="Unfocused"/>
                                     <VisualState x:Name="Focused">
@@ -145,14 +103,76 @@
                                                 <EasingColorKeyFrame KeyTime="0"
                                          Value="Black" />
                                             </ColorAnimationUsingKeyFrames>
-                                            <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="(Border.Width)" From="100" To="200" Duration="0:0:1"  FillBehavior="HoldEnd" />
+                                            <DoubleAnimation Storyboard.TargetName="Grid" Storyboard.TargetProperty="(Grid.Width)" From="100" To="200" Duration="0:0:1"  FillBehavior="HoldEnd" />
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
+
                             </VisualStateManager.VisualStateGroups>
-                            <ScrollViewer Margin="0"
+                            <Border Name="Border"
+                CornerRadius="2"
+                Padding="2"
+                BorderThickness="1">
+                                <Border.Background>
+                                    <SolidColorBrush Color="LightGoldenrodYellow" />
+                                </Border.Background>
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="LightGreen" />
+                                </Border.BorderBrush>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                                    <EasingColorKeyFrame KeyTime="0"
+                                         Value="Lavender" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="ReadOnly">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                                    <EasingColorKeyFrame KeyTime="0"
+                                         Value="Lavender" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Border.BorderBrush).
+                    (SolidColorBrush.Color)">
+                                                    <EasingColorKeyFrame KeyTime="0"
+                                         Value="#C0C0C0" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <!--<VisualStateGroup x:Name="FocusStates">
+                                        <VisualState Name="Unfocused"/>
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Border.BorderBrush).
+                    (SolidColorBrush.Color)">
+                                                    <EasingColorKeyFrame KeyTime="0"
+                                         Value="Black" />
+                                                </ColorAnimationUsingKeyFrames>
+                                                <DoubleAnimation Storyboard.TargetName="Grid" Storyboard.TargetProperty="(Grid.ActualWidth)" From="100" To="200" Duration="0:0:1"  FillBehavior="HoldEnd" />
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>-->
+                                </VisualStateManager.VisualStateGroups>
+                                <ScrollViewer Margin="0"
                         x:Name="PART_ContentHost" />
-                        </Border>
+                            </Border>
+<Image Source="Imgs/search.png" Width="16" Height="16" HorizontalAlignment="Right"></Image>
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
