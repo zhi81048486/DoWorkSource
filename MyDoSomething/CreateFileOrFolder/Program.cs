@@ -11,12 +11,18 @@ namespace CreateFileOrFolder
         static void Main(string[] args)
         {
             //CreatFile();
-            CreatFolder();
+            //CreatFolder();     
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\QH360Pro\DelFolder";
+
+            DeleFolder(path);
+
+            Console.ReadKey();
         }
 
         static void CreatFile()
         {
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SettingColumn.xml");
+
             if (!File.Exists(path))
             {
                 System.IO.File.Create(path);
@@ -27,9 +33,9 @@ namespace CreateFileOrFolder
         {
             string folderName = @"E:\";
             string pathString = System.IO.Path.Combine(folderName, "SubFolder");
-           
+
             //创建目录
-            System.IO.Directory.CreateDirectory(pathString); 
+            System.IO.Directory.CreateDirectory(pathString);
             //string fileName = System.IO.Path.GetRandomFileName();
             string fileName = "Setting.xml";
 
@@ -72,5 +78,24 @@ namespace CreateFileOrFolder
             System.Console.ReadKey();
         }
 
+        static void DeleFolder(string strPath)
+        {
+            try
+            {
+                //判断文件夹路径是否存在
+              //if(Directory.Exists(strPath))
+                Directory.Delete(strPath, true);
+                if(!Directory.Exists(strPath))
+                    Console.Write("delete success!");
+                //DirectoryInfo di = new DirectoryInfo(strPath);
+                //di.Delete(true);
+                
+            }
+            catch (Exception ex)
+            {
+
+                Console.Write(ex.ToString());
+            }
+        }
     }
 }

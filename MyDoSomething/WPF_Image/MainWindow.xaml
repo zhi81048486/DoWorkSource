@@ -57,5 +57,6 @@
     </Window.Resources>
     <Grid>
         <ToggleButton Style="{StaticResource ToggleButton_PlanGroup_Style}"/>
+        <Label Content="some Label" Background="Red" Width="100" Height="30" Cursor="Arrow"/>
     </Grid>
 </Window>
