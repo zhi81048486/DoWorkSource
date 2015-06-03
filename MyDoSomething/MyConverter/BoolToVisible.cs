@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace MyConverter
 {
-    public class BoolToVisible :IValueConverter
+    public class BoolToVisible : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
@@ -37,7 +39,7 @@ namespace MyConverter
     }
 
 
-    public class BoolToCollapsed: IValueConverter
+    public class BoolToCollapsed : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
@@ -74,7 +76,7 @@ namespace MyConverter
             {
                 bool b = (bool)value;
                 if (b)
-                    return new Thickness(0,0,30,0);
+                    return new Thickness(0, 0, 30, 0);
                 else
                     return new Thickness(-3000, 0, 0, 0);
             }
@@ -86,4 +88,46 @@ namespace MyConverter
             return false;
         }
     }
+    public class BoolToReverseConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (null != value && value.GetType() == typeof(bool))
+            {
+                bool b = (bool)value;
+                return !b;
+            }
+            return false;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (null != value && value.GetType() == typeof(bool))
+            {
+                bool b = (bool)value;
+                return !b;
+            }
+            return false;
+        }
+    }
+
+    public class BoolToBackgroundConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (null != value && value.GetType() == typeof(bool))
+            {
+                bool b = (bool)value;
+                if (b)
+                 return   Brushes.Pink;
+            }
+            return Brushes.White;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+           return  null;
+        }
+    }
+
 }

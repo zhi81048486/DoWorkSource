@@ -9,6 +9,10 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Name="Panel"/>
-        <Label Grid.Row="1" Background="PowderBlue" VerticalAlignment="Center" Height="500"/>
+        <ToggleButton Name="TButton" Grid.Row="1" Height="50"/>
+        <Popup IsOpen="{Binding ElementName=TButton,Path=IsChecked}" PlacementTarget="{Binding TButton}">
+            <Label Background="Olive"></Label>
+        </Popup>
+        <StackPanel Grid.Row="2"></StackPanel>
     </Grid>
 </Window>

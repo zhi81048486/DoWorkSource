@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_TextBox", "WPF_TextBox\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_WindowSize", "WPF_WindowSize\WPF_WindowSize.csproj", "{D6394C79-FF7E-4974-B37E-6F45B6FC8B32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MultyControl", "WPF_MultyControl\WPF_MultyControl.csproj", "{80CFD13E-48D3-404A-9C5D-4EE23858BF28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -411,6 +413,16 @@ Global
 		{D6394C79-FF7E-4974-B37E-6F45B6FC8B32}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D6394C79-FF7E-4974-B37E-6F45B6FC8B32}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D6394C79-FF7E-4974-B37E-6F45B6FC8B32}.Release|x86.ActiveCfg = Release|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

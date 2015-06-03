@@ -9,7 +9,10 @@ namespace BasicCsharp
     class Program
     {
         static void Main(string[] args)
-        { }
+        {
+            object obj=new object();
+            int i = Convert.ToInt32(obj);
+        }
         //static void Main(string[] args)
         //{
         //    //string str = "First";
