@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_WindowSize", "WPF_Windo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MultyControl", "WPF_MultyControl\WPF_MultyControl.csproj", "{80CFD13E-48D3-404A-9C5D-4EE23858BF28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Brush", "WPF_Brush\WPF_Brush.csproj", "{55C336E1-561B-46F6-94ED-D1D0B7F0417C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -423,6 +425,16 @@ Global
 		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{80CFD13E-48D3-404A-9C5D-4EE23858BF28}.Release|x86.ActiveCfg = Release|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

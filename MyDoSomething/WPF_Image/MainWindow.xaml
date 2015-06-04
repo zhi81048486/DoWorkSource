@@ -57,5 +57,5 @@
     </Window.Resources>
     <Grid>
         <ToggleButton Style="{StaticResource ToggleButton_PlanGroup_Style}" Name="ToggleButton1" IsEnabled="{Binding ElementName=TogglePopup,Path=IsOpen}"/>
-    </Grid>
+       </Grid>
 </Window>

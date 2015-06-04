@@ -1,0 +1,89 @@
+﻿<Window x:Class="WPF_Brush.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="800">
+   <ScrollViewer>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="SolidColorBrush:"/>
+                <Label Name="Label1" Height="30" Width="100"/>
+                <Label Name="Label2" Height="30" Width="100" Background="PowderBlue"/>
+                <Label Name="Label3" Height="30" Width="100" Background="#314D34"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!--可以简单的总结为凡是可以使用SolidColorBrush的地方就可以使用LinearGradientBrush-->
+                <Label Content="LinearGradientBrush:"/>
+                <Label Name="Line1" Height="30" Width="100">
+                    <Label.Background>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="RosyBrown" Offset="0.1"/>
+                            <GradientStop Color="Green" Offset="0.3"/>
+                            <GradientStop Color="Blue" Offset="0.5"/>
+                            <GradientStop Color="Red" Offset="0.7"/>
+                            <GradientStop Color="Yellow" Offset="0.9"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+                <Label Name="Line2" Height="30" Width="200" Content="this is a label " FontSize="20">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="RosyBrown" Offset="0.1"/>
+                            <GradientStop Color="Green" Offset="0.3"/>
+                            <GradientStop Color="Blue" Offset="0.5"/>
+                            <GradientStop Color="Red" Offset="0.7"/>
+                            <GradientStop Color="Yellow" Offset="0.9"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Label Name="Line3" Height="30" Width="100" BorderThickness="1">
+                    <Label.BorderBrush>
+                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                            <GradientStop Color="RosyBrown" Offset="0.1"/>
+                            <GradientStop Color="Green" Offset="0.3"/>
+                            <GradientStop Color="Blue" Offset="0.5"/>
+                            <GradientStop Color="Red" Offset="0.7"/>
+                            <GradientStop Color="Yellow" Offset="0.9"/>
+                        </LinearGradientBrush>
+                    </Label.BorderBrush>
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="RadialGradientBrush"/>
+                <Ellipse Stroke="Black" StrokeThickness="1" Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="0.7,0.7" RadiusX="0.5" RadiusY="0.5">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="Blue" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Content="ImageBrush"/>
+                <Label Width="128" Height="128">
+                    <Label.Background>
+                        <ImageBrush ImageSource="Resources/CameraFront.png"/>
+                    </Label.Background>
+                </Label>
+            </StackPanel>
+            <Label Height="60" Width="60">
+                <Label.Background>
+                    <ImageBrush Viewbox="0.4,0.4 0.2,0.2">
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="/Resources/CameraFront.png"/>
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Label.Background>
+            </Label>
+            <Label Height="100" Width="100">
+                <Label.Background>
+                    <ImageBrush TileMode="Tile" Viewport="0,0 0.5,0.5">
+                        <ImageBrush.ImageSource>
+                            <BitmapImage UriSource="/Resources/user.png"/>
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
+                </Label.Background>
+            </Label>
+        </StackPanel>
+    </ScrollViewer> 
+</Window>
