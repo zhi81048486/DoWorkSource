@@ -50,7 +50,7 @@
            <Border BorderThickness="1" BorderBrush="Purple">
                 <DockPanel Background="#FFFFFF">
                     <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                        <TextBox DockPanel.Dock="Top" Width="100" Height="30" Name="TBox" KeyDown="TBox_OnKeyDown"/>
+                        <TextBox DockPanel.Dock="Top" Width="200" Height="30" Name="TBox" KeyDown="TBox_OnKeyDown"/>
                         <Button Content="搜索" Width="60" Height="25"/>
                     </StackPanel>
                     <ListView Name="ListView_Accounts" ItemTemplate="{StaticResource  ItemDataTemplate}"  Style="{x:Null}" ItemContainerStyle="{StaticResource ListViewItemStyle}" DockPanel.Dock="Top" BorderThickness="0" SelectionMode="Multiple">
