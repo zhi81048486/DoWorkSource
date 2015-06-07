@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseButtonEvent", "MouseButtonEvent\MouseButtonEvent.csproj", "{3527EC78-0C2C-451B-97A4-5C86EE286900}"
 EndProject
@@ -74,6 +74,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MultyControl", "WPF_MultyControl\WPF_MultyControl.csproj", "{80CFD13E-48D3-404A-9C5D-4EE23858BF28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Brush", "WPF_Brush\WPF_Brush.csproj", "{55C336E1-561B-46F6-94ED-D1D0B7F0417C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_CustomControls", "WPF_CustomControls\WPF_CustomControls.csproj", "{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -435,6 +437,16 @@ Global
 		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{55C336E1-561B-46F6-94ED-D1D0B7F0417C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

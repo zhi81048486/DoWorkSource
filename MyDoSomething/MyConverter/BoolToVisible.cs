@@ -130,4 +130,23 @@ namespace MyConverter
         }
     }
 
+    public class VisibilityToReverseConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (null != value && value.GetType() == typeof(Visibility))
+            {
+                Visibility visib = (Visibility)value;
+                Visibility result = visib == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+                return result;
+            }
+            return false;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
 }

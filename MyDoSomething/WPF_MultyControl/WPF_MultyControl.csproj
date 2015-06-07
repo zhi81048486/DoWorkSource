@@ -91,6 +91,10 @@
       <Project>{17c2d26d-ccf5-4b63-8126-ff1ecb5308d8}</Project>
       <Name>MyConverter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WPF_CustomControls\WPF_CustomControls.csproj">
+      <Project>{bfd2ec41-e5ff-47f3-b2bd-d83e7b77def7}</Project>
+      <Name>WPF_CustomControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

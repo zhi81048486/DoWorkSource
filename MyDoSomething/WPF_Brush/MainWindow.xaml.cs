@@ -37,5 +37,7 @@ namespace WPF_Brush
             //Argb设置颜色透明度，其中第一个参数是设置透明度的，255表示完全不透明，0表示完全透明
             Label1.Background = new SolidColorBrush(Color.FromArgb(255, red, green, blue));
         }
+
+       
     }
 }
