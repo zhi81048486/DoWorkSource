@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPF_ListView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ListView Name="LView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Column1" Width="100" DisplayMemberBinding="{Binding Column1}"></GridViewColumn>
+                    <GridViewColumn Header="Column2" Width="100" DisplayMemberBinding="{Binding Column2}"></GridViewColumn>
+                    <GridViewColumn Header="Column3" Width="100" DisplayMemberBinding="{Binding Column3}"></GridViewColumn>
+                    <GridViewColumn Header="Column4" Width="100" DisplayMemberBinding="{Binding Column4}"></GridViewColumn>
+                    <GridViewColumn Header="Column5" Width="100" DisplayMemberBinding="{Binding Column5}"></GridViewColumn>
+                    <GridViewColumn Header="Column6" Width="100" DisplayMemberBinding="{Binding Column6}"></GridViewColumn>
+                    <GridViewColumn Header="Column7" Width="100" DisplayMemberBinding="{Binding Column7}"></GridViewColumn>
+                    <GridViewColumn Header="Column8" Width="100" DisplayMemberBinding="{Binding Column8}"></GridViewColumn>
+                    <GridViewColumn Header="Column9" Width="100" DisplayMemberBinding="{Binding Column9}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
