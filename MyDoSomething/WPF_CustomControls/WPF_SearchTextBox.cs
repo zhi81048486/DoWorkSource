@@ -47,11 +47,11 @@ namespace WPF_CustomControls
             var con = vartp.FindName("Button_Close", this);
             Button bt = con as Button;
             bt.Click += close_Click;
-            Binding binding = new Binding("SearchValueProperty");
-            binding.Source = this.Text.Trim();
-            binding.Mode = BindingMode.TwoWay;
-            //BindingOperations.SetBinding(this, SearchValueProperty, binding);
-            this.SetBinding(SearchValueProperty, binding);
+            //Binding binding = new Binding("SearchValueProperty");
+            //binding.Source = this.Text.Trim();
+            //binding.Mode = BindingMode.TwoWay;
+            ////BindingOperations.SetBinding(this, SearchValueProperty, binding);
+            //this.SetBinding(SearchValueProperty, binding);
 
             base.OnApplyTemplate();
         }
