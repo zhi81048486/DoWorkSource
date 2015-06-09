@@ -24,8 +24,7 @@ namespace Attribute
             t.LastName = "Joe";
         }
 
-        
-
+        public string Socia { get; set; }
 
     }
    // [DebuggerDisplay("FirstName={FirstName},LastName={LastName}")]
