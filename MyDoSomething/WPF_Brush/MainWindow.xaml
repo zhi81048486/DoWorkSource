@@ -92,6 +92,18 @@
                     </Rectangle.Fill>
                 </Rectangle>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Background="RosyBrown">
+                <Button Name="Butt1" Content="I am a Button"  Margin="3" Padding="5" Background="RoyalBlue"/>
+                <Rectangle>
+                    <Rectangle.Fill>
+                        <VisualBrush>
+                           <VisualBrush.Visual>
+                                <Path Data="M3,3 13,13 M13,3 3,13" Stroke="#FFFFFF" StrokeThickness="1"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button Name="But" Content="I am a Button"  Margin="3" Width="100" Height="100">
                     <Button.Background>
