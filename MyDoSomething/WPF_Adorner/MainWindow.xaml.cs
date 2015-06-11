@@ -78,7 +78,7 @@ namespace WPF_Adorner
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            if (string.IsNullOrEmpty(this.Text.Trim()))
+            if (string.IsNullOrEmpty(this.Text.Trim())&&!string.IsNullOrEmpty(TipValue))
             {
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
                 layer.Add(new TextBoxTipAdorner(TipValue, this));
@@ -103,7 +103,7 @@ namespace WPF_Adorner
         protected override void OnLostFocus(RoutedEventArgs e)
         {
             base.OnLostFocus(e);
-            if (string.IsNullOrEmpty(this.Text.Trim()))
+            if (string.IsNullOrEmpty(this.Text.Trim()) &&!string.IsNullOrEmpty(TipValue))
             {
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
                 layer.Add(new TextBoxTipAdorner(TipValue, this));

@@ -41,6 +41,8 @@
     </Window.Resources>
     <StackPanel Background="Pink">
         <mytextbox:TextBoxWithTip TipValue="请输入信息" Width="100" Height="30" Margin="20"></mytextbox:TextBoxWithTip>
+        <mytextbox:TextBoxWithTip Width="100" Height="30" Margin="20"></mytextbox:TextBoxWithTip>
+
         <TextBox Width="100" Height="30" Name="MyTextBox" Margin="20"/>
         <TextBox Width="200" Height="60" Name="MyTextBox2"></TextBox>
         <control:WPF_SearchTextBox Width="200" Height="30"></control:WPF_SearchTextBox>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseButtonEvent", "MouseButtonEvent\MouseButtonEvent.csproj", "{3527EC78-0C2C-451B-97A4-5C86EE286900}"
 EndProject
@@ -78,6 +78,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_CustomControls", "WPF_CustomControls\WPF_CustomControls.csproj", "{BFD2EC41-E5FF-47F3-B2BD-D83E7B77DEF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_ListView", "WPF_ListView\WPF_ListView.csproj", "{93A5B1A3-BA5C-48D2-B27C-5B3429C835E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_ListBox", "WPF_ListBox\WPF_ListBox.csproj", "{A790AA54-ACE3-40FF-B454-275A22955E64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -459,6 +461,16 @@ Global
 		{93A5B1A3-BA5C-48D2-B27C-5B3429C835E0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{93A5B1A3-BA5C-48D2-B27C-5B3429C835E0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{93A5B1A3-BA5C-48D2-B27C-5B3429C835E0}.Release|x86.ActiveCfg = Release|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A790AA54-ACE3-40FF-B454-275A22955E64}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
