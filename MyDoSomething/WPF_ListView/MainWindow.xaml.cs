@@ -33,7 +33,7 @@ namespace WPF_ListView
         private List<LViewSource> GetSource()
         {
             List<LViewSource> lists = new List<LViewSource>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 800000; i++)
             {
                 lists.Add(new LViewSource()
                 {

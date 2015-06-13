@@ -78,7 +78,7 @@ namespace WPF_Adorner
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            if (string.IsNullOrEmpty(this.Text.Trim())&&!string.IsNullOrEmpty(TipValue))
+            if (string.IsNullOrEmpty(this.Text.Trim()) && !string.IsNullOrEmpty(TipValue))
             {
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
                 layer.Add(new TextBoxTipAdorner(TipValue, this));
@@ -103,13 +103,15 @@ namespace WPF_Adorner
         protected override void OnLostFocus(RoutedEventArgs e)
         {
             base.OnLostFocus(e);
-            if (string.IsNullOrEmpty(this.Text.Trim()) &&!string.IsNullOrEmpty(TipValue))
+            if (string.IsNullOrEmpty(this.Text.Trim()) && !string.IsNullOrEmpty(TipValue))
             {
                 AdornerLayer layer = AdornerLayer.GetAdornerLayer(this);
                 layer.Add(new TextBoxTipAdorner(TipValue, this));
             }
         }
     }
+    //Adorner 的父级为 AdornerLayer，它呈现的是 Adorner，而不是正在装饰的元素。
+    //放置在装饰器层中的所有内容均呈现在您已设置的任何其余样式的顶部。 也就是说，装饰器始终以可见的方式位于顶部，无法使用 z 顺序重写。
     public class TextBoxTipAdorner : Adorner
     {
         public string Str_Tips { get; set; }

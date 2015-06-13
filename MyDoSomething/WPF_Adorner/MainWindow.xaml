@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:control="clr-namespace:WPF_CustomControls;assembly=WPF_CustomControls"
     xmlns:mytextbox="clr-namespace:WPF_Adorner"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="600">
     <Window.Resources>
         <Style TargetType="{x:Type control:WPF_SearchTextBox}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
@@ -40,11 +40,9 @@
 
     </Window.Resources>
     <StackPanel Background="Pink">
-        <mytextbox:TextBoxWithTip TipValue="请输入信息" Width="100" Height="30" Margin="20"></mytextbox:TextBoxWithTip>
-        <mytextbox:TextBoxWithTip Width="100" Height="30" Margin="20"></mytextbox:TextBoxWithTip>
-
+        <mytextbox:TextBoxWithTip TipValue="请输入信息" Width="100" Height="30" Margin="20"/>
         <TextBox Width="100" Height="30" Name="MyTextBox" Margin="20"/>
-        <TextBox Width="200" Height="60" Name="MyTextBox2"></TextBox>
-        <control:WPF_SearchTextBox Width="200" Height="30"></control:WPF_SearchTextBox>
+        <TextBox Width="200" Height="60" Name="MyTextBox2"/>
+        <control:WPF_SearchTextBox Width="200" Height="30"/>
     </StackPanel>
 </Window>
