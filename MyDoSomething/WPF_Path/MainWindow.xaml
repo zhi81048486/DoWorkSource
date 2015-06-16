@@ -1,8 +1,34 @@
 ﻿<Window x:Class="WPF_Path.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="650">
+    <Window.Resources>
+        <GeometryGroup x:Key="Group">
+            <RectangleGeometry Rect="0,0 100,30"/>
+            <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+        </GeometryGroup>
+    </Window.Resources>
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Left">
+            <Label Content="Path相关操作"/>
+            <Rectangle Width="100" Height="30" Fill="PowderBlue"/>
+            <!--path的data可以使用很多Geometry对象，来画出图形-->
+            <Path Fill="Yellow" Margin="10,10">
+                <Path.Data>
+                    <RectangleGeometry  Rect="0,0,100,30"/>
+                </Path.Data>
+            </Path>
+            
+            <Label Content="组合GeometryGroup"/>
+            <Path Fill="RosyBrown">
+                <Path.Data>
+                    <GeometryGroup>
+                        <RectangleGeometry Rect="0,0 100,30"/>
+                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+                    </GeometryGroup>
+                </Path.Data>
+            </Path>
+            <Path Margin="0,10" Data="{StaticResource Group}" Fill="Salmon"></Path>
+        </StackPanel>
     </Grid>
 </Window>
