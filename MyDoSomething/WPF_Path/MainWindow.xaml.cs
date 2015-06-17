@@ -22,6 +22,7 @@ namespace WPF_Path
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

@@ -2,115 +2,140 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="500" Width="650">
-    <Window.Resources>
-        <GeometryGroup x:Key="clipGeometry" FillRule="Nonzero">
-            <EllipseGeometry RadiusX="75" RadiusY="50" Center="100,150"/>
-            <EllipseGeometry RadiusX="100" RadiusY="25" Center="200,150"/>
-            <EllipseGeometry RadiusX="75" RadiusY="130" Center="140,140"/>
-        </GeometryGroup>
-    </Window.Resources>
-    <Grid>
-        <ScrollViewer>
-            <StackPanel Margin="0,0,0,50">
-                <Grid>
-                    <Label Content="this is a Label" Margin="0,30"></Label>
-                    <Path Fill="Yellow" >
-                        <Path.Data>
-                            <!--FillRule属性会对交叉区域进行设置，是否填充改区域，还是空出改区域-->
-                            <GeometryGroup FillRule="EvenOdd">
-                                <EllipseGeometry Center="50,45" RadiusX="20" RadiusY="20"/>
-                                <RectangleGeometry Rect="0,20,100,50"/>
-                            </GeometryGroup>
-                        </Path.Data>
-                    </Path>
-                </Grid>
-                <Path Stroke="Purple">
-                    <Path.Data>
-                        <!--CombinedGeometry 要比GeometryGroup对象要高级点。并且有更多的重叠属性设置，但是只有两个子对象，Geometry1和Geometry2-->
-                        <!--Union表示创建两个图形形成的所有区域-->
-                        <!--Intersect表示包含两个图形共有的公共区域的图形-->
-                        <!--Union表示创建两个图形形成的所有区域-->
-                        <!--Xor表示创建去掉两个图形的公共区域的剩下的区域图形-->
-                        <!--Exclude表示创意第一个图形的区域，但是不包含第二个图形的区域-->
-                        <CombinedGeometry GeometryCombineMode="Exclude">
-                            <CombinedGeometry.Geometry1>
-                                <RectangleGeometry Rect="0,20,100,30"/>
-                            </CombinedGeometry.Geometry1>
-                            <CombinedGeometry.Geometry2>
-                                <EllipseGeometry Center="20,30" RadiusX="20" RadiusY="30"/>
-                            </CombinedGeometry.Geometry2>
-                        </CombinedGeometry>
-                    </Path.Data>
-                </Path>
+  <Window.Resources>
+    <GeometryGroup x:Key="Group">
+      <RectangleGeometry Rect="0,0 100,30"/>
+      <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+    </GeometryGroup>
+    <GeometryGroup x:Key="clipGeometry" FillRule="Nonzero">
+      <EllipseGeometry RadiusX="75" RadiusY="50" Center="100,150"/>
+      <EllipseGeometry RadiusX="100" RadiusY="25" Center="200,150"/>
+      <EllipseGeometry RadiusX="75" RadiusY="130" Center="140,140"/>
+    </GeometryGroup>
+  </Window.Resources>
+  <Grid>
+    <ScrollViewer>
+      <StackPanel Margin="0,0,0,50">
+        <Grid>
+          <Label Content="this is a Label" Margin="0,30"></Label>
+          <Path Fill="Yellow" >
+            <Path.Data>
+              <!--FillRule属性会对交叉区域进行设置，是否填充改区域，还是空出改区域-->
+              <GeometryGroup FillRule="EvenOdd">
+                <EllipseGeometry Center="50,45" RadiusX="20" RadiusY="20"/>
+                <RectangleGeometry Rect="0,20,100,50"/>
+              </GeometryGroup>
+            </Path.Data>
+          </Path>
+        </Grid>
+        <Path Stroke="Purple">
+          <Path.Data>
+            <!--CombinedGeometry 要比GeometryGroup对象要高级点。并且有更多的重叠属性设置，但是只有两个子对象，Geometry1和Geometry2-->
+            <!--Union表示创建两个图形形成的所有区域-->
+            <!--Intersect表示包含两个图形共有的公共区域的图形-->
+            <!--Union表示创建两个图形形成的所有区域-->
+            <!--Xor表示创建去掉两个图形的公共区域的剩下的区域图形-->
+            <!--Exclude表示创意第一个图形的区域，但是不包含第二个图形的区域-->
+            <CombinedGeometry GeometryCombineMode="Exclude">
+              <CombinedGeometry.Geometry1>
+                <RectangleGeometry Rect="0,20,100,30"/>
+              </CombinedGeometry.Geometry1>
+              <CombinedGeometry.Geometry2>
+                <EllipseGeometry Center="20,30" RadiusX="20" RadiusY="30"/>
+              </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+          </Path.Data>
+        </Path>
 
 
-                <Path Fill="Orange" Stroke="Blue">
-                    <Path.Data>
-                        <CombinedGeometry GeometryCombineMode="Union">
-                            <CombinedGeometry.Geometry1>
-                                <CombinedGeometry GeometryCombineMode="Exclude">
-                                    <CombinedGeometry.Geometry1>
-                                        <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
-                                    </CombinedGeometry.Geometry1>
-                                    <CombinedGeometry.Geometry2>
-                                        <EllipseGeometry Center="50,50" RadiusX="40" RadiusY="40"/>
-                                    </CombinedGeometry.Geometry2>
-                                </CombinedGeometry>
-                            </CombinedGeometry.Geometry1>
-                            <CombinedGeometry.Geometry2>
-                                <RectangleGeometry Rect="44,5 10,90">
-                                    <RectangleGeometry.Transform>
-                                        <RotateTransform Angle="45" CenterX="50" CenterY="50"/>
-                                    </RectangleGeometry.Transform>
-                                </RectangleGeometry>
-                            </CombinedGeometry.Geometry2>
-                        </CombinedGeometry>
+        <Path Fill="Orange" Stroke="Blue">
+          <Path.Data>
+            <CombinedGeometry GeometryCombineMode="Union">
+              <CombinedGeometry.Geometry1>
+                <CombinedGeometry GeometryCombineMode="Exclude">
+                  <CombinedGeometry.Geometry1>
+                    <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                  </CombinedGeometry.Geometry1>
+                  <CombinedGeometry.Geometry2>
+                    <EllipseGeometry Center="50,50" RadiusX="40"                             RadiusY="40"/>
+                  </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+              </CombinedGeometry.Geometry1>
+              <CombinedGeometry.Geometry2>
+                <RectangleGeometry Rect="44,5 10,90">
+                  <RectangleGeometry.Transform>
+                    <RotateTransform Angle="45" CenterX="50" CenterY="50"/>
+                  </RectangleGeometry.Transform>
+                </RectangleGeometry>
+              </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
 
-                    </Path.Data>
-                </Path>
-                <!--PathGeometry是比之前都强大的对象，可以绘制各种图形,每个PathGeometry对象都是由一个或多个PathFigure对象构建的。（存储在PathGeometry.Figures集合中。）-->
-                <Path Stroke="Salmon">
-                    <Path.Data>
-                        <PathGeometry>
-                            <PathFigure IsClosed="True" StartPoint="10,100">
-                                <LineSegment Point="100,100"/>
-                                <LineSegment Point="100,50"/>
-                            </PathFigure>
-                        </PathGeometry>
-                    </Path.Data>
-                </Path>
+          </Path.Data>
+        </Path>
+        <!--PathGeometry是比之前都强大的对象，可以绘制各种图形,每个PathGeometry对象都是由一个或多个PathFigure对象构建的。（存储在PathGeometry.Figures集合中。）-->
+        <Path Stroke="Salmon">
+          <Path.Data>
+            <PathGeometry>
+              <PathFigure IsClosed="True" StartPoint="10,100">
+                <LineSegment Point="100,100"/>
+                <LineSegment Point="100,50"/>
+              </PathFigure>
+            </PathGeometry>
+          </Path.Data>
+        </Path>
 
-                <Path Stroke="Blue" StrokeThickness="2">
-                    <Path.Data>
-                        <PathGeometry>
-                            <PathFigure IsClosed="False" StartPoint="1,50">
-                                <!--IsLargeArc是指圆的大圆弧还是小圆弧-->
-                                <!--SweepDirection指示从起点到终点是先向上弯曲，还是先向下弯曲-->
-                                <ArcSegment Point="200,50" Size="200,300" IsLargeArc="False" SweepDirection="Clockwise"/>
-                            </PathFigure>
-                        </PathGeometry>
-                    </Path.Data>
-                </Path>
+        <Path Stroke="Blue" StrokeThickness="2">
+          <Path.Data>
+            <PathGeometry>
+              <PathFigure IsClosed="False" StartPoint="1,50">
+                <!--IsLargeArc是指圆的大圆弧还是小圆弧-->
+                <!--SweepDirection指示从起点到终点是先向上弯曲，还是先向下弯曲-->
+                <ArcSegment Point="200,50" Size="200,300" IsLargeArc="False" SweepDirection="Clockwise"/>
+              </PathFigure>
+            </PathGeometry>
+          </Path.Data>
+        </Path>
 
-                <!--贝塞尔曲线有起点，终点，两个控制点就可以创造各种光滑的曲线,在起点，贝塞尔曲线和从第一个控制点到起点之间的直线相切。在终点，贝塞尔曲线和链接终点与最后一个点的直线相切，弯曲程度由到两个控制点的距离决定。比较难，多用于工具输出-->
+        <!--贝塞尔曲线有起点，终点，两个控制点就可以创造各种光滑的曲线,在起点，贝塞尔曲线和从第一个控制点到起点之间的直线相切。在终点，贝塞尔曲线和链接终点与最后一个点的直线相切，弯曲程度由到两个控制点的距离决定。比较难，多用于工具输出-->
 
-                <!--这样使用微语言创建的几何图形，实际上是创建了StreamGeometry对象，而不是PathGeometry对象。因此，以后在代码中不能修改图形。但是如果要修改图形的话可以显式的创建PathGeometry对象，使用相同的语法定义其PathFigure对象-->
-                <Path Stroke="DarkKhaki" Data="M 10,100 L 100,100 L 100,50 Z"></Path>
-                <Path Stroke="Black">
-                    <Path.Data>
-                        <PathGeometry Figures="M 10,100 L 100,100 L100,50 Z"/>
-                    </Path.Data>
-                </Path>
+        <!--这样使用微语言创建的几何图形，实际上是创建了StreamGeometry对象，而不是PathGeometry对象。因此，以后在代码中不能修改图形。但是如果要修改图形的话可以显式的创建PathGeometry对象，使用相同的语法定义其PathFigure对象-->
+        <Path Stroke="DarkKhaki" Data="M 10,100 L 100,100 L 100,50 Z"></Path>
+        <Path Stroke="Black">
+          <Path.Data>
+            <PathGeometry Figures="M 10,100 L 100,100 L100,50 Z"/>
+          </Path.Data>
+        </Path>
 
-                <Button Clip="{StaticResource clipGeometry}" Content="I am a button"/>
-                <Image Source="Resources/car.png" Clip="{StaticResource clipGeometry}" Stretch="None"/>
-                <!--A标识开始描绘圆弧，50,50,两个大小值（x,y），1是否为大圆弧（1为是，0为否),1,1表示正负角度标记，最后两个表示结束点-->
-                <Path Data="M 0 -10 A 50 50 1 1 1 -0.01 -10" StrokeThickness="2" Stroke="Black" HorizontalAlignment="Center"/>
-                <Canvas Width="200" Height="200" HorizontalAlignment="Center" >
-                    <Path Data="M 0 -90 A 90 90 0 1 1 -0.01 -90" StrokeThickness="6" Stroke="Black" StrokeDashCap="Round"      StrokeDashArray="0 7.854"/>
-                </Canvas>
-            </StackPanel>
-        </ScrollViewer>
+        <Button Clip="{StaticResource clipGeometry}" Content="I am a button"/>
+        <Image Source="Resources/car.png" Clip="{StaticResource clipGeometry}" Stretch="None"/>
+        <!--A标识开始描绘圆弧，50,50,两个大小值（x,y），1是否为大圆弧（1为是，0为否),1,1表示正负角度标记，最后两个表示结束点-->
+        <Path Data="M 0 -10 A 50 50 1 1 1 -0.01 -10" StrokeThickness="2" Stroke="Black" HorizontalAlignment="Center"/>
+        <Canvas Width="200" Height="200" HorizontalAlignment="Center" >
+          <Path Data="M 0 -90 A 90 90 0 1 1 -0.01 -90" StrokeThickness="6" Stroke="Black" StrokeDashCap="Round"      StrokeDashArray="0 7.854"/>
+        </Canvas>
+        <Label Content="Path相关操作"/>
+        <Rectangle Width="100" Height="30" Fill="PowderBlue"/>
+        <!--path的data可以使用很多Geometry对象，来画出图形-->
+        <Path Fill="Yellow" Margin="10,10">
+          <Path.Data>
+            <RectangleGeometry  Rect="0,0,100,30"/>
+          </Path.Data>
+        </Path>
 
-    </Grid>
+        <Label Content="组合GeometryGroup"/>
+        <Path Fill="RosyBrown">
+          <Path.Data>
+            <GeometryGroup>
+              <RectangleGeometry Rect="0,0 100,30"/>
+              <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50" />
+            </GeometryGroup>
+          </Path.Data>
+        </Path>
+        <Path Margin="0,10" Data="{StaticResource Group}" Fill="Salmon"></Path>
+      </StackPanel>
+
+
+    </ScrollViewer>
+
+  </Grid>
 </Window>
