@@ -53,7 +53,7 @@
                                         <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
                                     </CombinedGeometry.Geometry1>
                                     <CombinedGeometry.Geometry2>
-                                        <EllipseGeometry Center="50,50" RadiusX="40"                             RadiusY="40"/>
+                                        <EllipseGeometry Center="50,50" RadiusX="40" RadiusY="40"/>
                                     </CombinedGeometry.Geometry2>
                                 </CombinedGeometry>
                             </CombinedGeometry.Geometry1>
