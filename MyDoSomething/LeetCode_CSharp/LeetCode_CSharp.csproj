@@ -46,6 +46,8 @@
     <Compile Include="BestTimeToBuyAndSellStock2.cs" />
     <Compile Include="BestTimeToBuyAndSellStock3.cs" />
     <Compile Include="Candy.cs" />
+    <Compile Include="ClimbingStairs.cs" />
+    <Compile Include="CombinationSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

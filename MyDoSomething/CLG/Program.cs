@@ -9,7 +9,7 @@ using LeetCode_CSharp;
 
 namespace CLG
 {
-    class  MYClass
+    class MYClass
     {
         public string name { get; set; }
     }
@@ -23,12 +23,18 @@ namespace CLG
             //{
             //    Console.WriteLine(n);
             //}
-            BestTimeToBuyAndSellStock3 stock3 = new BestTimeToBuyAndSellStock3();
-            int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8,200};
-           // stock3.maxProfit(money);
-            int[] rating = new[] {1, 2, 6, 4, 5,3, 8, 10};
-            Candy candy=new Candy();
-            candy.candy(rating);
+            // BestTimeToBuyAndSellStock3 stock3 = new BestTimeToBuyAndSellStock3();
+            // int[] money = new int[] {10,20,5,20,4,10,9,100,9,30,8,200};
+            //// stock3.maxProfit(money);
+            // int[] rating = new[] {1, 2, 6, 4, 5,3, 8, 10};
+            // Candy candy=new Candy();
+            // candy.candy(rating);
+            int[] arr = new[] { 2, 9, 3, 4, 7, 5, 1, 30 };
+            int target = 8;
+            int[] arr2 = new[] {2, 3, 6, 7};
+            int target2 = 7;
+            CombinationSum cs = new CombinationSum();
+            cs.combinationSum(arr, target);
             Console.ReadKey();
         }
         static void DoSort()

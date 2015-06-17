@@ -22,6 +22,12 @@ namespace WPF_Error
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            CollectionOperation();
         }
 
         #region 字段初始值设定无法引用非静态的字段，方法，属性
@@ -47,6 +53,40 @@ namespace WPF_Error
         //    someDel _someDel = method;
         //} 
         //#endregion
+
+        #endregion
+
+
+
+        #region 集合删除异常
+        void CollectionOperation()
+        {
+            List<string> lists = new List<string>();
+            for (int i = 0; i < 100; i++)
+            {
+                lists.Add("string" + i);
+            }
+            try
+            {
+                //foreach (string str in lists)
+                //{
+                //    if (str.Contains("0"))
+                //        lists.Remove(str);
+                //}
+                for (int i = 0; i < lists.Count; i++)
+                {
+                    if (lists[i].Contains("0"))
+                        lists.Remove(lists[i]);
+                    
+                }
+               Tbox.Text= lists.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                Tbox.Text = ex.ToString();
+            }
+        }
+        
         #endregion
     }
 }

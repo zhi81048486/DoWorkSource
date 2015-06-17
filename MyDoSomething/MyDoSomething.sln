@@ -83,6 +83,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_ListBox", "WPF_ListBox\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Path", "WPF_Path\WPF_Path.csproj", "{98C8D475-BB70-430B-AAF9-5553ED7A4A37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Event", "WPF_Event\WPF_Event.csproj", "{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -483,6 +485,16 @@ Global
 		{98C8D475-BB70-430B-AAF9-5553ED7A4A37}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{98C8D475-BB70-430B-AAF9-5553ED7A4A37}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{98C8D475-BB70-430B-AAF9-5553ED7A4A37}.Release|x86.ActiveCfg = Release|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{45FEAE1E-13B1-4B56-B96E-DCEB0B8A31F4}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
