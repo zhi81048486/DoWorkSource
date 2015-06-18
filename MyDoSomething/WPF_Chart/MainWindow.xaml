@@ -1,0 +1,9 @@
+﻿<Window x:Class="WPF_Chart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chart="clr-namespace:WPF_Chart"
+        Title="MainWindow" Height="500" Width="600">
+    <Grid>
+        <chart:WPF_Graph Width="500" Height="300" x:Name="chartview"/>
+    </Grid>
+</Window>
