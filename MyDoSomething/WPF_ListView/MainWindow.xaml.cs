@@ -53,9 +53,15 @@ namespace WPF_ListView
 
 
     }
-
     public class LViewSource
     {
+        one o;
+
+        public LViewSource()
+        {
+            string path = System.Environment.CurrentDirectory;
+            o.str = path;
+        }
         public string Column1 { get; set; }
         public string Column2 { get; set; }
         public string Column3 { get; set; }
@@ -65,5 +71,10 @@ namespace WPF_ListView
         public string Column7 { get; set; }
         public string Column8 { get; set; }
 
+    }
+
+    public class one
+    {
+        public string str { get; set; }
     }
 }
