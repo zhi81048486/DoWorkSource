@@ -32,7 +32,9 @@ namespace WPF_Chart
             chartview.Rows = 5;
 
            chartview.HValue=new List<string>(){"周一","周二","周三","周四","周五","周六","周日"};
-            chartview.VValue=new List<string>(){"50","40","30","20","10","0"};
+          //  chartview.VValue=new List<string>(){"50","40","30","20","10","0"};
+            chartview.VValue_MaxValue = 50;
+            chartview.VValue_InterValue = 10;
         }
     }
 }

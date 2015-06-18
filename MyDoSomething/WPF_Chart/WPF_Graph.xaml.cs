@@ -38,7 +38,7 @@ namespace WPF_Chart
             set
             {
                 _rows = value;
-                chart_rows = Rows + 1;
+                chart_rows = Rows;
             }
 
         }
@@ -48,18 +48,54 @@ namespace WPF_Chart
         public List<string> HValue { get; set; }
         public List<string> VValue { get; set; }
 
+        /// <summary>
+        /// 横坐标最大值
+        /// </summary>
+        public int HValue_MaxValue { get; set; }
+        /// <summary>
+        /// 横坐标最小值
+        /// </summary>
+        public int HValue_MinValue { get; set; }
+        /// <summary>
+        /// 水平间隔值
+        /// </summary>
+        public int HValue_InterValue { get; set; }
+
+        /// <summary>
+        /// 竖坐标最大值
+        /// </summary>
+        public int VValue_MaxValue { get; set; }
+        /// <summary>
+        /// 竖坐标最小值
+        /// </summary>
+        public int VValue_MinValue { get; set; }
+        /// <summary>
+        /// 竖坐标间隔值
+        /// </summary>
+        public int VValue_InterValue { get; set; }
+
         private Label[,] labels;
         public WPF_Graph()
         {
             InitializeComponent();
+            if (null == VValue)
+                VValue = new List<string>();
             this.Loaded += WPF_Graph_Loaded;
         }
 
+        private double _width;
+        private double _height;
+
+      
+
         void WPF_Graph_Loaded(object sender, RoutedEventArgs e)
         {
+            SetColumnsAndRows();
+            GetWidthAndHeight();
+            Set_HV_Value();
             LoadData();
-            double h = this.ActualHeight/chart_rows;
-            double w = this.ActualWidth/chart_columns;
+            double h = this.ActualHeight / chart_rows;
+            double w = this.ActualWidth / chart_columns;
             labels = new Label[chart_rows, chart_columns];
 
             ChartGrid.Rows = chart_rows;
@@ -87,35 +123,36 @@ namespace WPF_Chart
                         };
                     }
 
-                    if (i == chart_rows - 1 || j == 0)
-                        labels[i, j] = new Label() { Background = Brushes.White, HorizontalContentAlignment = HorizontalAlignment.Right, VerticalContentAlignment = VerticalAlignment.Top, Padding = new Thickness(0) };
+                    //if (i == chart_rows - 1 || j == 0)
+                    //    labels[i, j] = new Label() { Background = Brushes.White, HorizontalContentAlignment = HorizontalAlignment.Right, VerticalContentAlignment = VerticalAlignment.Top, Padding = new Thickness(0) };
                     ChartGrid.Children.Add(labels[i, j]);
 
-                    if (i == chart_rows - 1)
-                    {
-                        //labels[i, j].Background = Brushes.Red;
-                        labels[i, j].Content = HValue[j];
-                    }
+                    //if (i == chart_rows - 1)
+                    //{
+                    //    labels[i, j].Background = Brushes.Red;
+                    //    labels[i,j].Margin=new Thickness(30,0,0,0);
+                    //    labels[i, j].Content = HValue[j];
+                    //}
 
-                    if (j == 0)
-                    {
-                        if (i == chart_rows - 2)
-                        {
-                            StackPanel sp = new StackPanel();
-                          //  sp.Background = Brushes.Red;
-                            sp.Children.Add(new Label() { Content = VValue[i],Padding = new Thickness(0),VerticalAlignment = VerticalAlignment.Top});
-                            sp.Children.Add(new Label() { Content = VValue[i + 1] ,VerticalAlignment = VerticalAlignment.Bottom,Margin =new Thickness(0,10,0,0)});
-                            labels[i,j].Padding=new Thickness(0);
-                           // labels[i, j].Background = Brushes.Yellow;
-                            labels[i, j].Content = sp;
-                        }
-                        else if (i == chart_rows - 1)
-                        {
+                    //if (j == 0)
+                    //{
+                    //    if (i == chart_rows - 2)
+                    //    {
+                    //        StackPanel sp = new StackPanel();
+                    //        //  sp.Background = Brushes.Red;
+                    //        sp.Children.Add(new Label() { Content = VValue[i], Padding = new Thickness(0), VerticalAlignment = VerticalAlignment.Top });
+                    //        sp.Children.Add(new Label() { Content = VValue[i + 1], VerticalAlignment = VerticalAlignment.Bottom, Margin = new Thickness(0, 10, 0, 0) });
+                    //        labels[i, j].Padding = new Thickness(0);
+                    //        // labels[i, j].Background = Brushes.Yellow;
+                    //        labels[i, j].Content = sp;
+                    //    }
+                    //    else if (i == chart_rows - 1)
+                    //    {
 
-                        }
-                        else
-                            labels[i, j].Content = VValue[i];
-                    }
+                    //    }
+                    //    else
+                    //        labels[i, j].Content = VValue[i];
+                    //}
 
                 }
             }
@@ -140,10 +177,38 @@ namespace WPF_Chart
             //}
             //ChartGrid.Children.Add(new Label() { Background = Brushes.Salmon, BorderThickness = new Thickness(0.5), BorderBrush = Brushes.Black, Width = this.ActualWidth / 7, Height = this.ActualHeight / 5 });
         }
+        void GetWidthAndHeight()
+        {
+            _width = this.ChartGrid.ActualWidth / Columns;
+            _height = this.ChartGrid.ActualHeight / Rows;
+        }
+
+
+        void SetColumnsAndRows()
+        {
+            _rows = VValue_MaxValue / VValue_InterValue;
+            for (int i = Rows; i >= 0; i--)
+            {
+                VValue.Add(Convert.ToString(i * VValue_InterValue));
+            }
+        }
+
+        void Set_HV_Value()
+        {
+            for (int i = 0; i < Rows; i++)
+            {
+                VPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = VValue[i] });
+            }
+            for (int i = 0; i < Columns; i++)
+            {
+                HPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = HValue[i],HorizontalContentAlignment = HorizontalAlignment.Right});
+            }
+
+        }
 
         void LoadData()
         {
-            Ellipse e=new Ellipse(){Width = 10,Height = 10,Fill = Brushes.RoyalBlue};
+            Ellipse e = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.RoyalBlue };
             Canvas.SetLeft(e, 100); Canvas.SetTop(e, 100);
             MyCanvas.Children.Add(e);
         }

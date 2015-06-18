@@ -6,10 +6,20 @@
              mc:Ignorable="d" 
              Name="uc"
              d:DesignHeight="300" d:DesignWidth="300" Background="#FFFFFF">
-    <Border>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
         <Canvas Name="MyCanvas">
-            <UniformGrid Name="ChartGrid" Width="400" Height="300">
-            </UniformGrid>
-        </Canvas>
-    </Border>
+                <UniformGrid Name="ChartGrid" Width="400" Height="300">
+                </UniformGrid>
+            </Canvas>
+            <StackPanel Name="VPanel" Grid.Row="0" Grid.Column="0" Background="RosyBrown" Width="60"/>
+            <StackPanel Name="HPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Background="RosyBrown" Height="60" Orientation="Horizontal"/>
+        </Grid>
 </UserControl>
