@@ -86,7 +86,7 @@ namespace WPF_Chart
         private double _width;
         private double _height;
 
-      
+
 
         void WPF_Graph_Loaded(object sender, RoutedEventArgs e)
         {
@@ -179,8 +179,8 @@ namespace WPF_Chart
         }
         void GetWidthAndHeight()
         {
-            _width = this.ChartGrid.ActualWidth / Columns;
-            _height = this.ChartGrid.ActualHeight / Rows;
+            _width = (this.ChartGrid.ActualWidth / Columns);
+            _height = (this.ChartGrid.ActualHeight / Rows) - 5;
         }
 
 
@@ -195,15 +195,14 @@ namespace WPF_Chart
 
         void Set_HV_Value()
         {
-            for (int i = 0; i < Rows; i++)
+            for (int i = 0; i <= Rows; i++)
             {
-                VPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = VValue[i] });
+                VPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = VValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.Red});
             }
-            for (int i = 0; i < Columns; i++)
+            for (int i = 0; i < Columns+1; i++)
             {
-                HPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = HValue[i],HorizontalContentAlignment = HorizontalAlignment.Right});
+                HPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = HValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.Yellow});
             }
-
         }
 
         void LoadData()

@@ -28,7 +28,7 @@ namespace WPF_Chart
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            chartview.Columns = 7;
+            chartview.Columns = 6;
             chartview.Rows = 5;
 
            chartview.HValue=new List<string>(){"周一","周二","周三","周四","周五","周六","周日"};
