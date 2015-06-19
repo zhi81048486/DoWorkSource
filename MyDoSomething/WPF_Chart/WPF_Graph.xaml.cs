@@ -65,6 +65,7 @@ namespace WPF_Chart
         /// 竖坐标最大值
         /// </summary>
         public int VValue_MaxValue { get; set; }
+
         /// <summary>
         /// 竖坐标最小值
         /// </summary>
@@ -177,6 +178,8 @@ namespace WPF_Chart
             //}
             //ChartGrid.Children.Add(new Label() { Background = Brushes.Salmon, BorderThickness = new Thickness(0.5), BorderBrush = Brushes.Black, Width = this.ActualWidth / 7, Height = this.ActualHeight / 5 });
         }
+
+
         void GetWidthAndHeight()
         {
             _width = (this.ChartGrid.ActualWidth / Columns);

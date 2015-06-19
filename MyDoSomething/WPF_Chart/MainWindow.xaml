@@ -4,6 +4,6 @@
         xmlns:chart="clr-namespace:WPF_Chart"
         Title="MainWindow" Height="500" Width="600">
     <Grid>
-        <chart:WPF_Graph Width="500" Height="400" x:Name="chartview"/>
+        <chart:WPF_Graph Width="600" Height="400" x:Name="chartview"/>
     </Grid>
 </Window>
