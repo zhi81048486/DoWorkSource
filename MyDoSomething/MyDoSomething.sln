@@ -87,6 +87,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Event", "WPF_Event\WPF_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Chart", "WPF_Chart\WPF_Chart.csproj", "{4F47457D-BD77-4E11-9CF5-C69319BF8FB8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyWCF", "MyWCF", "{50E004A1-D593-448A-85C8-66A35E0BA4E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStartedLib", "GettingStartedLib\GettingStartedLib.csproj", "{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -507,11 +511,22 @@ Global
 		{4F47457D-BD77-4E11-9CF5-C69319BF8FB8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4F47457D-BD77-4E11-9CF5-C69319BF8FB8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4F47457D-BD77-4E11-9CF5-C69319BF8FB8}.Release|x86.ActiveCfg = Release|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1E28AED6-6CCF-4755-A13F-34DE362D9040} = {A2610400-0E39-4E27-9B1B-FBF9E0073B99}
+		{48BDC9F9-A9A5-41C0-84E6-65F1ADC1A5D6} = {50E004A1-D593-448A-85C8-66A35E0BA4E5}
 	EndGlobalSection
 EndGlobal

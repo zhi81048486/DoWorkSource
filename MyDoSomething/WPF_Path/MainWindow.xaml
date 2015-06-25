@@ -12,7 +12,32 @@
       <EllipseGeometry RadiusX="100" RadiusY="25" Center="200,150"/>
       <EllipseGeometry RadiusX="75" RadiusY="130" Center="140,140"/>
     </GeometryGroup>
-  </Window.Resources>
+        <Style x:Key="Img_Button_Close"  TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="ToolTip" Value="取消操作"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Width="24" Height="24" Stroke="Red" StrokeThickness="1" Name="ellipse1"/>
+                            <Ellipse Width="18" Height="18" Fill="Red" Name="ellipse2"/>
+                            <Path Data="M7,10 17,20 M17,10 7,20" Stroke="#FFFFFF" StrokeThickness="4" Name="path"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="ellipse1" Property="Stroke" Value="{DynamicResource Button_Submit_Background_Disable_Brush}"/>
+                                <Setter TargetName="ellipse2" Property="Fill" Value="{DynamicResource Button_Submit_Background_Disable_Brush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
   <Grid>
     <ScrollViewer>
       <StackPanel Margin="0,0,0,50">
