@@ -23,8 +23,10 @@ namespace WPF_Chart
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
-     
+            dd d1 = new dd() {startDate = DateTime.Now.Date.ToString()};
+            string t = d1.startDate.ToString();
         }
+
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -35,6 +37,29 @@ namespace WPF_Chart
           //  chartview.VValue=new List<string>(){"50","40","30","20","10","0"};
             chartview.VValue_MaxValue = 50;
             chartview.VValue_InterValue = 10;
+        }
+    }
+
+    public class dd
+    {
+        private string _startDate;
+        public string startDate
+        {
+            get { return _startDate; }
+            set { _startDate = value; chagne();}
+        }
+
+        void chagne()
+        {
+           _startDate= String.Format("{0:yyyy-MM-dd}", _startDate); 
+        }
+
+        private string _endDate;
+
+        public string endDate
+        {
+            get { return String.Format("{0:yyyy-MM-dd}", _endDate); }
+            set { _endDate = value; }
         }
     }
 }

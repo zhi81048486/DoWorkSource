@@ -93,7 +93,6 @@ namespace BasicCsharp
         List<PreventData> GetBList(string accountId);
     }
 
-
     public class PreventData
     {
         /// <summary>
@@ -130,5 +129,6 @@ namespace BasicCsharp
         /// </summary>
         public int ClickTimes { get; set; }
     }
+
 
 }
