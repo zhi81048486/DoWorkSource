@@ -54,8 +54,30 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <Style x:Key="imgae_buttonStyle" TargetType="Button">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ImageType}" Value="0">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage UriSource="Resources/1433421697_25.Camera-Front.png"></BitmapImage>
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding ImageType}" Value="1">
+                    <Setter Property="Background" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
-    <Grid>
+    <StackPanel>
         <ToggleButton Style="{StaticResource ToggleButton_PlanGroup_Style}" Name="ToggleButton1" IsEnabled="{Binding ElementName=TogglePopup,Path=IsOpen}"/>
-       </Grid>
+        
+        <Button Style="{StaticResource imgae_buttonStyle}" Width="100" Height="35" Name="ImageButton"></Button>
+        <Button Width="100" Height="35" Style="{x:Null}"/>
+    </StackPanel>
 </Window>

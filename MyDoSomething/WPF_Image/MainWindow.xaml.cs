@@ -22,6 +22,22 @@ namespace WPF_Image
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
         }
+
+        void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadImageButton();
+        }
+
+        void LoadImageButton()
+        {
+            ImageButton.DataContext = new ImgBtnSource() {ImageType = "0"};
+        }
+    }
+
+    public class ImgBtnSource
+    {
+        public string ImageType { get; set; }
     }
 }
