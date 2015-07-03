@@ -118,7 +118,7 @@
                             <Border.Background>
                                 <VisualBrush>
                                     <VisualBrush.Visual>
-                                        <Path Fill="#c2beb7" Name="path">
+                                        <Path Fill="{TemplateBinding Background}" Name="path">
                                             <Path.Data>
                                                 <GeometryGroup>
                                                     <RectangleGeometry RadiusY="2" RadiusX="2"  Rect="0,0 200,45"/>
@@ -189,7 +189,7 @@
 
                 <Label Style="{StaticResource Label2Style}" Height="45" Width="220" Content="2.防恶意导航" Foreground="#FFFFFF" Background="#0083d3" Margin="2,0,0,0"/>
 
-                <RadioButton Style="{StaticResource RadioButtonStyle}" Content="1.恶意导航" Width="200" Height="45"></RadioButton>
+                <RadioButton Style="{StaticResource RadioButtonStyle}" Content="1.恶意导航" Width="200" Height="45" Background="Red"></RadioButton>
 
                 <RadioButton Style="{StaticResource RadioButtonStyle}" Content="1.恶意导航" Width="200" Height="45" IsChecked="True"></RadioButton>
                 <!--<Path Fill="#0083d3">
