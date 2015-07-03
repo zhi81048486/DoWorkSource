@@ -2,9 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chart="clr-namespace:WPF_Chart"
-        Title="MainWindow" Height="500" Width="600">
+        Title="MainWindow" Height="100" Width="1200">
     <Grid>
-        <chart:WPF_Graph Width="600" Height="400" x:Name="chartview"/>
+        <chart:WPF_Graph Width="1200" Height="400" x:Name="chartview"/>
 
     </Grid>
 </Window>

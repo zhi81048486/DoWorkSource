@@ -2,10 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wpfListView="clr-namespace:WPF_ListView"
-        Title="MainWindow" Height="350" Width="525">
-    <Window.DataContext>
+        Title="MainWindow" Height="350" Width="1200">
+    <!--<Window.DataContext>
         <wpfListView:LViewSource/>
-    </Window.DataContext>
+    </Window.DataContext>-->
     <Grid>
         <ListView Name="LView">
             <ListView.View>

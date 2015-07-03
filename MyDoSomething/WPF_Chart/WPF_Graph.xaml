@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Canvas Name="MyCanvas" Grid.Row="0" Grid.Column="1">
-            <UniformGrid Name="ChartGrid" Width="500" Height="340">
+            <UniformGrid Name="ChartGrid" Width="1200" Height="340">
             </UniformGrid>
         </Canvas>
         <StackPanel Name="VPanel" Grid.Row="0" Grid.Column="0" />

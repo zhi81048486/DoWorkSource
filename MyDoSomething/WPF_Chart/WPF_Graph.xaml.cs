@@ -200,11 +200,11 @@ namespace WPF_Chart
         {
             for (int i = 0; i <= Rows; i++)
             {
-                VPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = VValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.Red});
+                VPanel.Children.Add(new Label() { Width = 60, Height = _height, Content = VValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.Red});
             }
             for (int i = 0; i < Columns+1; i++)
             {
-                HPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = HValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.Yellow});
+                HPanel.Children.Add(new Label() { Width = _width, Height = _height, Content = HValue[i], HorizontalContentAlignment = HorizontalAlignment.Right,Background = Brushes.RosyBrown});
             }
         }
 
@@ -213,6 +213,15 @@ namespace WPF_Chart
             Ellipse e = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.RoyalBlue };
             Canvas.SetLeft(e, 100); Canvas.SetTop(e, 100);
             MyCanvas.Children.Add(e);
+
+            Line lin=new Line(){Stroke = Brushes.Red,StrokeThickness = 1};
+            lin.X1 = 10;
+            lin.Y1 = 10;
+            lin.X2 = 40;
+            lin.Y2 = 60;
+
+            Point p=new Point();
+            MyCanvas.Children.Add(lin);
         }
     }
 }
